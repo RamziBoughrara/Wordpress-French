@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress 3.1\n"
+"Project-Id-Version: WordPress 3.2\n"
 "Report-Msgid-Bugs-To: wp-polyglots@lists.automattic.com\n"
-"POT-Creation-Date: 2011-02-23 15:18:02+00:00\n"
-"PO-Revision-Date: 2011-02-24 10:26+0100\n"
+"POT-Creation-Date: 2011-07-03 19:18:42+00:00\n"
+"PO-Revision-Date: 2011-07-04 22:52+0100\n"
 "Last-Translator: WordPress Francophone <traduction_at_wordpress-fr.net>\n"
 "Language-Team: WordPress Francophone <traduction@wordpress-fr.net>\n"
 "MIME-Version: 1.0\n"
@@ -50,12 +50,12 @@ msgid "Username:"
 msgstr "Identifiant&nbsp;:"
 
 #: wp-activate.php:90
-msgid "Your account is now activated. <a href=\"%1$s\">View your site</a> or <a href=\"%2$s\">Login</a>"
+msgid "Your account is now activated. <a href=\"%1$s\">View your site</a> or <a href=\"%2$s\">Log in</a>"
 msgstr "Votre compte est maintenant activé. <a href=\"%1$s\">Consultez votre site</a> ou <a href=\"%2$s\">connectez-vous</a>"
 
 #: wp-activate.php:92
-msgid "Your account is now activated. <a href=\"%1$s\">Login</a> or go back to the <a href=\"%2$s\">homepage</a>."
-msgstr "Votre compte est maintenant activé. <a href=\"%1$s\">Connectez-vous</a> ou retournez sur la <a href=\"%2$s\">page d&rsquo;accueil de votre site</a>."
+msgid "Your account is now activated. <a href=\"%1$s\">Log in</a> or go back to the <a href=\"%2$s\">homepage</a>."
+msgstr "Votre compte est maintenant activé. <a href=\"%1$s\">Connectez-vous</a> ou retournez sur la <a href=\"%2$s\">page d&rsquo;accueil</a>."
 
 #: wp-includes/ms-functions.php:214
 #: wp-includes/ms-functions.php:276
@@ -194,7 +194,7 @@ msgstr ""
 "%s"
 
 #: wp-includes/ms-functions.php:839
-#: wp-includes/ms-functions.php:891
+#: wp-includes/ms-functions.php:890
 msgid "[%1$s] Activate %2$s"
 msgstr "[%1$s] Activation de %2$s"
 
@@ -215,35 +215,35 @@ msgstr ""
 "Après l'activation, vous recevrez *un autre courrier* contenant votre identifiant.\n"
 "\n"
 
-#: wp-includes/ms-functions.php:927
+#: wp-includes/ms-functions.php:926
 msgid "Invalid activation key."
 msgstr "Clef d&#8217;activation invalide."
 
-#: wp-includes/ms-functions.php:931
+#: wp-includes/ms-functions.php:930
 msgid "The user is already active."
 msgstr "Cet utilisateur est déjà activé."
 
-#: wp-includes/ms-functions.php:933
+#: wp-includes/ms-functions.php:932
 msgid "The site is already active."
 msgstr "Ce site est déjà activé."
 
-#: wp-includes/ms-functions.php:949
+#: wp-includes/ms-functions.php:948
 msgid "Could not create user"
 msgstr "Impossible de créer l&#8217;utilisateur."
 
-#: wp-includes/ms-functions.php:957
+#: wp-includes/ms-functions.php:956
 msgid "That username is already activated."
 msgstr "Cet identifiant est déjà activé."
 
-#: wp-includes/ms-functions.php:1058
+#: wp-includes/ms-functions.php:1057
 msgid "Site already exists."
 msgstr "Ce site existe déjà."
 
-#: wp-includes/ms-functions.php:1064
+#: wp-includes/ms-functions.php:1063
 msgid "Could not create site."
 msgstr "Impossible de créer le site."
 
-#: wp-includes/ms-functions.php:1117
+#: wp-includes/ms-functions.php:1116
 msgid ""
 "New Site: %1s\n"
 "URL: %2s\n"
@@ -258,11 +258,11 @@ msgstr ""
 "Désactiver ces notifications : %4s"
 
 # Ne pas mettre d'entité HTML (&nbsp;...) : chaîne envoyée par e-mail.
-#: wp-includes/ms-functions.php:1124
+#: wp-includes/ms-functions.php:1123
 msgid "New Site Registration: %s"
 msgstr "Inscription d'un nouveau site : %s"
 
-#: wp-includes/ms-functions.php:1151
+#: wp-includes/ms-functions.php:1150
 msgid ""
 "New User: %1s\n"
 "Remote IP: %2s\n"
@@ -275,48 +275,79 @@ msgstr ""
 "Désactiver ces notifications : %3s"
 
 # Ne pas mettre d'entité HTML (&nbsp;...) : chaîne envoyée par e-mail.
-#: wp-includes/ms-functions.php:1157
+#: wp-includes/ms-functions.php:1156
 msgid "New User Registration: %s"
 msgstr "Inscription d'un nouvel utilisateur : %s"
 
-#: wp-includes/ms-functions.php:1230
+#: wp-includes/ms-functions.php:1229
 msgid "<h1>Already Installed</h1><p>You appear to have already installed WordPress. To reinstall please clear your old database tables first.</p>"
 msgstr "<h1>Déjà installé</h1><p>Il semblerait que WordPress soit déjà installé. Pour le réinstaller, commencez par supprimer vos anciennes tables de la base de données.</p>"
 
-#: wp-includes/ms-functions.php:1345
+# Ne pas mettre d'entité HTML (&nbsp;...) : chaîne envoyée par e-mail.
+#: wp-includes/ms-functions.php:1307
+msgid ""
+"Dear User,\n"
+"\n"
+"Your new SITE_NAME site has been successfully set up at:\n"
+"BLOG_URL\n"
+"\n"
+"You can log in to the administrator account with the following information:\n"
+"Username: USERNAME\n"
+"Password: PASSWORD\n"
+"Log in here: BLOG_URLwp-login.php\n"
+"\n"
+"We hope you enjoy your new site. Thanks!\n"
+"\n"
+"--The Team @ SITE_NAME"
+msgstr ""
+"Cher utilisateur,\n"
+"\n"
+"Votre nouveau site SITE_NAME a été bien créé à l'adresse :\n"
+"BLOG_URL\n"
+"\n"
+"Vous pouvez vous connecter au compte administrateur avec les informations suivantes :\n"
+"Identifiant : USERNAME\n"
+"Mot de passe : PASSWORD\n"
+"Connectez-vous ici : BLOG_URLwp-login.php\n"
+"\n"
+"Nous espérons que vous apprécierez votre nouveau site. Merci !\n"
+"\n"
+"--L'équipe @ SITE_NAME"
+
+#: wp-includes/ms-functions.php:1343
 msgid "New %1$s Site: %2$s"
 msgstr "Nouveau site %1$s&nbsp;: %2$s"
 
-#: wp-includes/ms-functions.php:1393
+#: wp-includes/ms-functions.php:1391
 msgid "New %1$s User: %2$s"
 msgstr "Nouvel utilisateur %1$s&nbsp;: %2$s"
 
-#: wp-includes/ms-functions.php:1574
+#: wp-includes/ms-functions.php:1572
 msgid "Sorry, you have used your space allocation. Please delete some files to upload more files."
 msgstr "Désolé, vous avez utilisé l&rsquo;intégralité de votre espace disque. Veuillez effacer quelques fichiers avant d&rsquo;en mettre d&rsquo;autres en ligne."
 
-#: wp-includes/ms-functions.php:1753
+#: wp-includes/ms-functions.php:1751
 msgid "This file is too big. Files must be less than %d KB in size."
 msgstr "Ce fichier est trop gros. La taille des fichiers doit être inférieure %d Ko."
 
-#: wp-includes/ms-functions.php:1784
+#: wp-includes/ms-functions.php:1782
 msgid "Please try again!"
 msgstr "Merci de réessayer&nbsp;!"
 
-#: wp-includes/ms-functions.php:1829
+#: wp-includes/ms-functions.php:1827
 msgid "An error occurred adding you to this site. Back to the <a href=\"%s\">homepage</a>."
 msgstr "Une erreur est survenue lors de votre ajout à ce site. Retournez à l&rsquo;<a href=\"%s\">accueil</a>."
 
-#: wp-includes/ms-functions.php:1831
+#: wp-includes/ms-functions.php:1829
 msgid "You have been added to this site. Please visit the <a href=\"%s\">homepage</a> or <a href=\"%s\">login</a> using your username and password."
 msgstr "Vous avez bien été ajouté à ce site. Veuillez vous rendre sur la <a href=\"%s\">page d&rsquo;accueil</a>, ou vous <a href=\"%s\">connectez</a> en utilisant votre identifiant et votre mot de passe."
 
-#: wp-includes/ms-functions.php:1831
+#: wp-includes/ms-functions.php:1829
 msgid "Success"
 msgstr "Validé"
 
 # Pas d'entité HTML : texte envoyé par mail
-#: wp-includes/ms-functions.php:1991
+#: wp-includes/ms-functions.php:1989
 msgid ""
 "Dear User,\n"
 "\n"
@@ -350,7 +381,7 @@ msgstr "Cet utilisateur a choisi d&#8217;effacer son compte, et son contenu n&#8
 
 #: wp-includes/ms-load.php:94
 msgid "This site has not been activated yet. If you are having problems activating your site, please contact <a href=\"mailto:%1$s\">%1$s</a>."
-msgstr "Ce site n&#8217;a pas encore été activé. Si vous rencontrez des problèmes durant l&rsquo;activation de votre site, veuillez contacter <a href=\"mailto:%1$s\">%1$s</a>."
+msgstr "Ce site n&rsquo;a pas encore été activé. Si vous rencontrez des problèmes durant l&rsquo;activation de votre site, veuillez contacter <a href=\"mailto:%1$s\">%1$s</a>."
 
 #: wp-includes/ms-load.php:101
 msgid "This site has been archived or suspended."
@@ -414,8 +445,8 @@ msgid "Up until WordPress version 3.0, what is now called a Multi-site Network h
 msgstr "Avant la version 3.0 de WordPress, l&rsquo;équivalent du réseau multisite devait être installé avec une édition spéciale de WordPress, appellée WordPress MU (pour Multi-Utilisateurs)."
 
 #: wp-admin/my-sites.php:45
-msgid "<a href=\"http://codex.wordpress.org/Dashboard_My_Sites_SubPanel\" target=\"_blank\">Documentation on My Sites</a>"
-msgstr "<a href=\"http://codex.wordpress.org/Dashboard_My_Sites_SubPanel\" target=\"_blank\">Documentation sur Mes Sites</a>"
+msgid "<a href=\"http://codex.wordpress.org/Dashboard_My_Sites_Screen\" target=\"_blank\">Documentation on My Sites</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Dashboard_My_Sites_Screen\" target=\"_blank\">Documentation sur Mes Sites (en)</a>"
 
 #: wp-admin/my-sites.php:68
 msgid "Global Settings"
@@ -434,11 +465,6 @@ msgstr "Le panneau de création de réseau n&rsquo;est pas conçu pour les rése
 msgid "You must define the <code>WP_ALLOW_MULTISITE</code> constant as true in your wp-config.php file to allow creation of a Network."
 msgstr "Afin d&rsquo;autoriser la création d&rsquo;un réseau, vous devez définir la constante <code>WP_ALLOW_MULTISITE</code> comme &laquo;&nbsp;true&nbsp;&raquo; dans votre fichier wp-config.php."
 
-#: wp-admin/network.php:99
-#: wp-admin/network/menu.php:45
-msgid "Network Setup"
-msgstr "Réglage du réseau"
-
 #: wp-admin/network.php:102
 msgid "Create a Network of WordPress Sites"
 msgstr "Créer un réseau de sites WordPress"
@@ -452,16 +478,16 @@ msgid "Choose subdomains or subdirectories; this can only be switched afterwards
 msgstr "Faites le choix entre sous-domaines ou sous-dossiers. Une fois l&rsquo;installation configurée, vous ne pourrez pas revenir en arrière sans recommencer à zéro. Saisissez tous les détails, et cliquez sur &laquo;&nbsp;Installer&nbsp;&raquo;. Si cela ne marche pas, vous devrez sans doute ajouter une entrée de sous-domaine générique (wildcard) dans vos enregistrements DNS, ou passer à un réglage différent pour vos permaliens (si en mode sous-dossiers)."
 
 #: wp-admin/network.php:109
-msgid "The next screen for Network will give you individually-generated lines of code to add to your wp-config.php and .htaccess files. Make sure the settings of your FTP client make files starting with a dot visible, so that you can find .htaccess; you may have to create this file if it really is not there. Make backup copies of those two files."
-msgstr "L&rsquo;écran suivant vous présentera un ensemble de lignes de code générées à partir de votre configuration, qu&rsquo;il vous faudra ajouter à vos fichiers <code>wp-config.php</code> et <code>.htaccess</code>. Veillez bien à ce que votre client FTP soit configuré pour afficher les fichiers commençant par un point, afin que vous puissiez trouver le <code>.htaccess</code>. Il est possible que vous ayez à créer ce fichier s&rsquo;il n&rsquo;est pas déjà présent. Avant toute modification de <code>wp-config.php</code> et <code>.htaccess</code>, faites-en une copie de sauvegarde."
+msgid "The next screen for Network Setup will give you individually-generated lines of code to add to your wp-config.php and .htaccess files. Make sure the settings of your FTP client make files starting with a dot visible, so that you can find .htaccess; you may have to create this file if it really is not there. Make backup copies of those two files."
+msgstr "L&rsquo;écran suivant vous présentera un ensemble de lignes de code générées à partir de votre configuration, qu&rsquo;il vous faudra ajouter à vos fichiers <code>wp-config.php</code> et <code>.htaccess</code>. Veillez bien à ce que votre client FTP soit configuré pour afficher les fichiers commençant par un point, afin que vous puissiez trouver le fichier <code>.htaccess</code>. Il est possible que vous ayez à créer ce fichier s&rsquo;il n&rsquo;est pas déjà présent. Avant toute modification de <code>wp-config.php</code> et <code>.htaccess</code>, faites-en une copie de sauvegarde."
 
 #: wp-admin/network.php:110
 msgid "Add a <code>blogs.dir</code> directory under <code>/wp-content</code> and add the designated lines of code to wp-config.php (just before <code>/*...stop editing...*/</code>) and <code>.htaccess</code> (replacing the existing WordPress rules)."
 msgstr "Ajouter le dossier <code>blogs.dir</code> dans le dossier <code>/wp-content/</code> et ajouter les lignes de code désignées dans le fichier <code>wp-config.php</code> (juste avant <code>/*...stop editing...*/</code>) et le fichier <code>.htaccess</code> (remplace les règles existantes de WordPress)."
 
 #: wp-admin/network.php:111
-msgid "Refreshing your browser will take you to a screen with an archive of those added lines of code. A set of six links under Super Admin will appear at the top of the main left navigation menu. The multisite network is now enabled."
-msgstr "En rechargeant la page, l&rsquo;écran affichera un rappel de ces lignes de code, et une nouvelle section de menu avec six entrées, nommée &laquo;&nbsp;Super Admin&nbsp;&raquo;, apparaîtra au-dessus du menu principal. Le réseau multisite sera alors activé."
+msgid "Once you add this code and refresh your browser, multisite should be enabled. This screen will keep an archive of the added code. You can toggle between Network Admin and Site Admin by clicking on the Howdy (Username) dropdown in the upper right of the administration area."
+msgstr "Une fois que vous aurez ajouté ce code et rafraîchi la page dans votre navigateur, le mode multisite devrait être activé. Cet écran conservera une archive du code ajouté. Vous pouvez passer de l&rsquo;administration du réseau à l&rsquo;administration du site en cliquant sur &laquo;&nbsp;Salutations, [Utilisateur]&nbsp;!&nbsp;raquo; en haut à droite de la zone d&rsquo;administration."
 
 #: wp-admin/network.php:112
 msgid "The choice of subdirectory sites is disabled if this setup is more than a month old because of permalink problems with &#8220;/blog/&#8221; from the main site. This disabling will be addressed soon in a future version."
@@ -472,8 +498,8 @@ msgid "<a href=\"http://codex.wordpress.org/Create_A_Network\" target=\"_blank\"
 msgstr "<a href=\"http://codex.wordpress.org/Create_A_Network\" target=\"_blank\">Documentation sur la création d&rsquo;un réseau de sites</a>"
 
 #: wp-admin/network.php:115
-msgid "<a href=\"http://codex.wordpress.org/Tools_Network_SubPanel\" target=\"_blank\">Documentation on the Network Screen</a>"
-msgstr "<a href=\"http://codex.wordpress.org/Tools_Network_SubPanel\" target=\"_blank\">Documentation sur l&rsquo;écran Outils > Réseau</a>"
+msgid "<a href=\"http://codex.wordpress.org/Tools_Network_Screen\" target=\"_blank\">Documentation on the Network Screen</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Tools_Network_Screen\" target=\"_blank\">Documentation sur l&rsquo;écran Outils > Réseau (en)</a>"
 
 #: wp-admin/network.php:138
 #: wp-admin/network.php:145
@@ -725,7 +751,7 @@ msgid "I'm sorry, the link you clicked is stale. Please select another option."
 msgstr "Je suis désolé, mais le lien que vous avez cliqué ne répond pas. Merci de sélectionner une autre option."
 
 # Pas d'entité HTML : envoyé par mail.
-#: wp-admin/ms-delete-site.php:42
+#: wp-admin/ms-delete-site.php:44
 msgid ""
 "Dear User,\n"
 "You recently clicked the 'Delete Site' link on your site and filled in a\n"
@@ -753,27 +779,27 @@ msgstr ""
 "Le webmaster\n"
 "###SITE_NAME###"
 
-#: wp-admin/ms-delete-site.php:60
+#: wp-admin/ms-delete-site.php:62
 msgid "Delete My Site"
 msgstr "Supprimer mon site"
 
-#: wp-admin/ms-delete-site.php:63
+#: wp-admin/ms-delete-site.php:65
 msgid "Thank you. Please check your email for a link to confirm your action. Your site will not be deleted until this link is clicked. "
 msgstr "Merci. Veuillez consulter le message que nous vous avons envoyé pour confirmer cette action. Votre site ne sera pas effacé tant que vous n&#8217;aurez pas cliqué le lien qu&#8217;il contient."
 
-#: wp-admin/ms-delete-site.php:67
+#: wp-admin/ms-delete-site.php:69
 msgid "If you do not want to use your %s site any more, you can delete it using the form below. When you click <strong>Delete My Site Permanently</strong> you will be sent an email with a link in it. Click on this link to delete your site."
 msgstr "Si vous ne souhaitez plus utiliser votre site %s, vous pouvez l&#8217;effacer à l&#8217;aide du formulaire ci-dessous. Après avoir cliqué sur <strong>Supprimer mon site</strong>, vous recevrez un message avec un lien. Cliquez sur ce lien pour effacer votre site."
 
-#: wp-admin/ms-delete-site.php:68
+#: wp-admin/ms-delete-site.php:70
 msgid "Remember, once deleted your site cannot be restored."
 msgstr "Rappelez-vous qu&rsquo;une fois supprimé, votre site ne peut être récupéré."
 
-#: wp-admin/ms-delete-site.php:72
+#: wp-admin/ms-delete-site.php:75
 msgid "I'm sure I want to permanently disable my site, and I am aware I can never get it back or use %s again."
 msgstr "Je suis certain de vouloir effacer mon site de manière permanente, et je me rends compte que je ne pourrais jamais le récupérer, ni utiliser %s pour un nouveau site."
 
-#: wp-admin/ms-delete-site.php:73
+#: wp-admin/ms-delete-site.php:76
 msgid "Delete My Site Permanently"
 msgstr "Supprimer définitivement mon site"
 
@@ -795,40 +821,40 @@ msgstr "N&rsquo;est pas un indésirable"
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:143
 #: wp-admin/network/site-new.php:120
 #: wp-admin/network/site-new.php:122
-#: wp-admin/network/site-info.php:116
+#: wp-admin/network/site-info.php:119
 msgid "Domain"
 msgstr "Domaine"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:147
-#: wp-admin/network/site-info.php:139
+#: wp-admin/network/site-info.php:142
 msgid "Last Updated"
 msgstr "Dernière mise à jour"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:148
-#: wp-admin/network/site-info.php:135
+#: wp-admin/network/site-info.php:138
 msgctxt "site"
 msgid "Registered"
 msgstr "Date de création"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:172
-#: wp-admin/network/site-info.php:145
+#: wp-admin/network/site-info.php:148
 msgid "Archived"
 msgstr "Archivé"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:173
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:260
-#: wp-admin/network/site-info.php:146
+#: wp-admin/network/site-info.php:149
 msgctxt "site"
 msgid "Spam"
 msgstr "Indésirable"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:174
-#: wp-admin/network/site-info.php:147
+#: wp-admin/network/site-info.php:150
 msgid "Deleted"
 msgstr "Supprimé"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:175
-#: wp-admin/network/site-info.php:149
+#: wp-admin/network/site-info.php:152
 msgid "Mature"
 msgstr "Adulte"
 
@@ -992,10 +1018,12 @@ msgstr "[%s] Nouvelle adresse e-mail"
 msgid "Your email address has not been updated yet. Please check your inbox at %s for a confirmation email."
 msgstr "Votre adresse e-mail n&rsquo;a pas encore été mise à jour. Merci de vérifier votre boite de réception %s pour consulter l&rsquo;e-mail de confirmation."
 
+#. translators: Gigabytes
 #: wp-admin/includes/ms.php:413
 msgid "GB"
 msgstr "GO"
 
+#. translators: Megabytes
 #: wp-admin/includes/ms.php:416
 msgid "MB"
 msgstr "MO"
@@ -1012,39 +1040,57 @@ msgstr "Quota de l&rsquo;espace disque du site"
 msgid "MB (Leave blank for network default)"
 msgstr "MO (Laisser vide pour utiliser la valeur par défaut du réseau)"
 
-#: wp-admin/includes/ms.php:505
-msgid "You don&#8217;t have permission to view this site. Please contact the system administrator."
-msgstr "Vous n&rsquo;avez pas la permission de visualiser ce site. Merci de contacter l&rsquo;administrateur de votre serveur."
+#: wp-admin/includes/ms.php:511
+#: wp-admin/includes/ms.php:513
+msgid "You attempted to access the \"%1$s\" dashboard, but you do not currently have privileges on this site. If you believe you should be able to access the \"%1$s\" dashboard, please contact your network administrator."
+msgstr "Vous avez tenté d&rsquo;accéder au tableau de bord de &laquo;&nbsp;%1$s&nbsp;&raquo;. Cependant, vous ne disposez pas pour le moment des droits nécessaires sur ce site. Si vous pensez que vous devriez pouvoir accéder au tableau de bord de &laquo;&nbsp;%1$s&nbsp;&raquo;, contactez l&rsquo;administrateur du réseau."
 
-#: wp-admin/includes/ms.php:537
+#: wp-admin/includes/ms.php:514
+msgid "If you reached this screen by accident and meant to visit one of your own sites, here are some shortcuts to help you find your way."
+msgstr "Si vous êtes arrivé sur cet écran par accident, et que vous vouliez en fait vous rendre sur l&rsquo;un de vos sites, voici quelques raccourcis pour vous aider à trouver votre chemin."
+
+#: wp-admin/includes/ms.php:516
+msgid "Your Sites"
+msgstr "Vos sites"
+
+#: wp-admin/includes/ms.php:525
+msgid "Visit Dashboard"
+msgstr "Se rendre sur le Tableau de bord"
+
+#: wp-admin/includes/ms.php:525
+msgid "View Site"
+msgstr "Afficher le site"
+
+#: wp-admin/includes/ms.php:552
 msgid "American English"
 msgstr "Anglais (US)"
 
-#: wp-admin/includes/ms.php:541
+#: wp-admin/includes/ms.php:556
 msgid "British English"
 msgstr "Anglais (UK)"
 
-#: wp-admin/includes/ms.php:551
+#: wp-admin/includes/ms.php:566
 msgid "English"
 msgstr "Anglais"
 
-#: wp-admin/includes/ms.php:571
+#: wp-admin/includes/ms.php:586
 msgid "Warning! WordPress encrypts user cookies, but you must add the following lines to <strong>wp-config.php</strong> for it to be more secure."
 msgstr "Attention&nbsp;! WordPress encrypte les cookies utilisés par les utilisateurs, mais pour que la sécurité soit améliorée vous devez ajouter les lignes suivantes dans le fichier <strong>wp-config.php</strong>."
 
-#: wp-admin/includes/ms.php:572
+#: wp-admin/includes/ms.php:587
 msgid "Before the line <code>/* That's all, stop editing! Happy blogging. */</code> please add this code:"
 msgstr "Merci d&rsquo;ajouter ce code avant la ligne <code>/* C'est tout, ne touchez pas à ce qui suit ! Bon blogging ! */</code> :"
 
-#: wp-admin/includes/ms.php:585
+#: wp-admin/includes/ms.php:600
 msgid "Thank you for Updating! Please visit the <a href=\"%s\">Update Network</a> page to update all your sites."
 msgstr "Merci d&rsquo;avoir fait cette mise à jour&nbsp;!  Rendez-vous sur la page de <a href=\"%s\">mise à jour du réseau</a> afin de mettre tous vos sites à jour."
 
-#: wp-admin/includes/ms.php:618
+#. translators: My sites label
+#: wp-admin/includes/ms.php:633
 msgid "Primary Site"
 msgstr "Site principal"
 
-#: wp-admin/includes/ms.php:665
+#: wp-admin/includes/ms.php:680
 msgid "The <code>%1$s</code> file is deprecated. Please remove it and update your server rewrite rules to use <code>%2$s</code> instead."
 msgstr "Le fichier <code>%1$s</code> est obsolète. Veuillez l&rsquo;enlever et mettre à jour les règles de réécriture de votre serveur, afin d&rsquo;utiliser <code>%2$s</code> à la place."
 
@@ -1153,7 +1199,7 @@ msgid "You do not have sufficient permissions to add users to this network."
 msgstr "Vous n&rsquo;avez pas les droits suffisants pour ajouter des utilisateurs à ce réseau."
 
 #: wp-admin/network/user-new.php:21
-msgid "Add User will set up a new user account on the network and send them an email with their username and password."
+msgid "Add User will set up a new user account on the network and send that person an email with username and password."
 msgstr "&laquo;&nbsp;Ajouter un utilisateur&nbsp;&raquo; créera un nouveau compte utilisateur sur le réseau, et enverra un message contenant son identifiant et son mot de passe au destinataire."
 
 #: wp-admin/network/user-new.php:22
@@ -1210,30 +1256,17 @@ msgstr "Vous n&#8217;avez pas les droits suffisants pour accéder à cette page.
 msgid "Cannot create an empty user."
 msgstr "Impossible de créer un utilisateur vide."
 
-#: wp-admin/network/user-new.php:37
-msgid "Missing username and email."
-msgstr "Il manque l&rsquo;identifiant ou l&rsquo;adresse de messagerie."
+#: wp-admin/network/user-new.php:46
+msgid "Cannot add user."
+msgstr "Impossible d&rsquo;ajouter l&rsquo;utilisateur."
 
-#: wp-admin/network/user-new.php:39
-msgid "Missing username."
-msgstr "Identifiant manquant."
-
-#: wp-admin/network/user-new.php:41
-msgid "Missing email."
-msgstr "Adresse de messagerie manquante."
-
-#: wp-admin/network/user-new.php:47
-#: wp-admin/network/site-users.php:214
-msgid "Duplicated username or email address."
-msgstr "Identifiant ou adresse de messagerie déjà utilisé(e)."
-
-#: wp-admin/network/user-new.php:85
-#: wp-admin/network/site-users.php:299
+#: wp-admin/network/user-new.php:94
+#: wp-admin/network/site-users.php:302
 msgid "Username and password will be mailed to the above email address."
 msgstr "L&rsquo;identifiant et le mot de passe seront envoyés à l&rsquo;adresse de contact précisée."
 
-#: wp-admin/network/user-new.php:89
-#: wp-admin/network/site-users.php:267
+#: wp-admin/network/user-new.php:98
+#: wp-admin/network/site-users.php:270
 msgid "Add User"
 msgstr "Ajouter un utilisateur"
 
@@ -1250,8 +1283,8 @@ msgid "Blogs are now called Sites; Site is now called Network."
 msgstr "Les blogs sont maintenant appelés des sites. Le site global est maintenant nommé &laquo;&nbsp;le réseau&nbsp;&raquo;."
 
 #: wp-admin/network/index.php:29
-msgid "This screen provides the network administrator with links to the screens for Sites and Users to either create a new site or user, or to search existing users and sites, as well as Dashboard widgets. Those screens are also accessible through the left-hand navigation in the Network Admin section."
-msgstr "Cet écran permet à l&rsquo;administrateur du réseau de se rendre à l&rsquo;écran de création de site et celui de création d&rsquo;utilisateur, ou de lancer une recherche sur l&rsquo;ensemble des sites et utilisateurs, ainsi que les widgets du Tableau de Bord. Ces écrans sont également accessibles via la navigation située dans la section &laquo;&nbsp;Super Admin&nbsp;&raquo;."
+msgid "The Right Now box provides the network administrator with links to the screens to either create a new site or user, or to search existing users and sites. Screen for Sites and Users are also accessible through the left-hand navigation in the Network Admin section."
+msgstr "La boîte &laquo;&nbsp;Aujourdh&rsquo;hui&nbsp;&raquo; permet à l&rsquo;administrateur du réseau de se rendre à l&rsquo;écran de création de site et celui de création d&rsquo;utilisateur, ou de lancer une recherche sur l&rsquo;ensemble des sites et utilisateurs. Ces écrans sont également accessibles via la navigation située dans la section &laquo;&nbsp;Super Admin&nbsp;&raquo;."
 
 #: wp-admin/network/index.php:31
 msgid "<a href=\"http://codex.wordpress.org/Network_Admin\" target=\"_blank\">Documentation on the Network Admin</a>"
@@ -1284,6 +1317,7 @@ msgid_plural "You are about to remove the following themes:"
 msgstr[0] "Vous êtes sur le point de supprimer le thème suivant&nbsp;:"
 msgstr[1] "Vous êtes sur le point de supprimer les thèmes suivants&nbsp;:"
 
+#. translators: 1: theme name, 2: theme author
 #: wp-admin/network/themes.php:133
 msgid "Are you sure you wish to delete these themes?"
 msgstr "Êtes-vous certain(e) de vouloir supprimer ces thèmes&nbsp;?"
@@ -1298,69 +1332,64 @@ msgstr[1] "Oui, supprimer ces thèmes"
 msgid "No, Return me to the theme list"
 msgstr "Non, retourner à la liste des thèmes."
 
-#: wp-admin/network/themes.php:182
+#: wp-admin/network/themes.php:176
 #: wp-admin/network/site-themes.php:125
 msgctxt "themes per page (screen options)"
 msgid "Themes"
 msgstr "Thèmes"
 
-#: wp-admin/network/themes.php:185
+#: wp-admin/network/themes.php:179
 msgid "This screen enables and disables the inclusion of themes available to choose in the Appearance menu for each site. It does not activate or deactivate which theme a site is currently using."
 msgstr "Cet écran permet d&rsquo;activer ou désactiver la disponibilité des thèmes pour tous les sites du réseau. Il ne permet pas d&rsquo;activer ou activer le thème actuellement utilisé ce site."
 
-#: wp-admin/network/themes.php:186
+#: wp-admin/network/themes.php:180
 msgid "If the network admin disables a theme that is in use, it can still remain selected on that site. If another theme is chosen, the disabled theme will not appear in the site&#8217;s Appearance > Themes screen."
 msgstr "Si l&rsquo;administrateur du réseau désactive un thème en cours d&rsquo;utilisation par un site, ce thème restera en place pour ce site. Si le site change de thème, le thème désactivé n&rsquo;apparaîtra plus dans l&rsquo;écran de sélection des thèmes de ce site."
 
-#: wp-admin/network/themes.php:187
-msgid "Themes can be enabled on a site by site basis by the network admin on the Edit Site screen you go to via the Edit action link on the Sites screen. Only network admins are able to install or edit themes."
-msgstr "Les thèmes peuvent être activés par l&rsquo;administrateur du réseau pour chaque site, individuellement, par le biais de l&rsquo;écran de modification d&rsquo;un site, accessible via le lien &laquo;&nbsp;Modifier&nbsp;&raquo; de la liste des sites. Seuls les administrateurs du réseau peuvent installer ou modifier des thèmes."
+#: wp-admin/network/themes.php:181
+msgid "Themes can be enabled on a site by site basis by the network admin on the Edit Site screen (which has a Themes tab); get there via the Edit action link on the All Sites screen. Only network admins are able to install or edit themes."
+msgstr "Les thèmes peuvent être activés par l&rsquo;administrateur du réseau pour chaque site, individuellement, par le biais de l&rsquo;écran de modification d&rsquo;un site (et de son onglet Thèmes), accessible via le lien &laquo;&nbsp;Modifier&nbsp;&raquo; de la liste des sites. Seuls les administrateurs du réseau peuvent installer ou modifier des thèmes."
 
-#: wp-admin/network/themes.php:189
+#: wp-admin/network/themes.php:183
 msgid "<a href=\"http://codex.wordpress.org/Network_Admin_Themes_Screen\" target=\"_blank\">Documentation on Network Themes</a>"
 msgstr "<a href=http://codex.wordpress.org/Network_Admin_Themes_Screenl\" target=\"_blank\">Documentation sur les thèmes du réseau</a>"
 
 # contexte
-#: wp-admin/network/themes.php:202
-#: wp-admin/network/menu.php:30
+#: wp-admin/network/themes.php:196
+#: wp-admin/network/menu.php:34
 msgctxt "theme"
 msgid "Add New"
 msgstr "Ajouter"
 
-#: wp-admin/network/themes.php:210
-#: wp-admin/network/site-themes.php:153
+#: wp-admin/network/themes.php:204
+#: wp-admin/network/site-themes.php:156
 msgid "Theme enabled."
 msgid_plural "%s themes enabled."
 msgstr[0] "Thème activé."
 msgstr[1] "%s thèmes activés."
 
-#: wp-admin/network/themes.php:213
-#: wp-admin/network/site-themes.php:156
+#: wp-admin/network/themes.php:207
+#: wp-admin/network/site-themes.php:159
 msgid "Theme disabled."
 msgid_plural "%s themes disabled."
 msgstr[0] "Thème désactivé."
 msgstr[1] "%s thèmes désactivés."
 
-#: wp-admin/network/themes.php:216
+#: wp-admin/network/themes.php:210
 msgctxt "network"
 msgid "Theme deleted."
 msgid_plural "%s themes deleted."
 msgstr[0] "Thème supprimé."
 msgstr[1] "%s thèmes supprimés."
 
-#: wp-admin/network/themes.php:218
-#: wp-admin/network/site-themes.php:158
+#: wp-admin/network/themes.php:212
+#: wp-admin/network/site-themes.php:161
 msgid "No theme selected."
 msgstr "Aucun thème sélectionné."
 
-#: wp-admin/network/themes.php:220
+#: wp-admin/network/themes.php:214
 msgid "You cannot delete a theme while it is active on the main site."
 msgstr "Vous ne pouvez pas effacer un thème s&rsquo;il est activé sur le site principal."
-
-#: wp-admin/network/themes.php:226
-#: wp-admin/network/site-themes.php:164
-msgid "Search Installed Themes"
-msgstr "Chercher parmi les thèmes installés"
 
 #: wp-admin/network/site-users.php:17
 #: wp-admin/network/site-settings.php:17
@@ -1419,53 +1448,64 @@ msgstr "<a href=\"http://codex.wordpress.org/Network_Admin_Sites_Screens\" targe
 msgid "Invalid site ID."
 msgstr "Identifiant du site invalide."
 
-#: wp-admin/network/site-users.php:160
-#: wp-admin/network/site-settings.php:71
-#: wp-admin/network/site-info.php:81
-#: wp-admin/network/site-themes.php:127
+#: wp-admin/network/site-users.php:161
+#: wp-admin/network/site-settings.php:72
+#: wp-admin/network/site-info.php:82
+#: wp-admin/network/site-themes.php:128
+msgid "Edit Site: <a href=\"%1$s\">%2$s</a>"
+msgstr "Modifier le site&nbsp;: <a href=\"%1$s\">%2$s</a>."
+
+#: wp-admin/network/site-users.php:162
+#: wp-admin/network/site-settings.php:73
+#: wp-admin/network/site-info.php:83
+#: wp-admin/network/site-themes.php:129
 msgid "Edit Site: %s"
 msgstr "Modifier le site : %s"
 
-#: wp-admin/network/site-users.php:172
-#: wp-admin/network/site-settings.php:85
-#: wp-admin/network/site-info.php:95
-#: wp-admin/network/site-themes.php:139
+#: wp-admin/network/site-users.php:175
+#: wp-admin/network/site-settings.php:88
+#: wp-admin/network/site-info.php:98
+#: wp-admin/network/site-themes.php:142
 msgid "Info"
 msgstr "Info"
 
-#: wp-admin/network/site-users.php:190
+#: wp-admin/network/site-users.php:193
 msgid "User is already a member of this site."
 msgstr "Cet utilisateur est déjà membre de ce site."
 
-#: wp-admin/network/site-users.php:193
+#: wp-admin/network/site-users.php:196
 msgid "Enter the username of an existing user."
 msgstr "Saisir l&rsquo;identifiant d&rsquo;un utilisateur existant."
 
-#: wp-admin/network/site-users.php:199
+#: wp-admin/network/site-users.php:202
 msgid "Select a user to change role."
 msgstr "Sélectionnez un utilisateur dont vous voulez changer le rôle."
 
-#: wp-admin/network/site-users.php:205
+#: wp-admin/network/site-users.php:208
 msgid "Select a user to remove."
 msgstr "Sélectionnez un utilisateur à enlever."
 
-#: wp-admin/network/site-users.php:208
+#: wp-admin/network/site-users.php:211
 msgid "User created."
 msgstr "L&rsquo;utilisateur a été créé."
 
-#: wp-admin/network/site-users.php:211
+#: wp-admin/network/site-users.php:214
 msgid "Enter the username and email."
 msgstr "Saisir l&rsquo;identifiant et l&rsquo;adresse de messagerie."
 
-#: wp-admin/network/site-users.php:237
+#: wp-admin/network/site-users.php:217
+msgid "Duplicated username or email address."
+msgstr "Identifiant ou adresse de messagerie déjà utilisé(e)."
+
+#: wp-admin/network/site-users.php:240
 msgid "Add User to This Site"
 msgstr "Ajouter un utilisateur à ce site"
 
-#: wp-admin/network/site-users.php:239
+#: wp-admin/network/site-users.php:242
 msgid "You may add from existing network users, or set up a new user to add to this site."
 msgstr "Vous pouvez ajouter des utilisateurs en provenance du réseau, ou créer un nouvel utilisateur à ajouter à ce site."
 
-#: wp-admin/network/site-users.php:241
+#: wp-admin/network/site-users.php:244
 msgid "You may add from existing network users to this site."
 msgstr "Vous pouvez ajouter à ce site des utilisateurs existant sur le réseau de sites."
 
@@ -1572,7 +1612,7 @@ msgstr "Attention&nbsp;! L&rsquo;utilisateur ne peut être effacé&nbsp;! %s est
 
 #: wp-admin/network/edit.php:52
 msgid "What should be done with posts and links owned by <em>%s</em>?"
-msgstr "Que voulez-vous faire des articles et liens appartenant à <em>%s</em> ?"
+msgstr "Que voulez-vous faire des articles et liens appartenant à <em>%s</em>&nbsp;?"
 
 #: wp-admin/network/edit.php:70
 msgid "Site: %s"
@@ -1646,13 +1686,13 @@ msgstr "Utilisateurs supprimés."
 #: wp-admin/network/upgrade.php:18
 #: wp-admin/network/upgrade.php:37
 #: wp-admin/network/upgrade.php:79
-#: wp-admin/network/menu.php:65
+#: wp-admin/network/menu.php:78
 msgid "Update Network"
 msgstr "Mettre à jour le réseau"
 
 #: wp-admin/network/upgrade.php:22
-msgid "Only use this screen once you have updated to a new version of WordPress through Dashboard > Updates. Clicking the Update Network button will step through each site in the network, five at a time, and make sure any database updates are applied."
-msgstr "N&rsquo;utilisez cet écran que quand vous avez mis à jour cette installation de WordPress. En cliquant sur &laquo;&nbsp;Mettre à jour le réseau&nbsp;&raquo;, WordPress s&rsquo;occupera de tous les sites du réseau, par groupes de cinq, et s&rsquo;assurera que la base de données est également à jour."
+msgid "Only use this screen once you have updated to a new version of WordPress through Updates/Available Updates (via the Network Administration navigation menu or the Admin Bar). Clicking the Update Network button will step through each site in the network, five at a time, and make sure any database updates are applied."
+msgstr "N&rsquo;utilisez cet écran que quand vous avez mis à jour cette installation de WordPress (au moyen de la fonction de mise à jour automatique). En cliquant sur &laquo;&nbsp;Mettre à jour le réseau&nbsp;&raquo;, WordPress s&rsquo;occupera de tous les sites du réseau, par groupes de cinq, et s&rsquo;assurera que la base de données est également à jour."
 
 #: wp-admin/network/upgrade.php:23
 msgid "If a version update to core has not happened, clicking this button won&#8217;t affect anything."
@@ -1728,8 +1768,8 @@ msgid "The site ID is used internally, and is not shown on the front end of the 
 msgstr "L&rsquo;identifiant du site est utilisé en interne et n’est pas affiché dans la partie publique du site, ni aux utilisateurs/visiteurs."
 
 #: wp-admin/network/sites.php:37
-msgid "Clicking on bold settings can re-sort this table. The upper right icons switch between list and excerpt views."
-msgstr "Un clic sur le titre d&rsquo;une colonne permet de changer le tri du tableau. Les icônes en haut à droit permettent d&rsquo;afficher des extraits ou non."
+msgid "Clicking on bold headings can re-sort this table."
+msgstr "Cliquez sur les en-têtes en gras afin de re-trier ce tableau."
 
 #: wp-admin/network/sites.php:49
 msgid "Sites removed from spam."
@@ -1776,7 +1816,7 @@ msgid "Site marked as spam."
 msgstr "Site marqué comme indésirable."
 
 # contexte
-#: wp-admin/network/sites.php:105
+#: wp-admin/network/sites.php:99
 #: wp-admin/network/menu.php:18
 msgctxt "site"
 msgid "Add New"
@@ -1815,8 +1855,8 @@ msgid "Menu setting enables/disables the plugin menus from appearing for non sup
 msgstr "Le réglage du menu (dés)active la section &laquo;&nbsp;Extensions&nbsp;&raquo; du menu pour les utilisateurs normaux, de telle sorte que seuls les super-admins peuvent y accéder pour activer une extension."
 
 #: wp-admin/network/settings.php:31
-msgid "Super admins can no longer be added on the Options screen. You must now go to the list of existing users on Super Admin > Users and click on Username or the Edit action link below that name. This goes to an Edit User page where you can check a box to grant super admin privileges."
-msgstr "Les super-admins ne peuvent plus être ajoutés via cet écran. Vous devez aller à la liste des utilisateurs (option &laquo;&nbsp;Utilisateurs&nbsp;&raquo; du menu &laquo;&nbsp;Super Admin&nbsp;&raquo;) et cliquer sur un identifiant ou sur le lien &laquo;&nbsp;Modifier&nbsp;&raquo; qui s&rsquo;affiche en dessous. Vous arriverez alors à un écran vous permettant de modifier ce compte utilisateur, où une case à cocher permet de donner les droits de super-admin."
+msgid "Super admins can no longer be added on the Options screen. You must now go to the list of existing users on Network Admin > Users and click on Username or the Edit action link below that name. This goes to an Edit User page where you can check a box to grant super admin privileges."
+msgstr "Les super-admins ne peuvent plus être ajoutés via l&rsquo;écran des options. Vous devez aller à la liste des utilisateurs (option &laquo;&nbsp;Utilisateurs&nbsp;&raquo; du menu &laquo;&nbsp;Super Admin&nbsp;&raquo;) et cliquer sur un identifiant ou sur le lien &laquo;&nbsp;Modifier&nbsp;&raquo; qui s&rsquo;affiche en dessous. Vous arriverez alors à un écran vous permettant de modifier ce compte utilisateur, où une case à cocher permet de donner les droits de super-admin."
 
 #: wp-admin/network/settings.php:33
 msgid "<a href=\"http://codex.wordpress.org/Network_Admin_Settings_Screen\" target=\"_blank\">Documentation on Network Settings</a>"
@@ -2027,28 +2067,44 @@ msgstr "Activer les menus d&rsquo;administration"
 msgid "Site info updated."
 msgstr "Les infos du site ont été mis à jour."
 
-#: wp-admin/network/site-info.php:131
+#: wp-admin/network/site-info.php:134
 msgid "Update <code>siteurl</code> and <code>home</code> as well."
 msgstr "Mettez également à jour les options <code>siteurl</code> et <code>home</code>."
 
-#: wp-admin/network/menu.php:28
+#: wp-admin/network/menu.php:17
+msgid "All Sites"
+msgstr "Toutes les sites"
+
+#: wp-admin/network/menu.php:29
 msgid "Themes %s"
 msgstr "Thèmes %s"
 
-#: wp-admin/network/menu.php:38
+#: wp-admin/network/menu.php:33
+msgid "Installed Themes"
+msgstr "Thèmes installés"
+
+#: wp-admin/network/menu.php:46
 msgctxt "plugin editor"
 msgid "Add New"
 msgstr "Ajouter"
 
-#: wp-admin/network/menu.php:64
+#: wp-admin/network/menu.php:52
+msgid "Network Settings"
+msgstr "Réglages du réseau"
+
+#: wp-admin/network/menu.php:74
 msgid "Updates"
 msgstr "Mises à jour"
+
+#: wp-admin/network/menu.php:77
+msgid "Available Updates"
+msgstr "Mises à jour disponibles"
 
 #: wp-admin/network/site-themes.php:22
 msgid "You do not have sufficient permissions to manage themes for this site."
 msgstr "Vous n&rsquo;avez pas les droits suffisants pour gérer les thèmes de ce site."
 
-#: wp-admin/network/site-themes.php:161
+#: wp-admin/network/site-themes.php:164
 msgid "Network enabled themes are not shown on this screen."
 msgstr "Les thèmes activés pour le réseau ne sont pas visibles sur cet écran."
 
@@ -2325,12 +2381,56 @@ msgstr "Des tables de la base de données sont manquantes."
 msgid "No site by that name on this system."
 msgstr "Aucun site ne porte ce nom dans ce système."
 
+#~ msgid "Network Setup"
+#~ msgstr "Réglage du réseau"
+
+#~ msgid "Missing username and email."
+#~ msgstr "Il manque l&rsquo;identifiant ou l&rsquo;adresse de messagerie."
+
+#~ msgid "Missing username."
+#~ msgstr "Identifiant manquant."
+
+#~ msgid "Missing email."
+#~ msgstr "Adresse de messagerie manquante."
+
+#~ msgid ""
+#~ "Clicking on bold settings can re-sort this table. The upper right icons "
+#~ "switch between list and excerpt views."
+#~ msgstr ""
+#~ "Un clic sur le titre d&rsquo;une colonne permet de changer le tri du "
+#~ "tableau. Les icônes en haut à droit permettent d&rsquo;afficher des "
+#~ "extraits ou non."
+
+#~ msgid ""
+#~ "Refreshing your browser will take you to a screen with an archive of "
+#~ "those added lines of code. A set of six links under Super Admin will "
+#~ "appear at the top of the main left navigation menu. The multisite network "
+#~ "is now enabled."
+#~ msgstr ""
+#~ "En rechargeant la page, l&rsquo;écran affichera un rappel de ces lignes "
+#~ "de code, et une nouvelle section de menu avec six entrées, nommée &laquo;"
+#~ "&nbsp;Super Admin&nbsp;&raquo;, apparaîtra au-dessus du menu principal. "
+#~ "Le réseau multisite sera alors activé."
+
+#~ msgid "Search Installed Themes"
+#~ msgstr "Chercher parmi les thèmes installés"
+
+#~ msgid ""
+#~ "You don&#8217;t have permission to view this site. Please contact the "
+#~ "system administrator."
+#~ msgstr ""
+#~ "Vous n&rsquo;avez pas la permission de visualiser ce site. Merci de "
+#~ "contacter l&rsquo;administrateur de votre serveur."
+
 #~ msgid "Network Options"
 #~ msgstr "Options du réseau"
+
 #~ msgid "Notice: The Network feature is already enabled."
 #~ msgstr "Avertissement&nbsp;: la fonctionnalité réseau est déjà activée."
+
 #~ msgid "Network Dashboard"
 #~ msgstr "Tableau de bord du réseau"
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Super_Admin_Super_Admin_Menu\" "
 #~ "target=\"_blank\">Documentation on Super Admin Menu</a>"
@@ -2338,6 +2438,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "<a target=\"_blank\" href=\"http://codex.wordpress.org/"
 #~ "Super_Admin_Super_Admin_Menu\" target=\"_blank\">Documentation sur "
 #~ "l&rsquo;administration du réseau</a>"
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Super_Admin_Options_SubPanel\" "
 #~ "target=\"_blank\">Network Options Documentation</a>"
@@ -2345,31 +2446,41 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "<a target=\"_blank\" href=\"http://codex.wordpress.org/"
 #~ "Super_Admin_Options_SubPanel\">Documentation sur les réglages du réseau</"
 #~ "a>"
+
 #~ msgid ""
 #~ "Disable or enable registration and who or what can be registered. "
 #~ "(Default is disabled.)"
 #~ msgstr ""
 #~ "Activer ou désactiver les inscriptions, et qui (ou quel domaine) peut "
 #~ "s&rsquo;inscrire. (valeur par défaut&nbsp;: désactivé)"
+
 #~ msgid "Options"
 #~ msgstr "Options"
+
 #~ msgid "Site users updated."
 #~ msgstr "Les utilisateurs du site ont été mis à jour."
+
 #~ msgid "User"
 #~ msgstr "Utilisateur"
+
 #~ msgid "Click to remove user"
 #~ msgstr "Cliquer pour supprimer un utilisateur"
+
 #~ msgid "N/A"
 #~ msgstr "Indisp."
+
 #~ msgid "First 20 users shown. <a href=\"%s\">Manage all users</a>."
 #~ msgstr ""
 #~ "Les 20 premiers utilisateurs sont affichés. <a href=\"%s\">Gérer tous les "
 #~ "utilisateurs</a>."
+
 #~ msgid "This site has no users."
 #~ msgstr "Ce site ne contient pas d'utilisateur."
 #~ msgctxt "sites"
+
 #~ msgid "Add New"
 #~ msgstr "Ajouter"
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Super_Admin_Update_SubPanel\" target="
 #~ "\"_blank\">Update Network Documentation</a>"
@@ -2377,10 +2488,12 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "<a target=\"_blank\" href=\"http://codex.wordpress.org/"
 #~ "Super_Admin_Update_SubPanel\">Documentation sur la mise à jour du réseau</"
 #~ "a>"
+
 #~ msgid "Add User will add that person to this table and send them an email."
 #~ msgstr ""
 #~ "&laquo;&nbsp;Ajouter un utilisateur&nbsp;&raquo; ajoutera cette personne "
 #~ "à ce tableau et lui enverra un message."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Super_Admin_Users_SubPanel\" target="
 #~ "\"_blank\">Network Users Documentation</a>"
@@ -2389,49 +2502,68 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Super_Admin_Users_SubPanel\">Documentation sur les utilisateurs du "
 #~ "réseau</a>"
 #~ msgctxt "users"
+
 #~ msgid "Add New"
 #~ msgstr "Ajouter"
+
 #~ msgid "Are you sure you want to unmark %s as mature?"
 #~ msgstr "Êtes-vous certain(e) de vouloir supprimer %s de l'état adulte ?"
+
 #~ msgid "Are you sure you want to mark %s as mature?"
 #~ msgstr "Êtes-vous certain(e) de vouloir marquer %s comme adulte ?"
+
 #~ msgid "Are you sure you want to unsuspend site %s?"
 #~ msgstr "Êtes-vous certain(e) de vouloir rétablir le site %s ?"
+
 #~ msgid "Are you sure you want to suspend site %s?"
 #~ msgstr "Êtes-vous certain(e) de vouloir suspendre le site %s ?"
+
 #~ msgid "Site Options"
 #~ msgstr "Réglages du site"
+
 #~ msgid "Unmark as mature"
 #~ msgstr "Supprimer l'état adulte"
+
 #~ msgid "Mark as mature"
 #~ msgstr "Marquer comme adulte"
+
 #~ msgid "Unsuspend site"
 #~ msgstr "Rétablir le site"
+
 #~ msgid "Suspend site"
 #~ msgstr "Suspendre le site"
+
 #~ msgid "Storage Space"
 #~ msgstr "Espace disque"
+
 #~ msgid ""
 #~ "<a href=\"%1$s\" title=\"Manage Uploads\" class=\"musublink\">%2$sMB</a>"
 #~ msgstr ""
 #~ "<a href=\"%1$s\" title=\"Gérer les envois\" class=\"musublink\">%2$s Mo</"
 #~ "a>"
+
 #~ msgid "Space Allowed"
 #~ msgstr "Espace alloué"
+
 #~ msgid ""
 #~ "<a href=\"%1$s\" title=\"Manage Uploads\" class=\"musublink\">%2$sMB (%3$s"
 #~ "%%)</a>"
 #~ msgstr ""
 #~ "<a href=\"%1$s\" title=\"Gérer les envois\" class=\"musublink\">%2$s Mo (%"
 #~ "3$s%%)</a>"
+
 #~ msgid "Space Used"
 #~ msgstr "Espace disque utilisé"
+
 #~ msgid "Read More"
 #~ msgstr "Lire la suite"
+
 #~ msgid "Your feed at %s is empty."
 #~ msgstr "Le flux à l&rsquo;adresse %s est vide."
+
 #~ msgid "Create a New Site"
 #~ msgstr "Créer un nouveau site"
+
 #~ msgid ""
 #~ "Warning! The current theme supports Featured Images. You must enable "
 #~ "image uploads on <a href='%s'>the options page</a> for it to work."
@@ -2439,40 +2571,54 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Attention&nbsp;! Le thème actuel accepte les images mises en avant (via "
 #~ "miniatures).<br />Vous devez activer l&rsquo;envoi d&rsquo;images depuis "
 #~ "la <a href='%s'>page d&rsquo;options</a> pour que cela fonctionne."
+
 #~ msgid ""
 #~ "The plugins page is not visible to normal users. It must be activated "
 #~ "first. %s"
 #~ msgstr ""
 #~ "La page des extensions n&rsquo;est pas visible par les utilisateurs "
 #~ "classiques. Vous devez précédemment l&rsquo;activer. %s"
+
 #~ msgid "Network Admin"
 #~ msgstr "Admin du réseau"
+
 #~ msgid "%s user"
+
 #~ msgid_plural "%s users"
 #~ msgstr[0] "%s utilisateur"
 #~ msgstr[1] "%s utilisateurs"
+
 #~ msgid "You have %1$s and %2$s."
 #~ msgstr "Votre plate-forme compte %1$s et %2$s."
+
 #~ msgid "Create a New User"
 #~ msgstr "Créer un nouvel utilisateur"
+
 #~ msgid "Search Sites"
 #~ msgstr "Chercher un site"
+
 #~ msgid "A dashboard site referenced by ID must already exist"
 #~ msgstr ""
 #~ "Un site d&rsquo;accueil défini via un identifiant, doit utiliser un "
 #~ "identifiant existant"
+
 #~ msgid "My Dashboard"
 #~ msgstr "Mon tableau de bord"
+
 #~ msgid "Problem creating dashboard site: "
 #~ msgstr "Problème lors de la création du site d&rsquo;accueil&nbsp;:"
+
 #~ msgid "You probably need to go back to the <a href=\"%s\">sites page</a>"
 #~ msgstr ""
 #~ "Vous devriez sans doute vous rendre sur <a href=\"%s\">la page des sites</"
 #~ "a>"
+
 #~ msgid "Dashboard Settings"
 #~ msgstr "Réglages du tableau de bord"
+
 #~ msgid "Dashboard Site"
 #~ msgstr "Site d&rsquo;accueil"
+
 #~ msgid ""
 #~ "Site path (&#8220;dashboard&#8221;, &#8220;control&#8221;, &#8220;"
 #~ "manager&#8221;, etc.) or blog ID.<br />New users are added to this site "
@@ -2489,8 +2635,10 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "utilisateurs abonnés à l&rsquo;ancien site seront transférés sur le "
 #~ "nouveau site. Le nouveau site sera créé s&rsquo;il n&rsquo;existe pas "
 #~ "déjà."
+
 #~ msgid "Dashboard User Default Role"
 #~ msgstr "Rôle par défaut de l&rsquo;utilisateur du site d&rsquo;accueil"
+
 #~ msgid ""
 #~ "The default role for new users on the Dashboard site. &#8220;"
 #~ "Subscriber&#8221; or &#8220;Contributor&#8221; roles are recommended."
@@ -2498,8 +2646,10 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Le rôle par défaut pour tout nouvel utilisateur sur le site d&rsquo;"
 #~ "accueil. Nous vous recommandons &laquo;&nbsp;Abonné&nbsp;&raquo; ou "
 #~ "&laquo;&nbsp;Contributeur&nbsp;&raquo;."
+
 #~ msgid "Admin Notice Feed"
 #~ msgstr "Flux d&rsquo;annonce de l&rsquo;administrateur"
+
 #~ msgid ""
 #~ "Display the latest post from this RSS or Atom feed on all site "
 #~ "dashboards. Leave blank to disable."
@@ -2507,14 +2657,15 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Affiche le dernier article depuis ce flux RSS ou Atom sur tous les "
 #~ "tableaux de bord des sites de la plate-forme. Laissez vide pour "
 #~ "désactiver cette fonctionnalité."
+
 #~ msgid "A good one to use would be the feed from your main site: "
 #~ msgstr ""
 #~ "Vous pouvez par exemple utiliser le flux de votre site principal&nbsp;:"
-#~ msgid "Network Wide Settings"
-#~ msgstr "Réglages pour l&rsquo;ensemble du réseau"
+
 #~ msgid "These settings may be overridden by site owners."
 #~ msgstr ""
 #~ "Ces réglages peuvent être modifiés par les propriétaires de chaque sites."
+
 #~ msgid ""
 #~ "This extensive list of options has five modules: Site Info, Site Options, "
 #~ "allowing Site Themes for this given site, changing user roles and "
@@ -2525,6 +2676,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "site, Réglages du site, gérer les utilisateurs du site et leurs rôles, "
 #~ "Ajouter un nouvel utilisateur, et un module pour les actions diverses "
 #~ "(quota de l&rsquo;espace disque, pour l&rsquo;heure)."
+
 #~ msgid ""
 #~ "Note that some fields in Site Options are grayed out and say Serialized "
 #~ "Data. These are stored values in the database which you cannot change "
@@ -2534,6 +2686,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "indiquent &laquo&nbsp;SERIALIZED DATE&nbsp;&raquo;. Il s&rsquo;agit de "
 #~ "valeurs stockées dans la base de données, et que vous ne pouvez pas "
 #~ "modifier d&rsquo;ici."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Super_Admin_Sites_Edit_Site\" target="
 #~ "\"_blank\">Documentation on Editing Sites</a>"
@@ -2541,6 +2694,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "<a target=\"_blank\" href=\"http://codex.wordpress.org/"
 #~ "Super_Admin_Sites_Edit_Site\" target=\"_blank\">Documentation sur l&rsquo;"
 #~ "édition de sites</a>"
+
 #~ msgid ""
 #~ "Clicking on Add Site, after filling out the address, title, and admin's "
 #~ "email address, adds the site instantly to the network and this table. You "
@@ -2551,14 +2705,19 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "l&rsquo;administrateur, et le site sera immédiatement créé sur le réseau "
 #~ "(et dans la liste de cette page). Pour le configurer plus précisément, "
 #~ "cliquez sur son lien &laquo;&nbsp;Modifier&nbsp;&raquo;."
+
 #~ msgid "Site info (wp_blogs)"
 #~ msgstr "Infos du site (wp_blogs)"
+
 #~ msgid "Site options (%soptions)"
 #~ msgstr "Réglages du site (%soptions)"
+
 #~ msgid "Active"
 #~ msgstr "Actif"
+
 #~ msgid "Site Themes"
 #~ msgstr "Thèmes du site"
+
 #~ msgid ""
 #~ "Activate the themename of an existing theme and hit \"Update Options\" to "
 #~ "allow the theme for this site."
@@ -2566,10 +2725,13 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Activez le nom de thème d&rsquo;un thème existant, puis cliquez sur "
 #~ "&laquo;&raquo;Mettre à jour les options&nbsp;&raquo; pour autoriser le "
 #~ "thème sur ce site."
+
 #~ msgid "Site Users"
 #~ msgstr "Utilisateurs du site"
+
 #~ msgid "Add a new user"
 #~ msgstr "Ajouter un nouvel utilisateur"
+
 #~ msgid ""
 #~ "Enter the username of an existing user and hit &#8220;Update "
 #~ "Options&#8221; to add the user."
@@ -2577,46 +2739,63 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Entrez l&rsquo;identifiant d&rsquo;un utilisateur existant et appuyez sur "
 #~ "&laquo;&nbsp;Mettre à jour les options&nbsp;&raquo; pour ajouter l&rsquo;"
 #~ "utilisateur."
+
 #~ msgid "User&nbsp;Login:"
 #~ msgstr "Identifiant&nbsp;:"
+
 #~ msgid "Misc Site Actions"
 #~ msgstr "Actions diverses pour les sites"
+
 #~ msgid "Search Site by"
 #~ msgstr "Chercher un site par"
+
 #~ msgid "ID"
 #~ msgstr "ID"
+
 #~ msgid "IP address"
 #~ msgstr "adresse IP"
+
 #~ msgid "Backend"
 #~ msgstr "Administration"
+
 #~ msgid "Network Themes"
 #~ msgstr "Thèmes du réseau"
+
 #~ msgid "Site themes saved."
 #~ msgstr "Thèmes du réseau sauvegardés."
+
 #~ msgid ""
 #~ "Themes must be enabled for your network before they will be available to "
 #~ "individual sites."
 #~ msgstr ""
 #~ "Afin d&rsquo;être disponible pour les sites individuels, les thèmes "
 #~ "doivent être activés pour votre réseau."
+
 #~ msgid "Apply Changes"
 #~ msgstr "Appliquer les modifications"
+
 #~ msgid "Total"
 #~ msgstr "Total"
+
 #~ msgid "Themes Installed: %d"
 #~ msgstr "Thèmes installés&nbsp;: %d"
+
 #~ msgid "Themes Enabled: %d"
 #~ msgstr "Thèmes activés&nbsp;: %d"
+
 #~ msgid "Super admin"
 #~ msgstr "Super-admin"
+
 #~ msgid "Add user"
 #~ msgstr "Ajouter un utilisateur"
+
 #~ msgid ""
 #~ "<a target=\"_blank\" href=\"http://codex.wordpress.org/"
 #~ "Super_Admin_Sites_SubPanel\">Documentation on Sites</a>"
 #~ msgstr ""
 #~ "<a target=\"_blank\" href=\"http://codex.wordpress.org/"
 #~ "Super_Admin_Sites_SubPanel\">Documentation sur les sites</a>"
+
 #~ msgid ""
 #~ "The network admin arrives at this screen to make choices for a given site "
 #~ "by clicking on the Edit link on the Sites screen available to them in the "
@@ -2624,16 +2803,20 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr ""
 #~ "Cet écran permet à l&rsquo;administrateur du réseau d&rsquo;intéragir "
 #~ "avec un site du réseau"
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Super_Admin_Themes_SubPanel"
 #~ "\">Network Themes Documentation</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Super_Admin_Themes_SubPanel"
 #~ "\">Documentation sur les thèmes du réseau</a>"
+
 #~ msgid "Activate"
 #~ msgstr "Activer"
+
 #~ msgid "Password:"
 #~ msgstr "Mot de passe&nbsp;:"
+
 #~ msgid ""
 #~ "<strong>ALERT: You are logged out!</strong> Could not save draft. <a href="
 #~ "\"%s\" target=\"_blank\">Please log in again.</a>"
@@ -2641,126 +2824,171 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "<strong>ALERTE&nbsp;: vous êtes déconnecté(e)&nbsp;!</strong> Impossible "
 #~ "d&rsquo;enregistrer le brouillon. <a href=\"%s\" target=\"blank"
 #~ "\">Veuillez vous reconnecter.</a>"
+
 #~ msgid "&laquo;"
 #~ msgstr "&laquo;"
+
 #~ msgid "&raquo;"
 #~ msgstr "&raquo;"
+
 #~ msgid ""
 #~ "Can&#8217;t delete the <strong>%s</strong> category: this is the default "
 #~ "one"
 #~ msgstr ""
 #~ "Impossible de supprimer la catégorie <strong>%s</strong>&nbsp;: c&rsquo;"
 #~ "est celle par défaut"
+
 #~ msgid "Comment %d does not exist"
 #~ msgstr "Le commentaire %d n&rsquo;existe pas."
+
 #~ msgid "You did not enter a category name."
 #~ msgstr "Vous n&rsquo;avez pas entré de nom de catégorie."
+
 #~ msgid "An error has occured. Please reload the page and try again."
 #~ msgstr ""
 #~ "Une erreur est survenue. Veuillez recharger la page pour faire une "
 #~ "nouvelle tentative."
+
 #~ msgid "No tags found!"
 #~ msgstr "Aucun mot-clef trouvé&nbsp;!"
+
 #~ msgid "Error: you are replying to a comment on a draft post."
 #~ msgstr ""
 #~ "Erreur&nbsp;: vous être en train de laisser un commentaire sur un "
 #~ "brouillon."
+
 #~ msgid "Sorry, you must be logged in to reply to a comment."
 #~ msgstr "Désolé, vous devez être connecté(e) pour répondre à un commentaire."
+
 #~ msgid "Error: please type a comment."
 #~ msgstr "Erreur&nbsp;: veuillez saisir un commentaire."
+
 #~ msgid "Please provide a custom field value."
 #~ msgstr "Veuillez saisir une valeur pour le champ personnalisé."
+
 #~ msgid "Please provide a custom field name."
 #~ msgstr "Veuillez saisir un nom pour le champ personnalisé."
+
 #~ msgid "User <a href=\"#%s\">%s</a> added"
 #~ msgstr "Utilisateur <a href=\"#%s\">%s</a> ajouté"
+
 #~ msgid "g:i:s a"
 #~ msgstr "G \\h i \\m\\i\\n s \\s"
+
 #~ msgid "Draft saved at %s."
 #~ msgstr "Brouillon enregistré à %s."
+
 #~ msgid "Someone"
 #~ msgstr "Quelqu&rsquo;un"
+
 #~ msgid "Autosave disabled: %s is currently editing this page."
 #~ msgstr ""
 #~ "Enregistrement automatique désactivé&nbsp;: %s modifie actuellement cette "
 #~ "page."
+
 #~ msgid "Autosave disabled: %s is currently editing this post."
 #~ msgstr ""
 #~ "Enregistrement automatique désactivé&nbsp;: %s modifie actuellement cet "
 #~ "article."
+
 #~ msgid "You are not allowed to edit this page."
 #~ msgstr "Vous n&rsquo;avez pas l&rsquo;autorisation de modifier cette page."
+
 #~ msgid "You are not allowed to edit this post."
 #~ msgstr "Vous n&rsquo;avez pas l&rsquo;autorisation de modifier cet article."
+
 #~ msgid "Saving is disabled: %s is currently editing this page."
 #~ msgstr ""
 #~ "Enregistrement automatique désactivé&nbsp;: %s modifie actuellement cette "
 #~ "page."
+
 #~ msgid "Saving is disabled: %s is currently editing this post."
 #~ msgstr ""
 #~ "Enregistrement automatique désactivé&nbsp;: %s modifie actuellement cet "
 #~ "article."
+
 #~ msgid "Cheatin&#8217; uh?"
 #~ msgstr "Alors, on triche&nbsp;?"
+
 #~ msgid "Category not updated."
 #~ msgstr "La catégorie n&rsquo;a pas été mise à jour."
+
 #~ msgid "Title"
 #~ msgstr "Titre"
+
 #~ msgid "Date"
 #~ msgstr "Date"
+
 #~ msgid "Status"
 #~ msgstr "État"
+
 #~ msgid "Published"
 #~ msgstr "Publié"
+
 #~ msgid "Scheduled"
 #~ msgstr "Planifié"
+
 #~ msgid "Pending Review"
 #~ msgstr "En attente de relecture"
+
 #~ msgid "Draft"
 #~ msgstr "Brouillon"
+
 #~ msgid "Y/m/d"
 #~ msgstr "d/m/Y"
+
 #~ msgid ""
 #~ "Thank you for creating with <a href=\"http://wordpress.org/\">WordPress</"
 #~ "a>."
 #~ msgstr ""
 #~ "Merci de faire de <a href=\"http://www.wordpress-fr.net/\">WordPress</a> "
 #~ "votre outil de création."
+
 #~ msgid "<a href=\"http://codex.wordpress.org/\">Documentation</a>"
 #~ msgstr "<a href=\"http://codex.wordpress.org/fr:Accueil\">Documentation</a>"
+
 #~ msgid "<a href=\"http://wordpress.org/support/forum/4\">Feedback</a>"
 #~ msgstr ""
 #~ "<a href=\"http://www.wordpress-fr.net/support/\">Forums d&rsquo;entraide</"
 #~ "a>"
+
 #~ msgid "Your site is asking search engines not to index its content"
 #~ msgstr ""
 #~ "Votre site indique aux moteurs de recherche de ne pas indexer son contenu"
+
 #~ msgid "Search Engines Blocked"
 #~ msgstr "Moteurs de recherche bloqués"
+
 #~ msgid "Howdy, <a href=\"%1$s\" title=\"Edit your profile\">%2$s</a>"
 #~ msgstr ""
 #~ "Salutations, <a href=\"%1$s\" title=\"Modifier votre profil\">%2$s</"
 #~ "a>&nbsp;!"
+
 #~ msgid "Log Out"
 #~ msgstr "Se déconnecter"
+
 #~ msgid "Invalid plugin page"
 #~ msgstr "Page d&rsquo;extension non valide"
-#~ msgid "Cannot load %s."
-#~ msgstr "Impossible de charger %s."
+
 #~ msgid "You are not allowed to import."
 #~ msgstr "Vous n&rsquo;avez pas l&rsquo;autorisation d&rsquo;importer."
+
 #~ msgid "Import"
 #~ msgstr "Importer"
+
 #~ msgid "You do not have permission to upload files."
 #~ msgstr ""
 #~ "Vous n&rsquo;avez pas l&rsquo;autorisation d&rsquo;envoyer des fichiers."
+
 #~ msgid "Dismiss"
 #~ msgstr "Rejeter"
+
 #~ msgid "&#8220;%s&#8221; has failed to upload due to an error"
 #~ msgstr " « %s » n&rsquo;a pas pu être mis en ligne suite à une erreur"
+
 #~ msgid "Edit Comment"
 #~ msgstr "Modifier le commentaire"
+
 #~ msgid ""
 #~ "You can edit the information left in a comment if needed. This is often "
 #~ "useful when you notice that a commenter has made a typographical error."
@@ -2768,6 +2996,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Au besoin, vous pouvez modifier les informations laissées dans un "
 #~ "commentaire. Par exemple, si un commentateur a fait une faute "
 #~ "d'orthographe."
+
 #~ msgid ""
 #~ "You can also moderate the comment from this screen using the Status box, "
 #~ "where you can also change the timestamp of the comment."
@@ -2775,78 +3004,106 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Vous pouvez également modérer le commentaire depuis cet écran, à l'aide "
 #~ "du module État, d'où vous pouvez également changer l'horodatage du "
 #~ "commentaire."
+
 #~ msgid "For more information:"
 #~ msgstr "Plus d&rsquo;informations&nbsp;:"
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Administration_Panels#Comments"
 #~ "\">Comments Documentation</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Administration_Panels#Comments"
 #~ "\">Documentation des commentaires</a>"
+
 #~ msgid "<a href=\"http://wordpress.org/support/\">Support Forums</a>"
 #~ msgstr ""
 #~ "<a href=\"http://www.wordpress-fr.net/support/\">Forums d&rsquo;entraide</"
 #~ "a>"
+
 #~ msgid "Oops, no comment with this ID."
 #~ msgstr "Oups, aucun commentaire avec cet ID."
+
 #~ msgid "Go back"
 #~ msgstr "Retour"
+
 #~ msgid "You are not allowed to edit comments on this post."
 #~ msgstr ""
 #~ "Vous n&rsquo;avez pas l&rsquo;autorisation de modifier les commentaires "
 #~ "de cet article."
+
 #~ msgid ""
 #~ "This comment is in the Trash. Please move it out of the Trash if you want "
 #~ "to edit it."
 #~ msgstr ""
 #~ "Ce commentaire est dans la corbeille. Veuillez l&rsquo;en sortir avant de "
 #~ "le modifier."
+
 #~ msgid "Moderate Comment"
 #~ msgstr "Modérer le commentaire"
+
 #~ msgid "You are about to mark the following comment as spam:"
 #~ msgstr ""
 #~ "Vous êtes sur le point de marquer le commentaire suivant comme "
 #~ "indésirable&nbsp;:"
+
 #~ msgid "Spam Comment"
 #~ msgstr "Marquer comme indésirable"
+
 #~ msgid "You are about to move the following comment to the Trash:"
 #~ msgstr ""
 #~ "Vous êtes sur le point de déplacer le commentaire suivant dans la "
 #~ "corbeille&nbsp;:"
+
 #~ msgid "Trash Comment"
 #~ msgstr "Mettre le commentaire dans la corbeille"
+
 #~ msgid "You are about to delete the following comment:"
 #~ msgstr "Vous êtes sur le point de supprimer le commentaire suivant&nbsp;:"
+
 #~ msgid "Permanently Delete Comment"
 #~ msgstr "Supprimer définitivement le commentaire"
+
 #~ msgid "You are about to approve the following comment:"
 #~ msgstr ""
 #~ "Vous êtes sur le point d&rsquo;approuver le commentaire suivant&nbsp;:"
+
 #~ msgid "Approve Comment"
 #~ msgstr "Approuver le commentaire"
+
 #~ msgid "This comment is currently approved."
 #~ msgstr "Ce commentaire est actuellement approuvé."
+
 #~ msgid "This comment is currently marked as spam."
 #~ msgstr "Ce commentaire est actuellement marqué comme indésirable."
+
 #~ msgid "This comment is currently in the Trash."
 #~ msgstr "Ce commentaire est actuellement dans la corbeille."
+
 #~ msgid "Caution:"
 #~ msgstr "Attention&nbsp;:"
+
 #~ msgid "Author"
 #~ msgstr "Auteur"
+
 #~ msgid "E-mail"
 #~ msgstr "E-mail"
+
 #~ msgid "URL"
 #~ msgstr "Adresse web"
 #~ msgctxt "noun"
+
 #~ msgid "Comment"
 #~ msgstr "Commentaire"
+
 #~ msgid "No"
 #~ msgstr "Non"
+
 #~ msgid "Unknown action."
 #~ msgstr "Action inconnue."
+
 #~ msgid "Background"
 #~ msgstr "Arrière-plan"
+
 #~ msgid ""
 #~ "You can customize the look of your site without touching any of your "
 #~ "theme&#8217;s code by using a custom background. Your background can be "
@@ -2855,6 +3112,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Vous pouvez personnaliser l'apparence de votre site sans jamais toucher "
 #~ "au code de votre thème, en utilisant un fond personnalisé. Votre fond "
 #~ "peut être une image ou juste une couleur."
+
 #~ msgid ""
 #~ "To use a background image, simply upload it, then choose your display "
 #~ "options below. You can display a single instance of your image, or tile "
@@ -2868,6 +3126,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "l'écran. Vous pouvez choisir de garder le fond en place quand vous faites "
 #~ "défiler le contenu, ou au contraire faire que le fond défile en même "
 #~ "temps."
+
 #~ msgid ""
 #~ "You can also choose a background color. If you know the hexadecimal code "
 #~ "for the color you want, enter it in the Color field. If not, click on the "
@@ -2878,96 +3137,132 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "code hexadécimal de la couleur voulue, saisissez-la dans le champ "
 #~ "Couleur. Sinon, cliquez  le lien Sélecteur de Couleur, et vous pourrez "
 #~ "choisir la teinte exacte que vous recherchez."
+
 #~ msgid ""
 #~ "Don&#8217;t forget to click on the Save Changes button when you are "
 #~ "finished. "
 #~ msgstr ""
 #~ "N'oubliez pas de cliquer sur Enregistrer les Modifications quand vous "
 #~ "avez terminé."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/\" target=\"_blank\">Documentation</"
 #~ "a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/fr:Accueil\"  target=\"_blank"
 #~ "\">Documentation</a>"
+
 #~ msgid "Custom Background"
 #~ msgstr "Arrière-plan personnalisé"
+
 #~ msgid ""
 #~ "Background updated. <a href=\"%s\">Visit your site</a> to see how it "
 #~ "looks."
 #~ msgstr ""
 #~ "L&rsquo;arrière-plan a été mis à jour. <a href=\"%s\">Afficher votre "
 #~ "site</a> pour voir le rendu."
+
 #~ msgid "Background Image"
 #~ msgstr "Image d&rsquo;arrière-plan"
+
 #~ msgid "Preview"
 #~ msgstr "Aperçu"
+
 #~ msgid "Remove Image"
 #~ msgstr "Retirer l&rsquo;image"
+
 #~ msgid "Remove Background Image"
 #~ msgstr "Supprimer l&rsquo;image d&rsquo;arrière-plan"
+
 #~ msgid ""
 #~ "This will remove the background image. You will not be able to restore "
 #~ "any customizations."
 #~ msgstr ""
 #~ "Ceci supprimera l&rsquo;image d&rsquo;arrière-plan. Il ne vous sera pas "
 #~ "possible de récupérer vos personnalisations."
+
 #~ msgid "Restore Original Image"
 #~ msgstr "Restaurer l&rsquo;image originale"
+
 #~ msgid ""
 #~ "This will restore the original background image. You will not be able to "
 #~ "restore any customizations."
 #~ msgstr ""
 #~ "Ceci remettra en place l&rsquo;image d&rsquo;arrière-plan originale. Il "
 #~ "ne vous sera pas possible de récupérer vos personnalisations."
+
 #~ msgid "Upload Image"
 #~ msgstr "Mettre en ligne une image"
+
 #~ msgid "Choose an image from your computer:"
 #~ msgstr "Choisissez une image sur votre ordinateur&nbsp;:"
+
 #~ msgid "Upload"
 #~ msgstr "Envoyer"
+
 #~ msgid "Display Options"
 #~ msgstr "Options d&rsquo;affichage"
+
 #~ msgid "Position"
 #~ msgstr "Position"
+
 #~ msgid "Background Position"
 #~ msgstr "Position d&rsquo;arrière-plan"
+
 #~ msgid "Left"
 #~ msgstr "Gauche"
+
 #~ msgid "Center"
 #~ msgstr "Centre"
+
 #~ msgid "Right"
 #~ msgstr "Droite"
+
 #~ msgid "Repeat"
 #~ msgstr "Répétition"
+
 #~ msgid "Background Repeat"
 #~ msgstr "Répétition de l&rsquo;arrière-plan"
+
 #~ msgid "No Repeat"
 #~ msgstr "Pas de répétition"
+
 #~ msgid "Tile"
 #~ msgstr "Motif répété"
+
 #~ msgid "Tile Horizontally"
 #~ msgstr "Répétition horizontale"
+
 #~ msgid "Tile Vertically"
 #~ msgstr "Répétition verticale"
+
 #~ msgid "Attachment"
 #~ msgstr "Fichier attaché"
+
 #~ msgid "Background Attachment"
 #~ msgstr "Image d&rsquo;arrière-plan"
+
 #~ msgid "Scroll"
 #~ msgstr "Défilant"
+
 #~ msgid "Fixed"
 #~ msgstr "Fixe"
+
 #~ msgid "Color"
 #~ msgstr "Couleur"
+
 #~ msgid "Background Color"
 #~ msgstr "Couleur d&rsquo;arrière-plan"
+
 #~ msgid "Select a Color"
 #~ msgstr "Sélecteur de couleur"
+
 #~ msgid "Save Changes"
 #~ msgstr "Enregistrer les modifications"
+
 #~ msgid "Header"
 #~ msgstr "En-tête"
+
 #~ msgid ""
 #~ "You can set a custom image header for your site. Simply upload the image "
 #~ "and crop it, and the new header will go live immediately. "
@@ -2975,6 +3270,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Vous pouvez utiliser une image d'en-tête personnalisée pour votre site. "
 #~ "Mettez simplement l'image en ligne, recadrez-la, et le nouvel en-tête "
 #~ "sera aussitôt en ligne."
+
 #~ msgid ""
 #~ "If you want to discard your custom header and go back to the default "
 #~ "included in your theme, click on the buttons to remove the custom image "
@@ -2983,6 +3279,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Si vous voulez abandonner votre en-tête personnalisé et retourner à celui "
 #~ "inclus par défaut dans votre thème, cliquez sur les boutons pour enlever "
 #~ "l'image personnalisée et remettre l'image d'en-tête originale."
+
 #~ msgid ""
 #~ "Some themes comes with additional header images bundled. If you see "
 #~ "multiple images displayed, select the one you&#8217;d like and click the "
@@ -2991,15 +3288,19 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Certains thèmes disposent d'une série d'images d'en-tête. Si vous voyez "
 #~ "plusieurs images affichées, sélectionnez celle que vous aimez et cliquez "
 #~ "sur le bouton Enregistrer les Modifications."
+
 #~ msgid "Custom Header"
 #~ msgstr "Personnalisation de l&rsquo;en-tête"
+
 #~ msgid ""
 #~ "Header updated. <a href=\"%s\">Visit your site</a> to see how it looks."
 #~ msgstr ""
 #~ "L&rsquo;en-tête a été mis à jour. <a href=\"%s\">Visiter le site</a> pour "
 #~ "voir son nouvel aspect."
+
 #~ msgid "Header Image"
 #~ msgstr "Image d&rsquo;en-tête"
+
 #~ msgid ""
 #~ "You can upload a custom header image to be shown at the top of your site "
 #~ "instead of the default one. On the next screen you will be able to crop "
@@ -3008,6 +3309,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Vous pouvez ici mettre en ligne une image d&rsquo;en-tête personnalisée, "
 #~ "qui sera affichée en haut de votre site en lieu et place de celle par "
 #~ "défaut. L&rsquo;écran suivant vous permettra de recadrer l&rsquo;image."
+
 #~ msgid ""
 #~ "Images of exactly <strong>%1$d x %2$d pixels</strong> will be used as-is."
 #~ msgstr ""
@@ -3533,6 +3835,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "et en ouvrant/femant les boites selon vos besoins. L'éditeur de page "
 #~ "fonctionne globalement comme celui des articles, mais dispose de "
 #~ "certaines spécificités, disponibles dans la boite Attributs de Page&nbsp;:"
+
 #~ msgid ""
 #~ "<strong>Parent</strong> - You can arrange your pages in hierarchies. For "
 #~ "example, you could have an &#8220;About&#8221; page that has &#8220;Life "
@@ -3544,6 +3847,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "&raquo;, avec comme sous-pages &laquo;&nbsp;Ma vie&nbsp;&raquo; et &laquo;"
 #~ "&nbsp;Mes passions&nbsp;&raquo;. Il n&rsquo;y a pas de limite à la "
 #~ "profondeur des sous-pages."
+
 #~ msgid ""
 #~ "<strong>Template</strong> - Some themes have custom templates you can use "
 #~ "for certain pages that might have additional features or custom layouts. "
@@ -3553,6 +3857,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "que vous pouvez appliquer à certaines pages, avec des fonctionnalités "
 #~ "supplémentaires ou une mise en page qui leur est propre. Si c&rsquo;est "
 #~ "le cas, vous les verrez dans ce menu déroulant."
+
 #~ msgid ""
 #~ "<strong>Order</strong> - Pages are usually ordered alphabetically, but "
 #~ "you can put a number above to change the order pages appear in."
@@ -3560,53 +3865,74 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "<strong>Ordre</strong> - Les pages sont généralement classées par ordre "
 #~ "alphabétique, mais vous pouvez indiquer un nombre pour modifier l&rsquo;"
 #~ "ordre d&rsquo;apparition."
+
 #~ msgid "<strong>For more information:</strong>"
 #~ msgstr "<strong>Pour plus d&rsquo;information&nbsp;:</strong> %s"
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Pages_Add_New_SubPanel\">Page "
 #~ "Creation Documentation</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Pages_Add_New_SubPanel"
 #~ "\">Documentation sur la création de page</a>"
+
 #~ msgid "Enter title here"
 #~ msgstr "Saisissez le titre ici"
+
 #~ msgid "Get Shortlink"
 #~ msgstr "Obtenir le lien court"
+
 #~ msgid "Last edited by %1$s on %2$s at %3$s"
 #~ msgstr "Dernière modification par %1$s, le %2$s à %3$s"
+
 #~ msgid "Last edited on %1$s at %2$s"
 #~ msgstr "Dernière modification le %1$s à %2$s"
+
 #~ msgid "Editing Comment # %s"
 #~ msgstr "Modifier le commentaire n°%s"
+
 #~ msgid "View Comment"
 #~ msgstr "Afficher le commentaire"
 #~ msgctxt "adjective"
+
 #~ msgid "Approved"
 #~ msgstr "Approuvé"
 #~ msgctxt "adjective"
+
 #~ msgid "Pending"
 #~ msgstr "En attente"
 #~ msgctxt "adjective"
+
 #~ msgid "Spam"
 #~ msgstr "Indésirable"
+
 #~ msgid "Submitted on: <b>%1$s</b>"
 #~ msgstr "Envoyé le&nbsp;: <b>%1$s</b>"
+
 #~ msgid "Update Comment"
 #~ msgstr "Mettre à jour le commentaire"
+
 #~ msgid "Name:"
 #~ msgstr "Nom&nbsp;:"
+
 #~ msgid "E-mail (%s):"
 #~ msgstr "E-mail (%s)&nbsp;: "
+
 #~ msgid "send e-mail"
 #~ msgstr "envoyer l&rsquo;e-mail"
+
 #~ msgid "E-mail:"
 #~ msgstr "E-mail&nbsp;:"
+
 #~ msgid "visit site"
 #~ msgstr "aller sur le site"
+
 #~ msgid "URL (%s):"
 #~ msgstr "Adresse web (%s)&nbsp;:"
+
 #~ msgid "URL:"
 #~ msgstr "Adresse web&nbsp;:"
+
 #~ msgid "Link Categories"
 #~ msgstr "Catégories des liens"
 
@@ -3629,26 +3955,35 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Vous pouvez effacer des catégories de liens, mais cette action n'efface "
 #~ "pas les liens contenus dans une catégories. Au lieu de cela, ils sont "
 #~ "déplacés dans la catégorie par défaut."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Links_Link_Categories_SubPanel"
 #~ "\">Link Categories Documentation</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Links_Link_Categories_SubPanel"
 #~ "\">Documentation des catégories de liens</a>"
+
 #~ msgid "Category added."
 #~ msgstr "Catégorie ajoutée."
+
 #~ msgid "Category deleted."
 #~ msgstr "Catégorie supprimée."
+
 #~ msgid "Category updated."
 #~ msgstr "Catégorie mise à jour."
+
 #~ msgid "Category not added."
 #~ msgstr "La catégorie n&rsquo;a pas été ajoutée."
+
 #~ msgid "Categories deleted."
 #~ msgstr "Catégories supprimées."
+
 #~ msgid "Search Categories"
 #~ msgstr "Chercher une catégorie"
+
 #~ msgid "Delete"
 #~ msgstr "Supprimer "
+
 #~ msgid ""
 #~ "<strong>Note:</strong><br />Deleting a category does not delete the links "
 #~ "in that category. Instead, links that were only assigned to the deleted "
@@ -3658,12 +3993,16 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "liens qu&rsquo;elle contient. Au lieu de cela, les liens affectés "
 #~ "uniquement à la catégorie supprimée seront réaffectés à celle par défaut: "
 #~ "<strong>%s</strong>."
+
 #~ msgid "Add Link Category"
 #~ msgstr "Ajouter une catégorie de lien"
+
 #~ msgid "Link Category name"
 #~ msgstr "Nom de la catégorie de liens"
+
 #~ msgid "Link Category slug"
 #~ msgstr "Identifiant de catégorie de liens"
+
 #~ msgid ""
 #~ "The &#8220;slug&#8221; is the URL-friendly version of the name. It is "
 #~ "usually all lowercase and contains only letters, numbers, and hyphens."
@@ -3671,42 +4010,57 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "L&rsquo;identifiant est la version normalisée du nom. Il ne contient "
 #~ "généralement que des lettres minuscules non accentuées, des chiffres et "
 #~ "des traits d&rsquo;union."
+
 #~ msgid "Description (optional)"
 #~ msgstr "Description (facultative)"
+
 #~ msgid ""
 #~ "The description is not prominent by default; however, some themes may "
 #~ "show it."
 #~ msgstr ""
 #~ "La description n&rsquo;est pas très utilisée par défaut, cependant de "
 #~ "plus en plus de thèmes l&rsquo;affichent."
+
 #~ msgid "Add Category"
 #~ msgstr "Ajouter une catégorie"
+
 #~ msgid ""
 #~ "You do not have sufficient permissions to edit link categories for this "
 #~ "site."
 #~ msgstr ""
 #~ "Vous n&rsquo;avez pas les droits suffisants pour modifier les catégories "
 #~ "de liens de ce site."
+
 #~ msgid "Edit Link Category"
 #~ msgstr "Modifier la catégorie de lien"
+
 #~ msgid "Update Category"
 #~ msgstr "Mettre à jour la catégorie"
+
 #~ msgid "<a href=\"%s\">Links</a> / Edit Link"
 #~ msgstr "<a href=\"%s\">Liens</a> / Modifier le lien"
+
 #~ msgid "Update Link"
 #~ msgstr "Mettre à jour le lien"
+
 #~ msgid "<a href=\"%s\">Links</a> / Add New Link"
 #~ msgstr "<a href=\"%s\">Liens</a> / Ajouter un nouveau lien"
+
 #~ msgid "Add Link"
 #~ msgstr "Ajouter un lien"
+
 #~ msgid "Save"
 #~ msgstr "Enregistrer"
+
 #~ msgid "Categories"
 #~ msgstr "Catégories"
+
 #~ msgid "Target"
 #~ msgstr "Cible"
+
 #~ msgid "Link Relationship (XFN)"
 #~ msgstr "Relation avec le propriétaire du site lié (XFN)"
+
 #~ msgid "Advanced"
 #~ msgstr "Avancé"
 
@@ -3745,29 +4099,37 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "c'est à dire Réseau XHTML d'Amis. Son usage est facultatif. WordPress "
 #~ "permet de générer les attributes XFN de vos liens, afin d'indiquer la "
 #~ "manières dont vous êtes lié à l'auteur ou le propriétaire de la page liée."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Links_Add_New_SubPanel\">Creating "
 #~ "Links Documentation</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Links_Add_New_SubPanel"
 #~ "\">Documentation sur la création des liens</a>"
+
 #~ msgid "Link added."
 #~ msgstr "Lien ajouté."
+
 #~ msgid "Name"
 #~ msgstr "Nom"
+
 #~ msgid "Example: Nifty blogging software"
 #~ msgstr ""
 #~ "Exemple&nbsp;: Logiciel de création de site rapide, puissant et efficace"
+
 #~ msgid "Web Address"
 #~ msgstr "Adresse web"
+
 #~ msgid ""
 #~ "Example: <code>http://wordpress.org/</code> &#8212; don&#8217;t forget "
 #~ "the <code>http://</code>"
 #~ msgstr ""
 #~ "Exemple&nbsp;: <code>http://www.wordpress-fr.net/</code> &#8212; Et "
 #~ "n&rsquo;oubliez pas le <code>http://</code>"
+
 #~ msgid "Description"
 #~ msgstr "Description"
+
 #~ msgid ""
 #~ "This will be shown when someone hovers over the link in the blogroll, or "
 #~ "optionally below the link."
@@ -3775,21 +4137,28 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Cette description sera affichée lors du survol du lien dans la liste de "
 #~ "liens&nbsp;; elle pourra également apparaître sous le lien si votre thème "
 #~ "le prévoit."
+
 #~ msgid "You did not select an item for editing."
 #~ msgstr "Un contenu n&rsquo;a pas été sélectionné pour l&rsquo;édition. "
 #~ msgctxt "Taxonomy Name"
+
 #~ msgid "Name"
 #~ msgstr "Nom"
+
 #~ msgid "The name is how it appears on your site."
 #~ msgstr "Ce nom est utilisé un peu partout sur votre site."
 #~ msgctxt "Taxonomy Slug"
+
 #~ msgid "Slug"
 #~ msgstr "Identifiant"
 #~ msgctxt "Taxonomy Parent"
+
 #~ msgid "Parent"
 #~ msgstr "Parent"
+
 #~ msgid "None"
 #~ msgstr "Aucun"
+
 #~ msgid ""
 #~ "Categories, unlike tags, can have a hierarchy. You might have a Jazz "
 #~ "category, and under that have children categories for Bebop and Big Band. "
@@ -3800,14 +4169,17 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "intérieur, plusieurs catégories comme Bebop et Big Band. Ceci est "
 #~ "totalement facultatif."
 #~ msgctxt "Taxonomy Description"
+
 #~ msgid "Description"
 #~ msgstr "Description"
+
 #~ msgid ""
 #~ "The description is not prominent by default, however some themes may show "
 #~ "it."
 #~ msgstr ""
 #~ "La description n&rsquo;est pas très utilisée par défaut, cependant de "
 #~ "plus en plus de thèmes l&rsquo;affichent."
+
 #~ msgid "Invalid taxonomy"
 #~ msgstr "La taxinomie est invalide"
 
@@ -3864,9 +4236,11 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr ""
 #~ "Quand vous ajoutez un nouveau mot-clef via cet écran, vous devez remplir "
 #~ "les champs suivants&nbsp;:"
+
 #~ msgid "<strong>Name</strong> - The name is how it appears on your site."
 #~ msgstr ""
 #~ "<strong>Nom</strong> - Ce nom est utilisé un peu partout sur votre site."
+
 #~ msgid ""
 #~ "<strong>Slug</strong> - The  &#8220;slug&#8221; is the URL-friendly "
 #~ "version of the name. It is usually all lowercase and contains only "
@@ -3875,6 +4249,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "<strong>Identifiant</strong> - L&rsquo;identifiant est la version "
 #~ "normalisée du nom. Il ne contient généralement que des lettres minuscules "
 #~ "non accentuées, des chiffres et des traits d&rsquo;union."
+
 #~ msgid ""
 #~ "<strong>Parent</strong> - Categories, unlike tags, can have a hierarchy. "
 #~ "You might have a Jazz category, and under that have children categories "
@@ -3886,6 +4261,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Jazz, et à l&rsquo;intérieur, plusieurs catégories comme Bebop et Big "
 #~ "Band. Ceci est totalement facultatif. Pour créer une sous-catégorie, "
 #~ "choisissez juste une autre catégorie depuis la liste déroulante Parent."
+
 #~ msgid ""
 #~ "<strong>Description</strong> - The description is not prominent by "
 #~ "default; however, some themes may display it."
@@ -3903,26 +4279,33 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Vous pouvez modifier l'affichage de cet écran via l'onglet Options de "
 #~ "l'Ecran, afin de définir le nombre d'éléments à afficher par écran, et "
 #~ "afficher/cacher les colonnes du tableau."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Manage_Categories_SubPanel"
 #~ "\">Categories Documentation</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Manage_Categories_SubPanel"
 #~ "\">Documentation des catégories</a>"
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Post_Tags_SubPanel\">Tags "
 #~ "Documentation</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Post_Tags_SubPanel\">Documentation "
 #~ "des mots clefs</a>"
+
 #~ msgid "Item added."
 #~ msgstr "Contenu ajouté."
+
 #~ msgid "Item updated."
 #~ msgstr "Contenu mis à jour."
+
 #~ msgid "Item not added."
 #~ msgstr "Contenu non ajouté."
+
 #~ msgid "Items deleted."
 #~ msgstr "Contenus supprimés."
+
 #~ msgid ""
 #~ "<strong>Note:</strong><br />Deleting a category does not delete the posts "
 #~ "in that category. Instead, posts that were only assigned to the deleted "
@@ -3932,38 +4315,48 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "les articles qu&rsquo;elle contient. Les articles affectés uniquement à "
 #~ "la catégorie supprimée seront affectés à celle par défaut&nbsp&nbsp;: "
 #~ "<strong>%s</strong>."
+
 #~ msgid ""
 #~ "Categories can be selectively converted to tags using the <a href=\"%s"
 #~ "\">category to tag converter</a>."
 #~ msgstr ""
 #~ "Les catégories peuvent être converties de manière sélective en mots-clefs "
 #~ "via le <a href=\"%s\">convertisseur catégories vers mots-clefs</a>."
+
 #~ msgid ""
 #~ "Tags can be selectively converted to categories using the <a href=\"%s"
 #~ "\">tag to category converter</a>"
 #~ msgstr ""
 #~ "Les mots-clefs peuvent être converties de manière sélective en catégories "
 #~ "via le <a href=\"%s\">convertisseur mots-clefs vers catégories</a>"
+
 #~ msgid "Invalid post type"
 #~ msgstr "Type d&rsquo;article invalide"
+
 #~ msgid "You are not allowed to move this item to the Trash."
 #~ msgstr ""
 #~ "Vous n&rsquo;avez pas l&rsquo;autorisation de déplacer ce contenu dans la "
 #~ "corbeille."
+
 #~ msgid "Error in moving to Trash."
 #~ msgstr "Erreur lors du déplacement dans la corbeille."
+
 #~ msgid "You are not allowed to restore this item from the Trash."
 #~ msgstr ""
 #~ "Vous n&rsquo;avez pas l&rsquo;autorisation de récupérer ce contenu depuis "
 #~ "la corbeille."
+
 #~ msgid "Error in restoring from Trash."
 #~ msgstr "Erreur pendant la récupération depuis la corbeille."
+
 #~ msgid "Error in deleting..."
 #~ msgstr "Erreur pendant la suppression&hellip;"
+
 #~ msgid "You can customize the display of this screen in a number of ways:"
 #~ msgstr ""
 #~ "Vous pouvez personnaliser l&rsquo;affichage de cet écran de plusieurs "
 #~ "manières&nbsp;:"
+
 #~ msgid ""
 #~ "You can hide/display columns based on your needs and decide how many "
 #~ "posts to list per screen using the Screen Options tab."
@@ -3971,6 +4364,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Vous pouvez cacher/afficher les colonnes en fonction de vos besoins, et "
 #~ "décider du nombre d&rsquo;articles à afficher par écran à l&rsquo;aide de "
 #~ "l&rsquo;onglet Options de l&rsquo;Écran."
+
 #~ msgid ""
 #~ "You can filter the list of posts by post status using the text links in "
 #~ "the upper left to show All, Published, Draft, or Trashed posts. The "
@@ -3980,6 +4374,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "liens textuels en haut à gauche, afin d&rsquo;afficher tous les articles, "
 #~ "ou seulement les articles publiés, les brouillons, etc. Par défaut, tous "
 #~ "les articles sont affichés."
+
 #~ msgid ""
 #~ "You can view posts in a simple title list or with an excerpt. Choose the "
 #~ "view you prefer by clicking on the icons at the top of the list on the "
@@ -3988,6 +4383,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Vous pouvez afficher une simple liste de titres, ou une liste avec des "
 #~ "extraits. Choisissez l&rsquo;affichage que vous préferez en cliquant sur "
 #~ "les icônes en haut à droite de la liste."
+
 #~ msgid ""
 #~ "You can refine the list to show only posts in a specific category or from "
 #~ "a specific month by using the dropdown menus above the posts list. Click "
@@ -4000,6 +4396,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "le bouton Filtrer après avoir fait votre choix. Vous pouvez également "
 #~ "affiner la liste en cliquant sur l&rsquo;auteur d&rsquo;un article, sa "
 #~ "catégorie ou un mot-clef."
+
 #~ msgid ""
 #~ "Hovering over a row in the posts list will display action links that "
 #~ "allow you to manage your post. You can perform the following actions:"
@@ -4007,6 +4404,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Passer la souris au-dessus d&rsquo;une ligne de la liste d&rsquo;"
 #~ "articles, fera s&rsquo;afficher des liens vous permettant de gérer "
 #~ "l&rsquo;article. Vous pouvez lancer les actions suivantes&nbsp;:"
+
 #~ msgid ""
 #~ "Edit takes you to the editing screen for that post. You can also reach "
 #~ "that screen by clicking on the post title."
@@ -4014,6 +4412,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Modifier vous envoie sur l&rsquo;écran de modification de cet article. "
 #~ "Vous pouvez également vous rendre sur cet écran en cliquant sur le titre "
 #~ "de l&rsquo;article."
+
 #~ msgid ""
 #~ "Quick Edit provides inline access to the metadata of your post, allowing "
 #~ "you to update post details without leaving this screen."
@@ -4021,12 +4420,14 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Modification Rapide vous donne un accès rapide aux métadonnées de votre "
 #~ "article, vous permettant de mettre à jour certains détails sans devoir "
 #~ "quitter la liste."
+
 #~ msgid ""
 #~ "Trash removes your post from this list and places it in the trash, from "
 #~ "which you can permanently delete it."
 #~ msgstr ""
 #~ "Mettre à la Corbeille retire l&rsquo;article de la liste et le déplacer "
 #~ "dans la Corbeille, d&rsquo;où vous pourrez l&rsquo;effacer définitivement."
+
 #~ msgid ""
 #~ "Preview will show you what your draft post will look like if you publish "
 #~ "it. View will take you to your live site to view the post. Which link is "
@@ -4036,6 +4437,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "vous le publiez tel quel. Afficher vous enverra sur votre site, à l&rsquo;"
 #~ "adresse de l&rsquo;article. L&rsquo;action disponible dépend de l&rsquo;"
 #~ "état de votre article."
+
 #~ msgid ""
 #~ "You can also edit multiple posts at once. Select the posts you want to "
 #~ "edit using the checkboxes, select Edit from the Bulk Actions menu and "
@@ -4050,6 +4452,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "auteur, et.c) pour tous les articles sélectionnés. Pour retirer un "
 #~ "article de la sélection, cliquez simplement sur la croix à gauche de son "
 #~ "titre dans la zone Édition Par Lot."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Posts_Edit_SubPanel\">Edit Posts "
 #~ "Documentation</a>"
@@ -4095,23 +4498,31 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "apparaissent quand la souris passe au-dessus d'une ligne, ou en utilisant "
 #~ "le menu Actions Globales pour modifier les métadonnées de plusieurs pages "
 #~ "d'un seul coup."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Pages_Edit_SubPanel\">Page "
 #~ "Management Documentation</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Pages_Edit_SubPanel\">Documentation "
 #~ "sur la gestion des pages</a>"
+
 #~ msgid "This has been saved."
 #~ msgstr "Ce contenu a été enregistré."
+
 #~ msgid "View Post"
 #~ msgstr "Afficher l&rsquo;article"
+
 #~ msgid "Edit Post"
 #~ msgstr "Modifier l&rsquo;article"
+
 #~ msgid "%s post updated."
+
 #~ msgid_plural "%s posts updated."
 #~ msgstr[0] "%s article mis à jour."
 #~ msgstr[1] "%s articles mis à jour."
+
 #~ msgid "%s item not updated, somebody is editing it."
+
 #~ msgid_plural "%s items not updated, somebody is editing them."
 #~ msgstr[0] ""
 #~ "%s entrée n&rsquo;a pas été mise à jour&nbsp;: quelqu&rsquo;un est déjà "
@@ -4119,31 +4530,43 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr[1] ""
 #~ "%s entrées n&rsquo;ont pas été mises à jour&nbsp;: quelqu&rsquo;un est "
 #~ "déjà en train de les modifier."
+
 #~ msgid "Item permanently deleted."
+
 #~ msgid_plural "%s items permanently deleted."
 #~ msgstr[0] "Élément définitivement supprimé."
 #~ msgstr[1] "%s éléments définitivement supprimés."
+
 #~ msgid "Item moved to the trash."
+
 #~ msgid_plural "%s items moved to the trash."
 #~ msgstr[0] "Élément déplacé dans la corbeille."
 #~ msgstr[1] "%s éléments déplacés dans la corbeille."
+
 #~ msgid "Item restored from the Trash."
+
 #~ msgid_plural "%s items restored from the Trash."
 #~ msgstr[0] "Élément récupéré depuis la corbeille."
 #~ msgstr[1] "%s éléments récupérés depuis la corbeille."
+
 #~ msgid "Show all dates"
 #~ msgstr "Afficher toutes les dates"
+
 #~ msgid "View all categories"
 #~ msgstr "Voir toutes les catégories"
+
 #~ msgid "List View"
 #~ msgstr "Liste simple"
+
 #~ msgid "Excerpt View"
 #~ msgstr "Liste avec extraits"
+
 #~ msgid ""
 #~ "You do not have sufficient permissions to export the content of this site."
 #~ msgstr ""
 #~ "Vous n&rsquo;avez pas les droits suffisants pour exporter le contenu de "
 #~ "ce site."
+
 #~ msgid "Export"
 #~ msgstr "Exporter"
 
@@ -4173,18 +4596,21 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Une fois généré, le fichier WXR peut peut être importé dans une autre "
 #~ "installation WordPress, ou une autre plate-forme de blog capable de lire "
 #~ "ce format."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Tools_Export_SubPanel\">Export "
 #~ "Documentation</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Tools_Export_SubPanel"
 #~ "\">Documentation de l'exportation</a>"
+
 #~ msgid ""
 #~ "When you click the button below WordPress will create an XML file for you "
 #~ "to save to your computer."
 #~ msgstr ""
 #~ "Cliquez sur ce bouton pour que WordPress crée un fichier XML que vous "
 #~ "pourrez enregistrer sur votre ordinateur."
+
 #~ msgid ""
 #~ "This format, which we call WordPress eXtended RSS or WXR, will contain "
 #~ "your posts, pages, comments, custom fields, categories, and tags."
@@ -4192,6 +4618,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Ce format, que nous appelons WordPress eXtended RSS (ou WXR), contient "
 #~ "tous vos articles, pages, commentaires, champs personnalisés, catégories "
 #~ "et mots-clefs."
+
 #~ msgid ""
 #~ "Once you&#8217;ve saved the download file, you can use the Import "
 #~ "function on another WordPress site to import this site."
@@ -4199,30 +4626,40 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Une fois que le fichier téléchargé a été enregistré, vous pouvez utiliser "
 #~ "la fonction Importer d&rsquo;un autre site WordPress pour importer ce "
 #~ "fichier dans cet autre site."
+
 #~ msgid "Filters"
 #~ msgstr "Filtres"
+
 #~ msgid "Start Date"
 #~ msgstr "Date de début"
-#~ msgid "All Dates"
-#~ msgstr "Toutes les dates"
+
 #~ msgid "End Date"
 #~ msgstr "Date de fin"
+
 #~ msgid "Authors"
 #~ msgstr "Auteurs"
+
 #~ msgid "All Authors"
 #~ msgstr "Tous les auteurs"
+
 #~ msgid "All Terms"
 #~ msgstr "Tous les termes"
+
 #~ msgid "Content Types"
 #~ msgstr "Type de contenu"
+
 #~ msgid "All Content"
 #~ msgstr "Tout le contenu"
+
 #~ msgid "Statuses"
 #~ msgstr "États"
+
 #~ msgid "All Statuses"
 #~ msgstr "Tous les états"
+
 #~ msgid "Download Export File"
 #~ msgstr "Télécharger le fichier d&rsquo;export"
+
 #~ msgid ""
 #~ "You do not have sufficient permissions to import content in this site."
 #~ msgstr ""
@@ -4244,6 +4681,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "plate-forme, cliquez sur le lien Recherche dans le Dépôt d'Extensions et "
 #~ "lancez une recherche - peut-être qu'une autre extension répondra à vos "
 #~ "attentes."
+
 #~ msgid ""
 #~ "In previous versions of WordPress, all the importers were built-in, but "
 #~ "they have been turned into plugins as of version 3.0 since most people "
@@ -4253,56 +4691,70 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "directement inclus, depuis la version 3.0 de WordPress nous les avons "
 #~ "convertis en extensions, car peu de personnes les utilisent, ou très "
 #~ "rarement le cas contraire."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Tools_Import_SubPanel\">Import "
 #~ "Documentation</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Tools_Import_SubPanel"
 #~ "\">Documentation de l'importation</a>"
+
 #~ msgid "Blogger"
 #~ msgstr "Blogger"
+
 #~ msgid ""
 #~ "Install the Blogger importer to import posts, comments, and users from a "
 #~ "Blogger blog."
 #~ msgstr ""
 #~ "Installer l&rsquo;importateur Blogger, pour importer les articles, "
 #~ "commentaires et utilisateurs d&rsquo;un blog Blogger."
+
 #~ msgid "Categories and Tags Converter"
 #~ msgstr "Convertisseur de catégories et mots-clefs"
+
 #~ msgid ""
 #~ "Install the category/tag converter to convert existing categories to tags "
 #~ "or tags to categories, selectively."
 #~ msgstr ""
 #~ "Installer le convertisseur catégorie/mot-clef, pour convertir les "
 #~ "catégories en mots-clefs, ou vice-versa."
+
 #~ msgid "LiveJournal"
 #~ msgstr "LiveJournal"
+
 #~ msgid ""
 #~ "Install the LiveJournal importer to import posts from LiveJournal using "
 #~ "their API."
 #~ msgstr ""
 #~ "Installer l&rsquo;importateur LiveJournal, pour importer les articles "
 #~ "depuis un blog LiveJournal en utilisant leur API."
+
 #~ msgid "Movable Type and TypePad"
 #~ msgstr "Movable Type et TypePad"
+
 #~ msgid ""
 #~ "Install the Movable Type importer to import posts and comments from a "
 #~ "Movable Type or TypePad blog."
 #~ msgstr ""
 #~ "Installer l&rsquo;importateur Movable Type, pour importer les articles et "
 #~ "commentaires en provenance d&rsquo;un blog Movable Type ou TypePad."
+
 #~ msgid "Blogroll"
 #~ msgstr "Liens"
+
 #~ msgid "Install the blogroll importer to import links in OPML format."
 #~ msgstr ""
 #~ "Install l&rsquo;importateur de blogoliste, pour importer une liste de "
 #~ "liens au format OPML."
+
 #~ msgid "RSS"
 #~ msgstr "Flux"
+
 #~ msgid "Install the RSS importer to import posts from an RSS feed."
 #~ msgstr ""
 #~ "Installer l&rsquo;importateur RSS, pour importer des articles à partir "
 #~ "d&rsquo;un flux RSS."
+
 #~ msgid ""
 #~ "Install the WordPress importer to import posts, pages, comments, custom "
 #~ "fields, categories, and tags from a WordPress export file."
@@ -4310,11 +4762,14 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Installer l&rsquo;importateur WordPress, pour importer les articles, "
 #~ "pages, commentaires, champs personnalisés, catégories et mots-clefs à "
 #~ "partir d&rsquo;un fichier d&rsquo;export WordPress."
+
 #~ msgid "ERROR:"
 #~ msgstr "ERREUR&nbsp;:"
+
 #~ msgid "The <strong>%s</strong> importer is invalid or is not installed."
 #~ msgstr ""
 #~ "L'importateur <strong>%s</strong> est invalide ou n'est pas installé."
+
 #~ msgid ""
 #~ "If you have posts or comments in another system, WordPress can import "
 #~ "those into this site. To get started, choose a system to import from "
@@ -4323,291 +4778,423 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Si vous avez des articles ou des commentaires dans un autre système de "
 #~ "site, WordPress peut les importer dans votre site actuel. Pour commencer, "
 #~ "choisissez un système d&rsquo;origine ci-dessous&nbsp;:"
+
 #~ msgid "No importers are available."
 #~ msgstr "Aucun outil d&rsquo;importation n&rsquo;est disponible."
+
 #~ msgid "Activate importer"
 #~ msgstr "Activer l&rsquo;importateur"
+
 #~ msgid "Install importer"
 #~ msgstr "Installer l&rsquo;importateur"
+
 #~ msgid "Could not update link in the database"
 #~ msgstr "Impossible de mettre à jour le lien dans la base de données"
+
 #~ msgid "Could not insert link into the database"
 #~ msgstr "Impossible d&rsquo;insérer le lien dans la base de données"
+
 #~ msgid "Changing to %s"
 #~ msgstr "Modifier à %s"
+
 #~ msgid "Found %s"
 #~ msgstr "Trouvé %s"
+
 #~ msgid "The ftp PHP extension is not available"
 #~ msgstr "L&rsquo;extension ftp de PHP n&rsquo;est pas disponible"
+
 #~ msgid "FTP hostname is required"
 #~ msgstr "L&rsquo;hôte du FTP est obligatoire"
+
 #~ msgid "FTP username is required"
 #~ msgstr "L&rsquo;identifiant FTP est obligatoire"
+
 #~ msgid "FTP password is required"
 #~ msgstr "Le mot de passe FTP est obligatoire"
+
 #~ msgid "Failed to connect to FTP Server %1$s:%2$s"
 #~ msgstr "Impossible de me connecter au serveur FTP %1$s&nbsp;: %2$s"
+
 #~ msgid "Username/Password incorrect for %s"
 #~ msgstr "Le couple identifiant / mot de passe est incorrect pour %s"
+
 #~ msgid "The ssh2 PHP extension is not available"
 #~ msgstr "L&rsquo;extension ssh2 de PHP n&rsquo;est pas disponible"
+
 #~ msgid ""
 #~ "The ssh2 PHP extension is available, however, we require the PHP5 "
 #~ "function <code>stream_get_contents()</code>"
 #~ msgstr ""
 #~ "L&rsquo;extension ssh2 de PHP est disponible, mais nécessite la fonction "
 #~ "PHP5 <code>stream_get_contents()</code>"
+
 #~ msgid "SSH2 hostname is required"
 #~ msgstr "Le nom de l&rsquo;hôte SSH2 est obligatoire"
+
 #~ msgid "SSH2 username is required"
 #~ msgstr "L&rsquo;identifiant SSH2 est obligatoire"
+
 #~ msgid "SSH2 password is required"
 #~ msgstr "Le mot de passe SSH2 est obligatoire"
+
 #~ msgid "Failed to connect to SSH2 Server %1$s:%2$s"
 #~ msgstr "Impossible de me connecter au serveur SSH2 %1$s&nbsp;: %2$s"
+
 #~ msgid "Public and Private keys incorrect for %s"
 #~ msgstr "Les clefs publiques et privées de %s ne sont pas correctes"
+
 #~ msgid "Unable to perform command: %s"
 #~ msgstr "Impossible de lancer la commande&nbsp;: %s"
+
 #~ msgid "Invalid Data provided."
 #~ msgstr "Les données fournies ne sont pas valides."
+
 #~ msgid "Could not access filesystem."
 #~ msgstr "Impossible d&rsquo;accéder au système de fichier."
+
 #~ msgid "Filesystem error."
 #~ msgstr "Erreur du système de fichier."
+
 #~ msgid "Unable to locate WordPress Root directory."
 #~ msgstr "Impossible de localiser le dossier racine de WordPress."
+
 #~ msgid "Unable to locate WordPress Content directory (wp-content)."
 #~ msgstr ""
 #~ "Impossible de localiser le dossier de contenu de WordPress (wp-content)."
+
 #~ msgid "Unable to locate WordPress Plugin directory."
 #~ msgstr "Impossible de localiser le dossier d&rsquo;extension de WordPress."
+
 #~ msgid "Unable to locate WordPress Theme directory."
 #~ msgstr "Impossible de localiser le dossier des thèmes de WordPress."
+
 #~ msgid "Unable to locate needed folder (%s)."
 #~ msgstr "Impossible de localiser le dossier nécessaire (%s)."
+
 #~ msgid "Download failed."
 #~ msgstr "Le téléchargement a échoué."
+
 #~ msgid "Installing the latest version&#8230;"
 #~ msgstr "Installation de la dernière version&#8230;"
+
 #~ msgid "Destination folder already exists."
 #~ msgstr "Le dossier de destination existe déjà."
+
 #~ msgid "Could not create directory."
 #~ msgstr "Impossible de créer le dossier."
+
 #~ msgid "Incompatible Archive."
 #~ msgstr "Archive incompatible."
+
 #~ msgid "Enabling Maintenance mode&#8230;"
 #~ msgstr "Activation du mode maintenance&#8230;"
+
 #~ msgid "Disabling Maintenance mode&#8230;"
 #~ msgstr "Désactivation du mode maintenance&#8230;"
+
 #~ msgid "The plugin is at the latest version."
 #~ msgstr "Vous avez la dernière version de cette extension."
+
 #~ msgid "Upgrade package not available."
 #~ msgstr "Pas d&rsquo;archive de mise à jour disponible."
+
 #~ msgid "Downloading update from <span class=\"code\">%s</span>&#8230;"
 #~ msgstr ""
 #~ "Téléchargement de la mise à jour depuis <span class=\"code\">%s</"
 #~ "span>&#8230;"
+
 #~ msgid "Unpacking the update&#8230;"
 #~ msgstr "Décompression de la mise à jour&#8230;"
+
 #~ msgid "Deactivating the plugin&#8230;"
 #~ msgstr "Désactivation de l&rsquo;extension&#8230;"
+
 #~ msgid "Removing the old version of the plugin&#8230;"
 #~ msgstr "Retrait de l&rsquo;ancienne version de l&rsquo;extension&#8230;"
+
 #~ msgid "Could not remove the old plugin."
 #~ msgstr "Impossible de supprimer l&rsquo;ancienne extension."
+
 #~ msgid "Plugin upgrade failed."
 #~ msgstr "La mise à jour de l&rsquo;extension a échoué."
+
 #~ msgid "Plugin upgraded successfully."
 #~ msgstr "L&rsquo;extension a bien été mise à jour."
+
 #~ msgid "Install package not available."
 #~ msgstr "L&rsquo;archive d&rsquo;installation n&rsquo;est pas disponible."
+
 #~ msgid ""
 #~ "Downloading install package from <span class=\"code\">%s</span>&#8230;"
 #~ msgstr ""
 #~ "Téléchargement de l&rsquo;archive d&rsquo;installation depuis <span class="
 #~ "\"code\">%s</span>&#8230;"
+
 #~ msgid "Unpacking the package&#8230;"
 #~ msgstr "Décompression de l&rsquo;archive de l&rsquo;extension&#8230;"
+
 #~ msgid "Installing the plugin&#8230;"
 #~ msgstr "Installation de l&rsquo;extension&#8230;"
+
 #~ msgid "Plugin install failed."
 #~ msgstr "L&rsquo;installation de l&rsquo;extension a échoué."
+
 #~ msgid "Plugin installed successfully."
 #~ msgstr "L&rsquo;extension a bien été installée."
+
 #~ msgid "The theme is at the latest version."
 #~ msgstr "Vous avez la dernière version de ce thème."
+
 #~ msgid "Removing the old version of the theme&#8230;"
 #~ msgstr "Retrait de l&rsquo;ancienne version du thème&#8230;"
+
 #~ msgid "Could not remove the old theme."
 #~ msgstr "Impossible de supprimer l&rsquo;ancien thème."
+
 #~ msgid "Theme upgrade failed."
 #~ msgstr "La mise à jour du thème a échoué."
+
 #~ msgid "Theme upgraded successfully."
 #~ msgstr "Le thème a bien été mis à jour."
+
 #~ msgid "Installing the theme&#8230;"
 #~ msgstr "Installation du thème&#8230;"
+
 #~ msgid "Theme install failed."
 #~ msgstr "L&rsquo;installation du thème a échoué."
+
 #~ msgid "Theme installed successfully."
 #~ msgstr "Le thème a bien été mis à jour."
+
 #~ msgid "WordPress is at the latest version."
 #~ msgstr "Vous avez la dernière version de WordPress."
+
 #~ msgid "Could not copy files."
 #~ msgstr "Impossible de copier les fichiers."
+
 #~ msgid "Upgrade Plugin"
 #~ msgstr "Mettre à jour l&rsquo;extension"
+
 #~ msgid "Reactivating the plugin&#8230;"
 #~ msgstr "Réactivation de l&rsquo;extension&#8230;"
+
 #~ msgid "Activate this plugin"
 #~ msgstr "Activer cette extension"
+
 #~ msgid "Activate Plugin"
 #~ msgstr "Activer l&rsquo;extension"
+
 #~ msgid "Goto plugins page"
 #~ msgstr "Aller sur la page des extensions"
+
 #~ msgid "Return to Plugins page"
 #~ msgstr "Retourner sur la page des extensions"
+
 #~ msgid "Actions:"
 #~ msgstr "Actions&nbsp;:"
+
 #~ msgid ""
 #~ "The update process is starting. This process may take awhile on some "
 #~ "hosts, so please be patient."
 #~ msgstr ""
 #~ "Le processus de mise à jour se lance. Il peut prendre un certain temps "
 #~ "chez certains hébergeurs, merci donc pour votre patience."
+
 #~ msgid "An error occured while updating %1$s: <strong>%2$s</strong>."
 #~ msgstr ""
 #~ "Une erreur s&rsquo;est produite pendant la mise à jour de %1$s&nbsp;: "
 #~ "<strong>%2$s</strong>."
+
 #~ msgid "The update of %1$s failed."
 #~ msgstr "La mise à jour de %1$s a échoué."
+
 #~ msgid "%1$s updated successfully."
 #~ msgstr "%1$s a bien été mis à jour."
+
 #~ msgid "Show Details"
 #~ msgstr "Afficher les détails"
+
 #~ msgid "Hide Details"
 #~ msgstr "Cacher les détails"
+
 #~ msgid "All updates have been completed."
 #~ msgstr "Toutes les mises à jour sont terminées."
+
 #~ msgid "Updating Plugin %1$s (%2$d/%3$d)"
 #~ msgstr "Mise à jour de l&rsquo;extension %1$s (%2$d/%3$d)"
+
 #~ msgid "Goto WordPress Updates page"
 #~ msgstr "Aller à la page des mises à jour de WordPress"
+
 #~ msgid "Return to WordPress Updates"
 #~ msgstr "Retourner aux mises à jour de WordPress"
+
 #~ msgid "Updating Theme %1$s (%2$d/%3$d)"
 #~ msgstr "Mise à jour du thème %1$s (%2$d/%3$d)"
+
 #~ msgid "Goto themes page"
 #~ msgstr "Aller à la page des thèmes"
+
 #~ msgid "Return to Themes page"
 #~ msgstr "Retourner sur la page des thèmes"
+
 #~ msgid "Successfully installed the plugin <strong>%s %s</strong>."
 #~ msgstr "L&rsquo;extension <strong>%s %s</strong> a bien été installée."
+
 #~ msgid "Activate Plugin &amp; Run Importer"
 #~ msgstr "Activer l&rsquo;extension &amp; lancer l'importateur"
+
 #~ msgid "Activate this plugin for all sites in this network"
 #~ msgstr "Activer cette extension sur tous les sites de ce réseau"
+
 #~ msgid "Network Activate"
 #~ msgstr "Activation sur le réseau"
+
 #~ msgid "Return to Importers"
 #~ msgstr "Retour aux importateurs"
+
 #~ msgid "Return to Plugin Installer"
 #~ msgstr "Retourner à l&rsquo;installeur d&rsquo;extensions"
+
 #~ msgid "Successfully installed the theme <strong>%1$s %2$s</strong>."
 #~ msgstr "Le thème <strong>%1$s %2$s</strong> a bien été installé."
+
 #~ msgid "Preview &#8220;%s&#8221;"
 #~ msgstr "Prévisualiser &laquo;&nbsp;%s&nbsp;&raquo;"
+
 #~ msgid "Activate &#8220;%s&#8221;"
 #~ msgstr "Activer &laquo;&nbsp;%s&nbsp;&raquo;"
+
 #~ msgid "Return to Theme Installer"
 #~ msgstr "Retourner à l&rsquo;installeur de thèmes"
+
 #~ msgid "Themes page"
 #~ msgstr "Page des thèmes"
+
 #~ msgid "Upgrade Theme"
 #~ msgstr "Mettre à jour le thème"
+
 #~ msgid "Please select a file"
 #~ msgstr "Veuillez choisir un fichier"
+
 #~ msgid "The uploaded file could not be moved to %s."
 #~ msgstr "Le fichier n&rsquo; a pas pu être déplacé vers %s."
+
 #~ msgid ""
 #~ "You are not allowed to edit comments on this post, so you cannot edit "
 #~ "this comment."
 #~ msgstr ""
 #~ "Vous n&rsquo;avez pas l&rsquo;autorisation de modifier les commentaires "
 #~ "de cet article, donc vous ne pouvez pas modifier ce commentaire."
+
 #~ msgid "Right Now"
 #~ msgstr "Aujourd&rsquo;hui"
+
 #~ msgid "Recent Comments"
 #~ msgstr "Commentaires récents"
+
 #~ msgid "Incoming Links"
 #~ msgstr "Liens entrants"
+
 #~ msgid "Plugins"
 #~ msgstr "Extensions"
+
 #~ msgid "QuickPress"
 #~ msgstr "Press-Minute"
+
 #~ msgid "Recent Drafts"
 #~ msgstr "Brouillons récents"
+
 #~ msgid "http://wordpress.org/development/"
 #~ msgstr "http://wordpress.org/development/"
+
 #~ msgid "http://wordpress.org/development/feed/"
 #~ msgstr "http://wordpress.org/development/feed/"
+
 #~ msgid "WordPress Blog"
 #~ msgstr "Blog WordPress"
+
 #~ msgid "http://planet.wordpress.org/"
 #~ msgstr "http://www.wordpress-fr.net/planet/"
+
 #~ msgid "http://planet.wordpress.org/feed/"
 #~ msgstr "http://feeds2.feedburner.com/WordpressFrancophonePlanet"
+
 #~ msgid "Other WordPress News"
 #~ msgstr "Autres actualités de WordPress (en français)"
+
 #~ msgid "View all"
 #~ msgstr "Afficher tout"
+
 #~ msgid "Cancel"
 #~ msgstr "Annuler"
+
 #~ msgid "Configure"
 #~ msgstr "Configurer"
+
 #~ msgid "Submit"
 #~ msgstr "Envoyer"
+
 #~ msgid "Content"
 #~ msgstr "Contenu"
+
 #~ msgid "Post"
+
 #~ msgid_plural "Posts"
 #~ msgstr[0] "Article"
 #~ msgstr[1] "Articles"
+
 #~ msgid "Page"
+
 #~ msgid_plural "Pages"
 #~ msgstr[0] "Page"
 #~ msgstr[1] "Pages"
+
 #~ msgid "Category"
+
 #~ msgid_plural "Categories"
 #~ msgstr[0] "Catégorie"
 #~ msgstr[1] "Catégories"
+
 #~ msgid "Tag"
+
 #~ msgid_plural "Tags"
 #~ msgstr[0] "Mot-clef"
 #~ msgstr[1] "Mots-clefs"
+
 #~ msgid "Comment"
+
 #~ msgid_plural "Comments"
 #~ msgstr[0] "Commentaire"
 #~ msgstr[1] "Commentaires"
 #~ msgctxt "Right Now"
+
 #~ msgid "Approved"
+
 #~ msgid_plural "Approved"
 #~ msgstr[0] "Approuvé"
 #~ msgstr[1] "Approuvés"
+
 #~ msgid "Pending"
+
 #~ msgid_plural "Pending"
 #~ msgstr[0] "En attente"
 #~ msgstr[1] "En attente"
 #~ msgctxt "comment"
+
 #~ msgid "Spam"
+
 #~ msgid_plural "Spam"
 #~ msgstr[0] "Indésirable"
 #~ msgstr[1] "Indésirables"
+
 #~ msgid "Change Theme"
 #~ msgstr "Changer de thème"
+
 #~ msgid ""
 #~ "Theme <span class=\"b\">%1$s</span> with <span class=\"b\"><a href="
 #~ "\"widgets.php\">%2$s Widget</a></span>"
+
 #~ msgid_plural ""
 #~ "Theme <span class=\"b\">%1$s</span> with <span class=\"b\"><a href="
 #~ "\"widgets.php\">%2$s Widgets</a></span>"
@@ -4617,9 +5204,11 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr[1] ""
 #~ "Thème <span class=\"b\">%1$s</span> avec <span class=\"b\"><a href="
 #~ "\"widgets.php\">%2$s widgets</a></span>"
+
 #~ msgid ""
 #~ "Theme <span class=\"b\">%1$s</span> with <span class=\"b\">%2$s Widget</"
 #~ "span>"
+
 #~ msgid_plural ""
 #~ "Theme <span class=\"b\">%1$s</span> with <span class=\"b\">%2$s Widgets</"
 #~ "span>"
@@ -4629,85 +5218,117 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr[1] ""
 #~ "Thème <span class=\"b\">%1$s</span> avec <span class=\"b\">%2$s widgets</"
 #~ "span>"
+
 #~ msgid "Theme <span class=\"b\"><a href=\"themes.php\">%1$s</a></span>"
 #~ msgstr "Thème <span class=\"b\"><a href=\"themes.php\">%1$s</a></span>"
+
 #~ msgid "Theme <span class=\"b\">%1$s</span>"
 #~ msgstr "Thème <span class=\"b\">%1$s</span>"
+
 #~ msgid ""
 #~ "Post published. <a href=\"%s\">View post</a> | <a href=\"%s\">Edit post</"
 #~ "a>"
 #~ msgstr ""
 #~ "Article publié. <a href=\"%s\">Afficher l&rsquo;article</a> | <a href=\"%s"
 #~ "\">Modifier l&rsquo;article</a>"
+
 #~ msgid ""
 #~ "Post submitted. <a href=\"%s\">Preview post</a> | <a href=\"%s\">Edit "
 #~ "post</a>"
 #~ msgstr ""
 #~ "Article publié. <a href=\"%s\">Afficher l&rsquo;article</a> | <a href=\"%s"
 #~ "\">Modifier l&rsquo;article</a>"
+
 #~ msgid ""
 #~ "Draft saved. <a href=\"%s\">Preview post</a> | <a href=\"%s\">Edit post</"
 #~ "a>"
 #~ msgstr ""
 #~ "Brouillon enregistré. <a href=\"%s\">Afficher l&rsquo;article</a> | <a "
 #~ "href=\"%s\">Modifier l&rsquo;article</a>"
+
 #~ msgid "You can also try %s, easy blogging from anywhere on the Web."
 #~ msgstr ""
 #~ "Vous pouvez aussi essayer %s, qui simplifie la création d&rsquo;article "
 #~ "depuis n&rsquo;importe où sur le Web."
+
 #~ msgid "Press This"
 #~ msgstr "Publier un article"
+
 #~ msgid "Tags"
 #~ msgstr "Mots-clefs"
+
 #~ msgid "Save Draft"
 #~ msgstr "Enregistrer brouillon"
+
 #~ msgid "Reset"
 #~ msgstr "Réinitialiser"
+
 #~ msgid "Submit for Review"
 #~ msgstr "Soumettre à relecture"
+
 #~ msgid "Loading&#8230;"
 #~ msgstr "Chargement&#8230;"
+
 #~ msgid "This widget requires JavaScript."
 #~ msgstr "Ce widget requiert JavaScript."
+
 #~ msgid "There are no drafts at the moment"
 #~ msgstr "Il n&rsquo;y a pas de brouillon actuellement"
+
 #~ msgid "No comments yet."
 #~ msgstr "Pas encore de commentaire."
+
 #~ msgid "Approve this comment"
 #~ msgstr "Approuver ce commentaire"
+
 #~ msgid "Unapprove this comment"
 #~ msgstr "Désapprouver ce commentaire"
+
 #~ msgid "Reply to this comment"
 #~ msgstr "Répondre à ce commentaire"
+
 #~ msgid "Reply"
 #~ msgstr "Répondre"
+
 #~ msgid "Mark this comment as spam"
 #~ msgstr "Marquer ce commentaire comme indésirable"
 #~ msgctxt "verb"
+
 #~ msgid "Spam"
 #~ msgstr "Indésirable"
+
 #~ msgid "Move this comment to the trash"
 #~ msgstr "Déplacer ce commentaire dans la corbeille"
 #~ msgctxt "verb"
+
 #~ msgid "Trash"
 #~ msgstr "Corbeille"
+
 #~ msgid "From %1$s on %2$s%3$s"
 #~ msgstr "Par %1$s, sur %2$s%3$s"
+
 #~ msgid "[Pending]"
 #~ msgstr "[En attente]"
+
 #~ msgid "Pingback"
 #~ msgstr "Ping"
+
 #~ msgid "Trackback"
 #~ msgstr "Rétrolien"
 #~ msgctxt "dashboard"
+
 #~ msgid "%1$s on %2$s"
 #~ msgstr "%1$s dans %2$s"
+
 #~ msgid "Number of comments to show:"
 #~ msgstr "Nombre de commentaires à afficher&nbsp;:"
+
 #~ msgid "(at most 30)"
 #~ msgstr "(30 au plus)"
+
 #~ msgid "<strong>RSS Error</strong>: %s"
 #~ msgstr "<strong>Erreur RSS&nbsp;:</strong> %s"
+
 #~ msgid ""
 #~ "This dashboard widget queries <a href=\"http://blogsearch.google.com/"
 #~ "\">Google Blog Search</a> so that when another blog links to your site it "
@@ -4719,80 +5340,117 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "autre blog fera un lien vers le vôtre, son nom s&rsquo;affichera ici. Ce "
 #~ "moteur n&rsquo;a pas encore trouvé de lien entrant&hellip; Ce n&rsquo;est "
 #~ "pas grave, on n&rsquo;est pas pressé."
+
 #~ msgid "Somebody"
 #~ msgstr "Quelqu&rsquo;un"
+
 #~ msgid "%1$s linked here <a href=\"%2$s\">saying</a>, \"%3$s\""
 #~ msgstr ""
 #~ "%1$s a fait un lien vers ce site <a href=\"%2$s\">en écrivant</a> &laquo;"
 #~ "&nbsp;%3$s&nbsp;&raquo;"
+
 #~ msgid "%1$s linked here saying, \"%3$s\""
 #~ msgstr "%1$s a fait un lien vers ce site en écrivant &laquo; %3$s &raquo;"
+
 #~ msgid "on %4$s"
 #~ msgstr "le %4$s"
+
 #~ msgid "Most Popular"
 #~ msgstr "Plus populaire"
+
 #~ msgid "Newest Plugins"
 #~ msgstr "Nouvelles extensions"
+
 #~ msgid "Recently Updated"
 #~ msgstr "Mises à jour récentes"
+
 #~ msgid "Install"
 #~ msgstr "Installer"
+
 #~ msgid "Unknown Feed"
 #~ msgstr "Flux inconnu"
+
 #~ msgid "Main Index Template"
 #~ msgstr "Modèle pour la page d&rsquo;accueil"
+
 #~ msgid "Stylesheet"
 #~ msgstr "Feuille de style"
+
 #~ msgid "Visual Editor Stylesheet"
 #~ msgstr "Feuille de style de l&rsquo;éditeur visuel"
+
 #~ msgid "RTL Stylesheet"
 #~ msgstr "Feuille de style RTL"
+
 #~ msgid "Popup Comments"
 #~ msgstr "Commentaires en popup"
+
 #~ msgid "Footer"
 #~ msgstr "Pied de page"
+
 #~ msgid "Sidebar"
 #~ msgstr "Colonne latérale"
+
 #~ msgid "Archives"
 #~ msgstr "Archives"
+
 #~ msgid "Author Template"
 #~ msgstr "Modèle pour un auteur"
+
 #~ msgid "Tag Template"
 #~ msgstr "Modèle pour un mot-clef"
+
 #~ msgid "Category Template"
 #~ msgstr "Modèle pour les catégories"
+
 #~ msgid "Page Template"
 #~ msgstr "Modèle de page"
+
 #~ msgid "Search Results"
 #~ msgstr "Résultats de recherche"
+
 #~ msgid "Search Form"
 #~ msgstr "Formulaire de recherche"
+
 #~ msgid "Single Post"
 #~ msgstr "Article seul"
+
 #~ msgid "404 Template"
 #~ msgstr "Modèle pour l&rsquo;erreur 404"
+
 #~ msgid "Links Template"
 #~ msgstr "Modèle pour les liens"
+
 #~ msgid "Theme Functions"
 #~ msgstr "Fonctions du thème"
+
 #~ msgid "Attachment Template"
 #~ msgstr "Modèle pour les fichiers attachés"
+
 #~ msgid "Image Attachment Template"
 #~ msgstr "Modèle pour les images attachées"
+
 #~ msgid "Video Attachment Template"
 #~ msgstr "Modèle pour les vidéos attachées"
+
 #~ msgid "Audio Attachment Template"
 #~ msgstr "Modèle pour les fichiers audio attachés"
+
 #~ msgid "Application Attachment Template"
 #~ msgstr "Modèle pour les programmes attachés"
+
 #~ msgid "my-hacks.php (legacy hacks support)"
 #~ msgstr "my-hacks.php (reconnaissance des hacks existants)"
+
 #~ msgid ".htaccess (for rewrite rules )"
 #~ msgstr ".htaccess (pour les règles de réécriture)"
+
 #~ msgid "Comments Template"
 #~ msgstr "Modèle pour les commentaires"
+
 #~ msgid "Popup Comments Template"
 #~ msgstr "Modèle pour la fenêtre de commentaires"
+
 #~ msgid ""
 #~ "Sorry, can&#8217;t edit files with &#8220;..&#8221; in the name. If you "
 #~ "are trying to edit a file in your WordPress home directory, you can just "
@@ -4801,8 +5459,10 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Désolé, on ne peut pas modifier les fichiers avec &laquo; .. &raquo; dans "
 #~ "le nom. Si vous tentez de modifier un fichier dans votre répertoire "
 #~ "WordPress, vous pouvez simplement saisir le nom du fichier."
+
 #~ msgid "Sorry, that file cannot be edited."
 #~ msgstr "Désolé, ce fichier ne peut être modifié."
+
 #~ msgid ""
 #~ "The uploaded file exceeds the <code>upload_max_filesize</code> directive "
 #~ "in <code>php.ini</code>."
@@ -4810,28 +5470,37 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "La taille du fichier envoyé excède celle indiquée dans la directive de "
 #~ "taille maximale autorisée, <code>upload_max_filesize</code>, dans "
 #~ "<code>php.ini</code>."
+
 #~ msgid ""
 #~ "The uploaded file exceeds the <em>MAX_FILE_SIZE</em> directive that was "
 #~ "specified in the HTML form."
 #~ msgstr ""
 #~ "La taille du fichier envoyé excède celle indiquée dans la directive "
 #~ "<em>MAX_FILE_SIZE</em> du formulaire HTML."
+
 #~ msgid "The uploaded file was only partially uploaded."
 #~ msgstr "Le fichier n&rsquo;a été que partiellement envoyé."
+
 #~ msgid "No file was uploaded."
 #~ msgstr "Aucun fichier n&rsquo;a été envoyé."
+
 #~ msgid "Missing a temporary folder."
 #~ msgstr "Un dossier temporaire est manquant."
+
 #~ msgid "Failed to write file to disk."
 #~ msgstr "Échec de l&rsquo;écriture du fichier sur le disque."
+
 #~ msgid "File upload stopped by extension."
 #~ msgstr "L&rsquo;envoi de fichier est arrêté par l&rsquo;extension."
+
 #~ msgid "Invalid form submission."
 #~ msgstr "Envoi non valide du formulaire."
+
 #~ msgid "File is empty. Please upload something more substantial."
 #~ msgstr ""
 #~ "Le fichier est vide. Merci d&rsquo;envoyer quelque chose de plus "
 #~ "consistent."
+
 #~ msgid ""
 #~ "File is empty. Please upload something more substantial. This error could "
 #~ "also be caused by uploads being disabled in your php.ini or by "
@@ -4843,12 +5512,15 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "de fichier dans le fichier php.ini de votre serveur, ou par une valeur de "
 #~ "post_max_size inférieure à celle de upload_max_filesize dans ce même php."
 #~ "ini."
+
 #~ msgid "Specified file failed upload test."
 #~ msgstr "Le test d&rsquo;envoi du fichier spécifié a échoué."
+
 #~ msgid "File type does not meet security guidelines. Try another."
 #~ msgstr ""
 #~ "Le type du fichier ne respecte pas les normes de sécurité. Essayez un "
 #~ "autre fichier."
+
 #~ msgid ""
 #~ "File is empty. Please upload something more substantial. This error could "
 #~ "also be caused by uploads being disabled in your php.ini."
@@ -4856,64 +5528,88 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Ce fichier est vide. Veuillez envoyer quelque chose de plus substantiel. "
 #~ "Cette erreur peut également être due à la désactivation de l&rsquo;envoi "
 #~ "de fichier dans le fichier php.ini de votre serveur."
+
 #~ msgid "Specified file does not exist."
 #~ msgstr "Le fichier spécifié n&rsquo;existe pas."
+
 #~ msgid "Invalid URL Provided."
 #~ msgstr "L&rsquo;URL fournie est invalide"
+
 #~ msgid "Could not create Temporary file."
 #~ msgstr "Impossible de créer le fichier temporaire."
+
 #~ msgid "Could not retrieve file from archive."
 #~ msgstr "Impossible de récupérer le fichier depuis l&rsquo;archive."
+
 #~ msgid "Could not extract file from archive."
 #~ msgstr "Impossible d&rsquo;extraire les fichiers depuis l&rsquo;archive."
+
 #~ msgid "Could not copy file."
 #~ msgstr "Impossible de copier le fichier."
+
 #~ msgid "Empty archive."
 #~ msgstr "Archive vide."
+
 #~ msgid ""
 #~ "<strong>Error:</strong> There was an error connecting to the server, "
 #~ "Please verify the settings are correct."
 #~ msgstr ""
 #~ "<strong>Erreur&nbsp;:</strong> Une erreur s&rsquo;est produite lors de la "
 #~ "connexion au serveur, vérifiez que vos paramètres sont corrects."
+
 #~ msgid "FTP"
 #~ msgstr "FTP"
+
 #~ msgid "FTPS (SSL)"
 #~ msgstr "FTPS (SSL)"
+
 #~ msgid "SSH2"
 #~ msgstr "SSH2"
+
 #~ msgid "Connection Information"
 #~ msgstr "Informations sur connexion"
+
 #~ msgid "To perform the requested action, connection information is required."
 #~ msgstr ""
 #~ "Pour lancer la requête demandée, vous devez donner les informations "
 #~ "requises."
+
 #~ msgid "Hostname"
 #~ msgstr "Nom de l&rsquo;H&ocirc;te&nbsp;:"
+
 #~ msgid "Username"
 #~ msgstr "Identifiant"
+
 #~ msgid "Password"
 #~ msgstr "Mot de passe"
+
 #~ msgid "Authentication Keys"
 #~ msgstr "Clefs d&rsquo;authentification"
+
 #~ msgid "Public Key:"
 #~ msgstr "Clef publique&nbsp;:"
+
 #~ msgid "Private Key:"
 #~ msgstr "Clef privée&nbsp;:"
+
 #~ msgid ""
 #~ "Enter the location on the server where the keys are located. If a "
 #~ "passphrase is needed, enter that in the password field above."
 #~ msgstr ""
 #~ "Saisissez l&rsquo;adresse du serveur où se trouvent les clefs. Si un mot "
 #~ "de passe est nécessaire, saisissez-le dans le champ ci-dessus."
+
 #~ msgid "Connection Type"
 #~ msgstr "Type de connexion"
+
 #~ msgid "Proceed"
 #~ msgstr "Continuer"
+
 #~ msgid "Image data does not exist. Please re-upload the image."
 #~ msgstr ""
 #~ "Il n&rsquoy a pas de données d&rsquo;image. Veuillez envoyer l&rsquoimage "
 #~ "à nouveau."
+
 #~ msgid "Crop"
 #~ msgstr "Recadrer"
 
@@ -5858,39 +6554,6 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr "Le réseau existe déjà."
 #~ msgid "You must provide a valid e-mail address."
 #~ msgstr "Vous devez saisir une adresse de messagerie valide."
-# Ne pas mettre d'entité HTML (&nbsp;...) : chaîne envoyée par e-mail.
-#~ msgid ""
-#~ "Dear User,\n"
-#~ "\n"
-#~ "Your new SITE_NAME site has been successfully set up at:\n"
-#~ "BLOG_URL\n"
-#~ "\n"
-#~ "You can log in to the administrator account with the following "
-#~ "information:\n"
-#~ "Username: USERNAME\n"
-#~ "Password: PASSWORD\n"
-#~ "Login Here: BLOG_URLwp-login.php\n"
-#~ "\n"
-#~ "We hope you enjoy your new site.\n"
-#~ "Thanks!\n"
-#~ "\n"
-#~ "--The Team @ SITE_NAME"
-#~ msgstr ""
-#~ "Cher utilisateur,\n"
-#~ "\n"
-#~ "Votre nouveau site SITE_NAME a été bien créé à l'adresse :\n"
-#~ "BLOG_URL\n"
-#~ "\n"
-#~ "Vous pouvez vous connecter au compte administrateur avec les informations "
-#~ "suivantes :\n"
-#~ "Identifiant : USERNAME\n"
-#~ "Mot de passe : PASSWORD\n"
-#~ "Connectez-vous ici : BLOG_URLwp-login.php\n"
-#~ "\n"
-#~ "Nous espérons que vous apprécierez votre nouveau site.\n"
-#~ "Merci !\n"
-#~ "\n"
-#~ "--L'équipe @ SITE_NAME"
 #~ msgid ""
 #~ "Welcome to <a href=\"SITE_URL\">SITE_NAME</a>. This is your first post. "
 #~ "Edit or delete it, then start blogging!"
@@ -6090,8 +6753,6 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr "Installer des extensions"
 #~ msgid "Manage Plugins"
 #~ msgstr "Gérer les extensions"
-#~ msgid "Install Themes"
-#~ msgstr "Installer des thèmes"
 #~ msgid "Manage Themes"
 #~ msgstr "Gérer les thèmes"
 #~ msgid "New Post"
@@ -6582,8 +7243,6 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr "Non, ne pas me relancer à ce sujet"
 #~ msgid "There are no options for this widget."
 #~ msgstr "Il n&rsquo;y a pas d&rsquo;options pour ce widget."
-#~ msgid "Dashboard"
-#~ msgstr "Tableau de bord"
 #~ msgid ""
 #~ "The left-hand navigation menu provides links to the administration "
 #~ "screens in your WordPress application. You can expand or collapse "
@@ -6842,6 +7501,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr ""
 #~ "Les liens peuvent être rangés dans des catégories&nbsp;; ce ne sont pas "
 #~ "les mêmes catégories que pour vos articles."
+
 #~ msgid ""
 #~ "You can customize the display of this screen using the Screen Options tab "
 #~ "and/or the dropdown filters above the links table."
@@ -6849,12 +7509,14 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Vous pouvez personnaliser l&rsquo;affichage de cet écran en utilisant les "
 #~ "réglages d'affichage et/ou le filtre déroulant présent au-dessous du "
 #~ "tableau de liens."
+
 #~ msgid ""
 #~ "If you delete a link, it will be removed permanently, as Links do not "
 #~ "have a Trash function yet. "
 #~ msgstr ""
 #~ "Si vous effacez un lien, il sera supprimé définitivement, car les liens "
 #~ "n'ont pas de fonction corbeille pour le moment."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Links_Edit_SubPanel\">Link "
 #~ "Management Documentation</a>"
@@ -6987,79 +7649,104 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "images, un outil basique de traitement est proposé une fois la mise en "
 #~ "ligne terminée. Assurez-vous bien de cliquer sur <em>Enregistrer</em> "
 #~ "avant de quitter l'écran."
+
 #~ msgid ""
 #~ "<a href=\"http://codex.wordpress.org/Media_Add_New_SubPanel\">Add New "
 #~ "Media in Codex</a>"
 #~ msgstr ""
 #~ "<a href=\"http://codex.wordpress.org/Media_Add_New_SubPanel\">Ajouter des "
 #~ "nouveaux médias dans le Codex</a>"
+
 #~ msgid "You are not allowed to edit this attachment."
 #~ msgstr ""
 #~ "Vous n&rsquo;avez pas l&rsquo;autorisation de modifier ce fichier attaché."
+
 #~ msgid ""
 #~ "You attempted to edit an attachment that doesn&#8217;t exist. Perhaps it "
 #~ "was deleted?"
 #~ msgstr ""
 #~ "Vous tentez de modifier un fichier attaché qui n&rsquo;existe pas. Peut-"
 #~ "être a-t-il été supprimé&nbsp;?"
+
 #~ msgid ""
 #~ "You can&#8217;t edit this attachment because it is in the Trash. Please "
 #~ "move it out of the Trash and try again."
 #~ msgstr ""
 #~ "Vous ne pouvez pas modifier ce fichier attaché, car il est dans la "
 #~ "corbeille. Sortez-l&rsquo;en, puis réessayez."
+
 #~ msgid "Media attachment updated."
 #~ msgstr "Fichier attaché mis à jour."
+
 #~ msgid "Update Media"
 #~ msgstr "Mettre à jour le fichier"
+
 #~ msgid "Super Admin"
 #~ msgstr "Super Admin"
+
 #~ msgid "Admin"
 #~ msgstr "Admin"
-#~ msgid "My Sites"
-#~ msgstr "Mes sites"
+
 #~ msgid "%d WordPress Update"
 #~ msgstr "%d mise à jour de WordPress"
+
 #~ msgid "%d Plugin Update"
+
 #~ msgid_plural "%d Plugin Updates"
 #~ msgstr[0] "%d mise à jour d&rsquo;extension"
 #~ msgstr[1] "%d mises à jour d&rsquo;extensions"
+
 #~ msgid "%d Theme Update"
+
 #~ msgid_plural "%d Themes Updates"
 #~ msgstr[0] "%d mise à jour de thème"
 #~ msgstr[1] "%d mises à jour de thèmes"
+
 #~ msgid "Updates %s"
 #~ msgstr "Mises à jour %s"
 #~ msgctxt "post"
+
 #~ msgid "Add New"
 #~ msgstr "Ajouter"
+
 #~ msgid "Library"
 #~ msgstr "Bibliothèque"
 #~ msgctxt "file"
+
 #~ msgid "Add New"
 #~ msgstr "Ajouter"
+
 #~ msgid "Pages"
 #~ msgstr "Pages"
 #~ msgctxt "page"
+
 #~ msgid "Add New"
 #~ msgstr "Ajouter"
+
 #~ msgid "Comments %s"
 #~ msgstr "Commentaires %s"
+
 #~ msgid "Appearance"
 #~ msgstr "Apparence"
+
 #~ msgid "Menus"
 #~ msgstr "Menus"
 #~ msgctxt "theme editor"
+
 #~ msgid "Editor"
 #~ msgstr "Éditeur"
+
 #~ msgid "Plugins %s"
 #~ msgstr "Extensions %s"
 #~ msgctxt "plugin"
+
 #~ msgid "Add New"
 #~ msgstr "Ajouter"
 #~ msgctxt "plugin editor"
+
 #~ msgid "Editor"
 #~ msgstr "Éditeur"
+
 #~ msgid "Profile"
 #~ msgstr "Profil"
 
@@ -9157,8 +9844,6 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr ""
 #~ "Une erreur est survenue durant l&rsquo;affichage du formulaire de "
 #~ "paramétrage du widget."
-#~ msgid "Available Widgets"
-#~ msgstr "Widgets disponibles"
 #~ msgid ""
 #~ "Drag widgets from here to a sidebar on the right to activate them. Drag "
 #~ "widgets back here to deactivate them and delete their settings."
@@ -11622,8 +12307,6 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgstr[1] "%1$s réponses à %2$s"
 #~ msgid "Comments are closed."
 #~ msgstr "Les commentaires sont fermés."
-#~ msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
-#~ msgstr "Connecté en tant que <a href=\"%1$s\">%2$s</a>."
 #~ msgid "Log out of this account"
 #~ msgstr "Se déconnecter"
 #~ msgid "Log out &raquo;"
@@ -15089,6 +15772,7 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ msgid "Use <a href=\"%s\">oEmbed</a> to assist in rich content embedding"
 #~ msgstr ""
 #~ "Vous devez <a href=\"%s\">être connecté</a> pour rédiger un commentaire."
+
 #~ msgid ""
 #~ "The character encoding you write your blog in (UTF-8 is <a href=\"http://"
 #~ "developer.apple.com/documentation/macos8/TextIntlSvcs/"
@@ -15098,11 +15782,15 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "(UTF-8 est <a href=\"http://developer.apple.com/documentation/macos8/"
 #~ "TextIntlSvcs/TextEncodingConversionManager/TEC1.5/TEC.b0.html"
 #~ "\">recommandé</a>)"
+
 #~ msgid "Audio (%s)"
+
 #~ msgid_plural "Audio (%s)"
 #~ msgstr[0] "Son (%s)"
 #~ msgstr[1] "Sons (%s)"
+
 #~ msgid "Video (%s)"
+
 #~ msgid_plural "Video (%s)"
 #~ msgstr[0] "Vidéo (%s)"
 #~ msgstr[1] "Vidéos (%s)"
@@ -15110,64 +15798,80 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #, fuzzy
 #~ msgid "Moved to Trash"
 #~ msgstr "Avancer"
+
 #~ msgid "You did not enter a tag name."
 #~ msgstr "Vous n&rsquo;avez pas entré de nom de mot-clef."
+
 #~ msgid "Tag <a href=\"#%s\">%s</a> added"
 #~ msgstr "Mot-clef <a href=\"#%s\">%s</a> ajouté"
+
 #~ msgid ""
 #~ "You are about to delete this attachment '%s'\n"
 #~ "  'Cancel' to stop, 'OK' to delete."
 #~ msgstr ""
 #~ "Vous êtes sur le point de supprimer le fichier joint « %s ».\n"
 #~ "  « Annuler » pour abandonner, « OK » pour le supprimer."
+
 #~ msgid "Delete All Spam"
 #~ msgstr "Supprimer tous les indésirables"
+
 #~ msgid ""
 #~ "You are about to delete this draft '%s'\n"
 #~ "  'Cancel' to stop, 'OK' to delete."
 #~ msgstr ""
 #~ "Vous êtes sur le point de supprimer le brouillon « %s ».\n"
 #~ "  « Annuler » pour abandonner, « OK » pour le supprimer."
+
 #~ msgid ""
 #~ "You are about to delete this post '%s'\n"
 #~ "  'Cancel' to stop, 'OK' to delete."
 #~ msgstr ""
 #~ "Vous êtes sur le point de supprimer l’article « %s ».\n"
 #~ "  « Annuler » pour abandonner, « OK » pour le supprimer."
+
 #~ msgid "Keep this post private"
 #~ msgstr "Cet article est privé"
+
 #~ msgid "Post Password"
 #~ msgstr "Mot de passe de l&rsquo;article"
+
 #~ msgid "Password Protect This Post"
 #~ msgstr "Mot de passe protégeant cet article"
+
 #~ msgid ""
 #~ "Setting a password will require people who visit your blog to enter the "
 #~ "above password to view this post and its comments."
 #~ msgstr ""
 #~ "Mettre un mot de passe obligera les visiteurs qui parcourent votre blog à "
 #~ "entrer un mot de passe pour lire cet article et ses commentaires."
+
 #~ msgid ""
 #~ "You are about to delete this comment. \n"
 #~ "  'Cancel' to stop, 'OK' to delete."
 #~ msgstr ""
 #~ "Vous êtes sur le point de supprimer ce commentaire.\n"
 #~ "  « Annuler » pour abandonner, « OK » pour le supprimer."
+
 #~ msgid ""
 #~ "You are about to delete this page '%s'\n"
 #~ "  'Cancel' to stop, 'OK' to delete."
 #~ msgstr ""
 #~ "Vous êtes sur le point de supprimer la page « %s ».\n"
 #~ "  « Annuler » pour abandonner, « OK » pour la supprimer."
+
 #~ msgid "Page Password"
 #~ msgstr "Mot de passe de la page"
+
 #~ msgid "Password Protect This Page"
 #~ msgstr "Mot de passe de protection de cette page"
+
 #~ msgid ""
 #~ "Setting a password will require people who visit your blog to enter the "
 #~ "above password to view this page and its comments."
 #~ msgstr ""
 #~ "Fixer un mot de passe obligera les visiteurs qui fréquentent votre blog à "
 #~ "entrer un mot de passe pour lire la page et les commentaires associés."
+
 #~ msgid ""
 #~ "These settings apply to this page only. &#8220;Pings&#8221; are <a href="
 #~ "\"http://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments\" "
@@ -15177,8 +15881,10 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "pings&nbsp;&#8221; sont <a href=\"http://codex.wordpress.org/"
 #~ "Introduction_to_Blogging#Managing_Comments\" target=\"_blank\">des "
 #~ "rétroliens ou des pings</a>."
+
 #~ msgid "Import Bunny&#8217;s Technorati Tags"
 #~ msgstr "Importer depuis Bunny&rsquo;s Technorati Tags"
+
 #~ msgid ""
 #~ "Howdy! This imports tags from Bunny&#8217;s Technorati Tags into "
 #~ "WordPress tags."
@@ -15186,77 +15892,95 @@ msgstr "Aucun site ne porte ce nom dans ce système."
 #~ "Salutations&nbsp;! Cet outil importe dans ce blog les mots-clefs en "
 #~ "provenance d&rsquo;une installation existante de Bunny&rsquo;s "
 #~ "Technorati, dans les mots-clefs WordPress."
+
 #~ msgid "This is suitable for Bunny&#8217;s Technorati Tags version 0.6."
 #~ msgstr ""
 #~ "Cette importateur fonctionne pour la version 0.6 de Bunny&rsquo;s "
 #~ "Technorati Tags."
+
 #~ msgid ""
 #~ "All existing Bunny&#8217;s Technorati Tags will be removed after import."
 #~ msgstr ""
 #~ "Tous les mots-clefs existants de Bunny&rsquo;s Technorati Tags seront "
 #~ "supprimés après l&rsquo;exportation."
+
 #~ msgid "Import Tags"
 #~ msgstr "Importation des mots-clefs"
+
 #~ msgid "Reading Bunny&#8217;s Technorati Tags&#8230;"
 #~ msgstr "Lecture des mots-clefs Bunny&rsquo;s Technorati Tags&#8230;"
+
 #~ msgid "Done! <strong>%s</strong> post with tags were read."
+
 #~ msgid_plural "Done! <strong>%s</strong> posts with tags were read."
 #~ msgstr[0] ""
 #~ "Terminé&nbsp;! <strong>%s</strong> article avec mots-clefs a été traité."
 #~ msgstr[1] ""
 #~ "Terminé&nbsp;! <strong>%s</strong> articles avec mots-clefs ont été "
 #~ "traités."
+
 #~ msgid "Import Bunny&#8217;s Technorati Tags into WordPress tags."
 #~ msgstr ""
 #~ "Importation des mots-clefs Bunny&rsquo;s Technorati dans les mots-clefs "
 #~ "WordPress."
+
 #~ msgid "Import Jerome&#8217;s Keywords"
 #~ msgstr "Importer depuis Jerome&rsquo;s Keywords"
+
 #~ msgid ""
 #~ "Howdy! This imports tags from Jerome&#8217;s Keywords into WordPress tags."
 #~ msgstr ""
 #~ "Salutations&nbsp;! Cet outil importe dans ce blog les mots-clefs en "
 #~ "provenance d&rsquo;une installation existante de Jerome&rsquo;s Keywords, "
 #~ "dans les tags WordPress."
+
 #~ msgid "This is suitable for Jerome&#8217;s Keywords version 1.x and 2.0a."
 #~ msgstr ""
 #~ "Cette importateur fonctionne pour les versions 1.x et 2.0a de "
 #~ "Jerome&rsquo;s Keywords."
+
 #~ msgid "All existing Jerome&#8217;s Keywords will be removed after import."
 #~ msgstr ""
 #~ "Tous les mots-clefs existants de Jerome&rsquo;s Keywords seront supprimés "
 #~ "après l&rsquo;exportation."
+
 #~ msgid "Import Version 1.x"
 #~ msgstr "Importer depuis la version 1.x"
+
 #~ msgid "Import Version 2.0a"
 #~ msgstr "Importer depuis la version 2.0a"
+
 #~ msgid "Reading Jerome&#8217;s Keywords Tags&#8230;"
 #~ msgstr ""
 #~ "Lecture des mots-clefs Jerome&rsquo;s Keywords d&rsquo;article&#8230;"
+
 #~ msgid "Import Jerome&#8217;s Keywords into WordPress tags."
 #~ msgstr ""
 #~ "Importation des mots-clefs Jerome&rsquo;s Keywords dans les mots-clefs "
 #~ "WordPress."
+
 #~ msgid ""
 #~ "You are about to delete this draft '%s'\n"
 #~ " 'Cancel' to stop, 'OK' to delete."
 #~ msgstr ""
 #~ "Vous êtes sur le point de supprimer le brouillon « %s ».\n"
 #~ "  « Annuler » pour abandonner, « OK » pour le supprimer."
+
 #~ msgid ""
 #~ "You are about to delete this post '%s'\n"
 #~ " 'Cancel' to stop, 'OK' to delete."
 #~ msgstr ""
 #~ "Vous êtes sur le point de supprimer l’article « %s ».\n"
 #~ "  « Annuler » pour abandonner, « OK » pour le supprimer."
+
 #~ msgid ""
 #~ "You are about to delete this page '%s'\n"
 #~ " 'Cancel' to stop, 'OK' to delete."
 #~ msgstr ""
 #~ "Vous êtes sur le point de supprimer la page « %s ».\n"
 #~ "  « Annuler » pour abandonner, « OK » pour supprimer."
+
 #~ msgid "You do not have sufficient permissions to edit themes for this blog."
 #~ msgstr ""
 #~ "Vous n&rsquo;avez pas les droits suffisants pour modifier les thèmes de "
 #~ "ce blog."
-

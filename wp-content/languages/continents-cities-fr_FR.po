@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress 3.1\n"
+"Project-Id-Version: WordPress 3.2\n"
 "Report-Msgid-Bugs-To: wp-polyglots@lists.automattic.com\n"
-"POT-Creation-Date: 2011-02-23 15:37:22+00:00\n"
-"PO-Revision-Date: 2011-02-24 10:56+0100\n"
+"POT-Creation-Date: 2011-07-03 18:37:54+00:00\n"
+"PO-Revision-Date: 2011-07-04 22:53+0100\n"
 "Last-Translator: WordPress Francophone <traduction_at_wordpress-fr.net>\n"
 "Language-Team: WordPress Francophone <traduction@wordpress-fr.net>\n"
 "MIME-Version: 1.0\n"
@@ -19,8 +19,6 @@ msgstr ""
 "X-Poedit-Country: France\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#. Continent and city translations for timezone selection.
-#. * This file is not included anywhere. It exists solely for use by xgettext.
 #: wp-admin/includes/continents-cities.php:7
 msgid "Africa"
 msgstr "Afrique"

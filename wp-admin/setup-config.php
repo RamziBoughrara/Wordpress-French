@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Retrieves and creates the wp-config.php file.
  *
@@ -16,10 +16,10 @@
  */
 define('WP_INSTALLING', true);
 
-/** 
- * We are blissfully unaware of anything. 
- */ 
-define('WP_SETUP_CONFIG', true); 
+/**
+ * We are blissfully unaware of anything.
+ */
+define('WP_SETUP_CONFIG', true);
 
 /**
  * Disable error reporting
@@ -98,7 +98,7 @@ switch($step) {
 		display_header();
 ?>
 
-<p>Bienvenu dans WordPress. Avant de nous lancer, nous avons besoin de quelques informations &agrave; propos de la base de donn&eacute;es. Il vous faudra conna&icirc;tre les points suivants pour aller plus loin.</p>
+<p>Bienvenue dans WordPress. Avant de nous lancer, nous avons besoin de quelques informations &agrave; propos de la base de donn&eacute;es. Il vous faudra conna&icirc;tre les points suivants pour aller plus loin.</p>
 <ol>
 	<li>Le nom de la base de donn&eacute;es ;</li>
 	<li>Votre identifiant de base de donn&eacute;es ;</li>
@@ -157,7 +157,7 @@ switch($step) {
 	$passwrd = trim($_POST['pwd']);
 	$dbhost  = trim($_POST['dbhost']);
 	$prefix  = trim($_POST['prefix']);
-	if (empty($prefix))
+	if ( empty($prefix) )
 		$prefix = 'wp_';
 
     // Validate $prefix: it can only contain letters, numbers and underscores 
@@ -176,7 +176,7 @@ switch($step) {
 
 	// We'll fail here if the values are no good.
 	require_wp_db();
-	if ( ! empty($wpdb->error ) ) {
+	if ( ! empty( $wpdb->error ) ) {
 		$back = '<p class="step"><a href="setup-config.php?step=1" onclick="javascript:history.go(-1);return false;" class="button">Try Again</a></p>'; 
 		wp_die( $wpdb->error->get_error_message() . $back ); 
 	}
@@ -231,14 +231,14 @@ switch($step) {
 			case '$table_prefix  =':
 				$configFile[$line_num] = str_replace('wp_', $prefix, $line);
 				break;
-            case "define('AUTH_KEY": 
-            case "define('SECURE_A": 
-            case "define('LOGGED_I": 
-            case "define('NONCE_KE": 
-            case "define('AUTH_SAL": 
-            case "define('SECURE_A": 
-            case "define('LOGGED_I": 
-            case "define('NONCE_SA": 
+            case "define('AUTH_KEY":
+            case "define('SECURE_A":
+            case "define('LOGGED_I":
+            case "define('NONCE_KE":
+            case "define('AUTH_SAL":
+            case "define('SECURE_A":
+            case "define('LOGGED_I":
+            case "define('NONCE_SA":
                 $configFile[$line_num] = str_replace('put your unique phrase here', $secret_keys[$key++], $line ); 
                 break; 
 		}
