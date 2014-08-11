@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.6\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/theme\n"
-"POT-Creation-Date: 2009-05-18 17:54+0300\n"
-"PO-Revision-Date: 2009-06-11 09:38+0100\n"
-"Last-Translator: Amaury BALMER <balmer.amaury@gmail.com>\n"
+"POT-Creation-Date: 2009-12-23 23:38+0200\n"
+"PO-Revision-Date: 2009-12-23 22:58+0100\n"
+"Last-Translator: Xavier Borderie <xavier-a-borderie-point-net>\n"
 "Language-Team: French (France) <taduction@wordpress-fr.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,6 +94,7 @@ msgid "Permanent Link to %s"
 msgstr "Lien permanent vers %s"
 
 #: archive.php:40
+#: image.php:32
 #: sidebar.php:30
 #: single.php:34
 msgid "l, F jS, Y"
@@ -252,6 +253,7 @@ msgid "Close this window."
 msgstr "Fermer cette fenêtre."
 
 #: comments-popup.php:109
+#: image.php:65
 #: single.php:65
 msgid "Sorry, no posts matched your criteria."
 msgstr "Désolé, aucun article ne correspond à vos critères."
@@ -280,7 +282,7 @@ msgstr "% réponses"
 #: comments.php:21
 #, php-format
 msgid "to &#8220;%s&#8221;"
-msgstr "à &#8220;%s&#8221;"
+msgstr "à to &#8220;%s&#8221;"
 
 #: comments.php:43
 msgid "Comments are closed."
@@ -358,106 +360,146 @@ msgstr "Flux RSS des commentaires"
 msgid "%d queries. %s seconds."
 msgstr "%d requêtes. %s secondes."
 
-#: functions.php:156
+#: functions.php:160
 msgid "Custom Header"
 msgstr "En-tête personalisée"
 
-#: functions.php:169
+#: functions.php:173
 msgid "Close Color Picker"
 msgstr "Fermer le sélecteur de couleur"
 
-#: functions.php:366
+#: functions.php:376
 msgid "Options saved."
 msgstr "Options enregistrées."
 
-#: functions.php:369
+#: functions.php:379
 msgid "Customize Header"
 msgstr "Personaliser l&rsquo;en-tête"
 
-#: functions.php:383
-#: functions.php:390
+#: functions.php:393
+#: functions.php:400
 msgid "Save"
 msgstr "Enregistrer"
 
-#: functions.php:384
+#: functions.php:394
 msgid "Font Color:"
 msgstr "Couleur de police&nbsp;:"
 
-#: functions.php:384
+#: functions.php:394
 #, php-format
 msgid "Any CSS color (%s or %s or %s)"
 msgstr "N&rsquo;importe quelle couleur CSS (%s ou %s ou %s)"
 
-#: functions.php:385
+#: functions.php:395
 msgid "Upper Color:"
 msgstr "Couleur du haut&nbsp;:"
 
-#: functions.php:385
-#: functions.php:386
+#: functions.php:395
+#: functions.php:396
 #, php-format
 msgid "HEX only (%s or %s)"
 msgstr "Héxadécimel seul (%s ou %s)"
 
-#: functions.php:386
+#: functions.php:396
 msgid "Lower Color:"
 msgstr "Couleur du bas&nbsp;:"
 
-#: functions.php:388
+#: functions.php:398
 msgid "Toggle Text"
 msgstr "Inverser le texte"
 
-#: functions.php:389
+#: functions.php:399
 msgid "Use Defaults"
 msgstr "Utiliser les couleurs par défaut"
 
-#: functions.php:398
+#: functions.php:408
 msgid "Font Color"
 msgstr "Couleur du texte"
 
-#: functions.php:399
+#: functions.php:409
 msgid "Upper Color"
 msgstr "Couleur du haut"
 
-#: functions.php:400
+#: functions.php:410
 msgid "Lower Color"
 msgstr "Couleur du bas"
 
-#: functions.php:401
+#: functions.php:411
 msgid "Revert"
 msgstr "Annuler"
 
-#: functions.php:402
+#: functions.php:412
 msgid "Advanced"
 msgstr "Avancé"
 
-#: functions.php:409
+#: functions.php:419
 msgid "Update Header"
 msgstr "Mettre à jour l&rsquo;en-tête"
 
-#: functions.php:415
+#: functions.php:425
 msgid "Font Color (CSS):"
 msgstr "Couleur du texte (CSS)&nbsp;:"
 
-#: functions.php:416
+#: functions.php:426
 msgid "Upper Color (HEX):"
 msgstr "Couleur du haut (hexa)&nbsp;:"
 
-#: functions.php:417
+#: functions.php:427
 msgid "Lower Color (HEX):"
 msgstr "Couleur du bas (hexa)&nbsp;:"
 
-#: functions.php:418
+#: functions.php:428
 msgid "Select Default Colors"
 msgstr "Sélectionner les couleurs par défaut"
 
-#: functions.php:419
+#: functions.php:429
 msgid "Toggle Text Display"
 msgstr "Afficher/masquer le texte"
 
+#: image.php:20
 #: index.php:20
 #: single.php:23
 msgid "Read the rest of this entry &raquo;"
 msgstr "Lire la suite de cette entrée &raquo;"
+
+#: image.php:22
+#: page.php:17
+#: single.php:25
+msgid "Pages:"
+msgstr "Pages&nbsp;:"
+
+#: image.php:32
+#, php-format
+msgid "This entry was posted on %1$s at %2$s and is filed under %3$s."
+msgstr "Cette entrée a été publiée le %1$s à %2$s, et est rangée dans %3$s."
+
+#: image.php:34
+#: single.php:35
+#, php-format
+msgid "You can follow any responses to this entry through the <a href='%s'>RSS 2.0</a> feed."
+msgstr "Vous pouvez suivre les réponses à cette entrée via son flux <a href='%s'>RSS 2.0</a>."
+
+#: image.php:38
+#: single.php:39
+#, php-format
+msgid "You can <a href=\"#respond\">leave a response</a>, or <a href=\"%s\" rel=\"trackback\">trackback</a> from your own site."
+msgstr "Vous pouvez <a href=\"#respond\">laisser un commentaire</a>, ou <a href=\"%s\" rel=\"trackback\">faire un rétrolien</a> depuis votre site."
+
+#: image.php:42
+#: single.php:43
+#, php-format
+msgid "Responses are currently closed, but you can <a href=\"%s\" rel=\"trackback\">trackback</a> from your own site."
+msgstr "Les commentaires sont fermés actuellement, mais vous pouvez toujours <a href=\"%s\" rel=\"trackback\">faire un rétrolien</a> depuis votre site."
+
+#: image.php:46
+#: single.php:47
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "Vous pouvez sauter à la fin, et laisser directement un commentaire. L&rsquo;envoi de ping est n&rsquo;est pas pour le moment autorisé."
+
+#: image.php:50
+#: single.php:51
+msgid "Both comments and pings are currently closed."
+msgstr "Les commentaires et les pings sont pour le moment fermés."
 
 #: index.php:35
 msgid "Not Found"
@@ -474,11 +516,6 @@ msgstr "Liens&nbsp;:"
 #: page.php:15
 msgid "Read the rest of this page &raquo;"
 msgstr "Lire le reste de cette page &raquo;"
-
-#: page.php:17
-#: single.php:25
-msgid "Pages:"
-msgstr "Pages&nbsp;:"
 
 #: page.php:22
 msgid "Edit this entry."
@@ -567,29 +604,6 @@ msgstr "Propulsé par WordPress, une plate-forme de publication personnelle à l
 msgid "This entry was posted %1$s on %2$s at %3$s and is filed under %4$s."
 msgstr "Cette entrée a été publiée %1$s le %2$s à %3$s, et rangée dans %4$s."
 
-#: single.php:35
-#, php-format
-msgid "You can follow any responses to this entry through the <a href='%s'>RSS 2.0</a> feed."
-msgstr "Vous pouvez suivre les réponses à cette entrée via son flux <a href='%s'>RSS 2.0</a>."
-
-#: single.php:39
-#, php-format
-msgid "You can <a href=\"#respond\">leave a response</a>, or <a href=\"%s\" rel=\"trackback\">trackback</a> from your own site."
-msgstr "Vous pouvez <a href=\"#respond\">laisser un commentaire</a>, ou <a href=\"%s\" rel=\"trackback\">faire un rétrolien</a> depuis votre site."
-
-#: single.php:43
-#, php-format
-msgid "Responses are currently closed, but you can <a href=\"%s\" rel=\"trackback\">trackback</a> from your own site."
-msgstr "Les commentaires sont fermés actuellement, mais vous pouvez toujours <a href=\"%s\" rel=\"trackback\">faire un rétrolien</a> depuis votre site."
-
-#: single.php:47
-msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
-msgstr "Vous pouvez sauter à la fin, et laisser directement un commentaire. L&rsquo;envoi de ping est n&rsquo;est pas pour le moment autorisé."
-
-#: single.php:51
-msgid "Both comments and pings are currently closed."
-msgstr "Les commentaires et les pings sont pour le moment fermés."
-
 #: single.php:53
 msgid "Edit this entry"
 msgstr "Modifier cette entrée"
@@ -624,8 +638,6 @@ msgstr "blue, custom header, fixed width, two columns, widgets"
 #~ msgstr "%s flux RSS"
 #~ msgid "%s Atom Feed"
 #~ msgstr "%s flux Atom"
-#~ msgid "This entry was posted on %1$s at %2$s and is filed under %3$s."
-#~ msgstr "Cette entrée a été publiée le %1$s à %2$s, et est rangée dans %3$s."
 #~ msgid "Search for:"
 #~ msgstr "Recherche sur&nbsp;:"
 #~ msgid "Search"

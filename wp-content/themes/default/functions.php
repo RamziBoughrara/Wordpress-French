@@ -4,8 +4,8 @@
  * @subpackage Default_Theme
  */
 
-load_theme_textdomain( 'kubrick' );
-
+$content_width = 450; 
+ 
 automatic_feed_links();
 
 if ( function_exists('register_sidebar') ) {
@@ -313,6 +313,10 @@ function kubrick_theme_page_head() {
 		width: 100%;
 		display: <?php echo kubrick_header_display_string(); ?>;
 	}
+  .description { 
+    margin-top: 16px; 
+    color: #fff; 
+  } 
 	#jsForm {
 		display: none;
 		text-align: center;

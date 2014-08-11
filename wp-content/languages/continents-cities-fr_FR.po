@@ -5,11 +5,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress 2.8\n"
+"Project-Id-Version: WordPress 2.9\n"
 "Report-Msgid-Bugs-To: wp-polyglots@lists.automattic.com\n"
-"POT-Creation-Date: 2009-06-09 11:07+0000\n"
-"PO-Revision-Date: 2009-06-10 14:26+0100\n"
-"Last-Translator: Xavier Borderie <xavier-à-borderie-point-net>\n"
+"POT-Creation-Date: 2009-06-28 11:07+0000\n"
+"PO-Revision-Date: 2009-12-18 09:25+0100\n"
+"Last-Translator: Amaury Balmer <amaury@wordpress-fr.net>\n"
 "Language-Team: WordPress Francophone <traduction at wordpress-fr dot net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1780,7 +1780,7 @@ msgstr "Archipel des Comores"
 
 #: wp-admin/includes/continents-cities.php:447
 msgid "Kerguelen"
-msgstr "Île Kerguelen"
+msgstr "Îles Kerguelen"
 
 #: wp-admin/includes/continents-cities.php:448
 msgid "Mahe"
@@ -1960,7 +1960,7 @@ msgstr "Île Wake"
 
 #: wp-admin/includes/continents-cities.php:492
 msgid "Wallis"
-msgstr "Île Wallis"
+msgstr "Wallis-et-Futuna"
 
 #: wp-admin/includes/continents-cities.php:493
 msgid "Yap"

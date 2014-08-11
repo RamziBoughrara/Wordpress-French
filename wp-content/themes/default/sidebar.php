@@ -1,79 +1,73 @@
-<?php
-/**
- * @package WordPress
- * @subpackage Default_Theme
- */
+<?php 
+/** 
+ * @package WordPress 
+ * @subpackage Default_Theme 
+ */ 
 ?>
-	<div id="sidebar" role="complementary">
-		<ul>
-			<?php 	/* Widgetized sidebar, if you have the plugin installed. */
-					if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
-			<li>
-				<?php get_search_form(); ?>
-			</li>
+<div id="sidebar" role="complementary">
+	<ul>
+		<?php   /* Widgetized sidebar, if you have the plugin installed. */ 
+			if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+			 
+		<li>
+			<?php get_search_form(); ?>
+		</li>
 
-			<!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
-			<li><h2><?php _e('Author', 'kubrick'); ?></h2>
-			<p>A little something about you, the author. Nothing lengthy, just an overview.</p>
-			</li>
-			-->
+		<!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
+		<li><h2>Auteur</h2>
+			<p>Une petite description de vue. Pas un roman... juste un apercu !</p>
+		</li>
+		-->
 
-			<?php if ( is_404() || is_category() || is_day() || is_month() ||
-						is_year() || is_search() || is_paged() ) {
-			?> <li>
-
+		<?php if ( is_404() || is_category() || is_day() || is_month() || is_year() || is_search() || is_paged() ) { ?> 
+		<li> 
 			<?php /* If this is a 404 page */ if (is_404()) { ?>
 			<?php /* If this is a category archive */ } elseif (is_category()) { ?>
-			<p><?php printf(__('You are currently browsing the archives for the %s category.', 'kubrick'), single_cat_title('', false)); ?></p>
-
-			<?php /* If this is a yearly archive */ } elseif (is_day()) { ?>
-			<p><?php printf(__('You are currently browsing the <a href="%1$s/">%2$s</a> blog archives for the day %3$s.', 'kubrick'), get_bloginfo('url'), get_bloginfo('name'), get_the_time(__('l, F jS, Y', 'kubrick'))); ?></p>
-
+				<p>Vous vous trouvez dans les archives de la catégorie <?php single_cat_title(''); ?>.</p>
+			<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
+				<p>Vous vous trouvez dans les archives du blog <a href="<?php bloginfo('home'); ?>/"><?php bloginfo('name'); ?></a> pour la journée du <?php the_time('l j F Y'); ?>.</p>
 			<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-			<p><?php printf(__('You are currently browsing the <a href="%1$s/">%2$s</a> blog archives for %3$s.', 'kubrick'), get_bloginfo('url'), get_bloginfo('name'), get_the_time(__('F, Y', 'kubrick'))); ?></p>
-
+				<p>Vous vous trouvez dans les archives du blog <a href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a> pour <?php the_time('F Y'); ?>.</p>
 			<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-			<p><?php printf(__('You are currently browsing the <a href="%1$s/">%2$s</a> blog archives for the year %3$s.', 'kubrick'), get_bloginfo('url'), get_bloginfo('name'), get_the_time('Y')); ?></p>
-
-			<?php /* If this is a monthly archive */ } elseif (is_search()) { ?>
-			<p><?php printf(__('You have searched the <a href="%1$s/">%2$s</a> blog archives for <strong>&#8216;%3$s&#8217;</strong>. If you are unable to find anything in these search results, you can try one of these links.', 'kubrick'), get_bloginfo('url'), get_bloginfo('name'), wp_specialchars(get_search_query(), true)); ?></p>
-
-			<?php /* If this is a monthly archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-			<p><?php printf(__('You are currently browsing the <a href="%1$s/">%2$s</a> blog archives.', 'kubrick'), get_bloginfo('url'), get_bloginfo('name')); ?></p>
-
+				<p>Vous vous trouvez dans les archives du blog <a href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a> pour l'année <?php the_time('Y'); ?>.</p>
+			<?php /* If this is a search result */ } elseif (is_search()) { ?>
+				<p>Vous avez lancé la recherche <strong>'<?php the_search_query(); ?>'</strong> dans les archives du blog  <a href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a> . Si vous ne trouvez rien dans ces résultats, essayez l'un de ces liens.</p>
+			<?php /* If this set is paginated */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+				<p>Vous vous trouvez dans les archives du blog <a href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a>.</p>
 			<?php } ?>
+		</li> 
+		<?php }?> 
+	</ul>
+	
+	<ul role="navigation">
+		<?php wp_list_pages('title_li=<h2>Pages</h2>' ); ?>
 
-			</li>
-		<?php }?>
-		</ul>
-		<ul role="navigation">
-			<?php wp_list_pages('title_li=<h2>' . __('Pages', 'kubrick') . '</h2>' ); ?>
-
-			<li><h2><?php _e('Archives', 'kubrick'); ?></h2>
-				<ul>
+		<li><h2>Archives</h2>
+			<ul>
 				<?php wp_get_archives('type=monthly'); ?>
-				</ul>
-			</li>
+			</ul>
+		</li>
 
-			<?php wp_list_categories('show_count=1&title_li=<h2>' . __('Categories', 'kubrick') . '</h2>'); ?>
-		</ul>
-		<ul>
-			<?php /* If this is the frontpage */ if ( is_home() || is_page() ) { ?>
-				<?php wp_list_bookmarks(); ?>
+		<?php wp_list_categories('show_count=1&title_li=<h2>Catégories</h2>'); ?>
+	</ul>
 
-				<li><h2><?php _e('Meta', 'kubrick'); ?></h2>
+	<ul>
+		<?php /* Si c'est la page d'accueil */ if ( is_home() || is_page() ) { ?>
+			<?php wp_list_bookmarks(); ?>
+
+			<li><h2>Méta</h2>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>
-					<li><a href="http://validator.w3.org/check/referer" title="<?php _e('This page validates as XHTML 1.0 Transitional', 'kubrick'); ?>"><?php _e('Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr>', 'kubrick'); ?></a></li>
-					<li><a href="http://gmpg.org/xfn/"><abbr title="<?php _e('XHTML Friends Network', 'kubrick'); ?>"><?php _e('XFN', 'kubrick'); ?></abbr></a></li>
-					<li><a href="http://wordpress.org/" title="<?php _e('Powered by WordPress, state-of-the-art semantic personal publishing platform.', 'kubrick'); ?>">WordPress</a></li>
+					<li><a href="http://validator.w3.org/check/referer" title="Cette page valide en XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML valide</abbr></a></li>
+					<li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li>
+					<li><a href="http://wordpress.org/" title="Propulsé par WordPress, plate-forme de publication personnelle à la pointe de la sémantique.">WordPress</a></li>
+					<li><a href="http://wordpress-fr.net/" title="Communauté francophone des CMS libres WordPress et WordPres MU.">WordPress Francophone</a></li>
 					<?php wp_meta(); ?>
 				</ul>
-				</li>
-			<?php } ?>
-
-			<?php endif; ?>
-		</ul>
-	</div>
-
+			</li>
+		<?php } ?>
+		
+		<?php endif; ?> 
+	</ul>
+</div>

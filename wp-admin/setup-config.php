@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Retrieves and creates the wp-config.php file.
  *
@@ -15,6 +15,13 @@
  * @package WordPress
  */
 define('WP_INSTALLING', true);
+
+/**
+ * Disable error reporting
+ *
+ * Set this to error_reporting( E_ALL ) or error_reporting( E_ALL | E_STRICT ) for debugging
+ */
+error_reporting(0);
 
 /**#@+
  * These three defines are required to allow us to use require_wp_db() to load
@@ -35,9 +42,6 @@ if (!file_exists(ABSPATH . 'wp-config-sample.php'))
 
 $configFile = file(ABSPATH . 'wp-config-sample.php');
 
-if ( !is_writable(ABSPATH))
-	wp_die("Je suis d&eacute;sol&eacute;, mais je ne peux pas &eacute;crire dans le r&eacute;pertoire. Il vous faut soit modifier les permissions de votre r&eacute;pertoire WordPress, soit cr&eacute;er votre fichier <code>wp-config.php</code> manuellement.");
-
 // Check if wp-config.php has been created
 if (file_exists(ABSPATH . 'wp-config.php'))
 	wp_die("<p>Le fichier 'wp-config.php' existe d&eacute;j&agrave;. Si vous devez mettre &agrave; z&eacute;ro les &eacute;l&eacute;ments de configuration de ce fichier, veuillez l'effacer avant de continuer. Vous pouvez <a href='install.php'>lancer l'installateur</a> maintenant.</p>");
@@ -45,6 +49,12 @@ if (file_exists(ABSPATH . 'wp-config.php'))
 // Check if wp-config.php exists above the root directory but is not part of another install
 if (file_exists(ABSPATH . '../wp-config.php') && ! file_exists(ABSPATH . '../wp-settings.php'))
 	wp_die("<p>Le fichier 'wp-config.php' existe déjà dans un répertoire supérieur à votre installation de WordPress. Si vous avez besoin de réinitialiser un élément de configuration de ce fichier, merci de l'effacer d'abord. Vous maintenant procéder <a href='install.php'>l'installation</a>.</p>");
+
+if ( version_compare( '4.3', phpversion(), '>' ) )
+	wp_die( sprintf( /*WP_I18N_OLD_PHP*/'Votre serveur utilise la version %s de PHP mais WordPress nécéssite au moins la version 4.3.'/*/WP_I18N_OLD_PHP*/, phpversion() ) );
+
+if ( !extension_loaded('mysql') && !file_exists(ABSPATH . 'wp-content/db.php') )
+	wp_die( /*WP_I18N_OLD_MYSQL*/'Votre installation PHP ne dispose pas de MySQL. Extension requise pour WordPress.'/*/WP_I18N_OLD_MYSQL*/ );
 
 if (isset($_GET['step']))
 	$step = $_GET['step'];
@@ -66,7 +76,7 @@ function display_header() {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>WordPress &rsaquo; Setup Configuration File</title>
+<title>WordPress &rsaquo; Création du fichier du configuration</title>
 <link rel="stylesheet" href="css/install.css" type="text/css" />
 
 </head>
@@ -155,38 +165,52 @@ switch($step) {
 	if ( !empty($wpdb->error) )
 		wp_die($wpdb->error->get_error_message());
 
-	$handle = fopen(ABSPATH . 'wp-config.php', 'w');
-
 	foreach ($configFile as $line_num => $line) {
 		switch (substr($line,0,16)) {
 			case "define('DB_NAME'":
-				fwrite($handle, str_replace("votre_nom_de_bdd", $dbname, $line));
+				$configFile[$line_num] = str_replace("votre_nom_de_bdd", $dbname, $line);
 				break;
 			case "define('DB_USER'":
-				fwrite($handle, str_replace("'votre_utilisateur_de_bdd'", "'$uname'", $line));
+				$configFile[$line_num] = str_replace("'votre_utilisateur_de_bdd'", "'$uname'", $line);
 				break;
 			case "define('DB_PASSW":
-				fwrite($handle, str_replace("'votre_mdp_de_bdd'", "'$passwrd'", $line));
+				$configFile[$line_num] = str_replace("'votre_mdp_de_bdd'", "'$passwrd'", $line);
 				break;
 			case "define('DB_HOST'":
-				fwrite($handle, str_replace("localhost", $dbhost, $line));
+				$configFile[$line_num] = str_replace("localhost", $dbhost, $line);
 				break;
 			case '$table_prefix  =':
-				fwrite($handle, str_replace('wp_', $prefix, $line));
+				$configFile[$line_num] = str_replace('wp_', $prefix, $line);
 				break;
-			default:
-				fwrite($handle, $line);
 		}
 	}
-	fclose($handle);
-	chmod(ABSPATH . 'wp-config.php', 0666);
-
-	display_header();
+	if ( ! is_writable(ABSPATH) ) :
+		display_header();
 ?>
-<p>Tr&egrave;s bien, mon grand ! Nous sommes arriv&eacute;s au terme de cette partie de l'installation. WordPress peut maintenant communiquer avec votre base de donn&eacute;es. Si vous &ecirc;tes pr&ecirc;t, il est grand temps de&hellip;</p>
-
-<p class="step"><a href="install.php" class="button">Lancer l'installateur&nbsp;!</a></p>
+<p>Désolé, mais je ne peux pas créer le fichier <code>wp-config.php</code>.</p>
+<p>Vous pouvez créer un fichier <code>wp-config.php</code> manuellement, et y copier/coller le texte suivant.</p>
+<textarea cols="90" rows="15"><?php
+		foreach( $configFile as $line ) {
+			echo htmlentities($line);
+		}
+?></textarea>
+<p>Ceci fait, cliquez sur "Lancer l'installation&nbsp;!"</p>
+<p class="step"><a href="install.php" class="button">Lancer l'installation&nbsp;!</a></p>
 <?php
+	else :
+		$handle = fopen(ABSPATH . 'wp-config.php', 'w');
+		foreach( $configFile as $line ) {
+			fwrite($handle, $line);
+		}
+		fclose($handle);
+		chmod(ABSPATH . 'wp-config.php', 0666);
+		display_header();
+?>
+<p>Formidable ! Nous sommes arriv&eacute;s au terme de cette partie de l'installation. WordPress peut maintenant communiquer avec votre base de donn&eacute;es. Si vous &ecirc;tes pr&ecirc;t, il est grand temps de&hellip;</p>
+
+<p class="step"><a href="install.php" class="button">Lancer l'installation&nbsp;!</a></p>
+<?php
+	endif;
 	break;
 }
 ?>
