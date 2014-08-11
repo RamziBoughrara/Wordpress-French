@@ -12,7 +12,7 @@
 
 // $base sanity check.
 if ( 'BASE' == $base )
-	die( /*WP_I18N_BASE_ERROR*/'Configuration error in <code>wp-config.php</code>. <code>$base</code> is set to <code>BASE</code> when it should be like <code>/</code> or <code>/blogs/</code>.'/*/WP_I18N_BASE_ERROR*/ );
+	die( /*WP_I18N_BASE_ERROR*/'Erreur dans la configuration de <code>wp-config.php</code>. La variable <code>$base</code> contient <code>BASE</code> , alors qu&rsquo;il devrait contenir <code>/</code> ou <code>/blogs/</code>.'/*/WP_I18N_BASE_ERROR*/ );
 
 /** Include Multisite initialization functions */
 require( ABSPATH . WPINC . '/ms-load.php' );
@@ -35,7 +35,7 @@ if ( !isset( $current_site ) || !isset( $current_blog ) ) {
 			$domain = substr( $domain, 0, -4 );
 			$_SERVER['HTTP_HOST'] = substr( $_SERVER['HTTP_HOST'], 0, -4 );
 		} else {
-			wp_die( /*WP_I18N_NO_PORT_NUMBER*/'Multisite only works without the port number in the URL.'/*/WP_I18N_NO_PORT_NUMBER*/ );
+			wp_die( /*WP_I18N_NO_PORT_NUMBER*/'La fonctionnalité multisite fonctionne uniquement sans le numéro de port dans l&rsquo;adresse.'/*/WP_I18N_NO_PORT_NUMBER*/ );
 		}
 	}
 
@@ -59,9 +59,11 @@ if ( !isset( $current_site ) || !isset( $current_blog ) ) {
 			if ( $current_blog )
 				wp_cache_set( 'current_blog_' . $domain, $current_blog, 'site-options' );
 		}
-		if ( $current_blog && $current_blog->site_id != $current_site->id )
+		if ( $current_blog && $current_blog->site_id != $current_site->id ) {
 			$current_site = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->site WHERE id = %d", $current_blog->site_id ) );
-		else
+			if ( ! isset( $current_site->blog_id ) )
+				$current_site->blog_id = $wpdb->get_var( $wpdb->prepare( "SELECT blog_id FROM $wpdb->blogs WHERE domain = %s AND path = %s", $current_site->domain, $current_site->path ) );
+		} else
 			$blogname = substr( $domain, 0, strpos( $domain, '.' ) );
 	} else {
 		$blogname = htmlspecialchars( substr( $_SERVER[ 'REQUEST_URI' ], strlen( $path ) ) );
@@ -78,6 +80,7 @@ if ( !isset( $current_site ) || !isset( $current_blog ) ) {
 			if ( $current_blog )
 				wp_cache_set( 'current_blog_' . $domain . $path, $current_blog, 'site-options' );
 		}
+		unset($reserved_blognames);
 	}
 
 	if ( ! defined( 'WP_INSTALLING' ) && is_subdomain_install() && ! is_object( $current_blog ) ) {
@@ -117,8 +120,8 @@ if ( !isset( $current_site ) || !isset( $current_blog ) ) {
 		if ( defined( 'WP_INSTALLING' ) ) {
 			$current_blog->blog_id = $blog_id = 1;
 		} else {
-			$msg = ! $wpdb->get_var( "SHOW TABLES LIKE '$wpdb->site'" ) ? ' ' . /*WP_I18N_TABLES_MISSING*/'Database tables are missing.'/*/WP_I18N_TABLES_MISSING*/ : '';
-			wp_die( /*WP_I18N_NO_BLOG*/'No site by that name on this system.'/*/WP_I18N_NO_BLOG*/ . $msg );
+			$msg = ! $wpdb->get_var( "SHOW TABLES LIKE '$wpdb->site'" ) ? ' ' . /*WP_I18N_TABLES_MISSING*/'Des tables de la base de données sont manquantes.'/*/WP_I18N_TABLES_MISSING*/ : '';
+			wp_die( /*WP_I18N_NO_BLOG*/'Aucun site ne porte ce nom dans ce système.'/*/WP_I18N_NO_BLOG*/ . $msg );
 		}
 	}
 }
