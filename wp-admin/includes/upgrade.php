@@ -402,6 +402,15 @@ function upgrade_all() {
 	if ( $wp_current_db_version < 22422 )
 		upgrade_350();
 
+	if ( $wp_current_db_version < 25824 )
+		upgrade_370();
+
+	if ( $wp_current_db_version < 26148 )
+		upgrade_372();
+
+	if ( $wp_current_db_version < 26149 )
+		upgrade_373();
+
 	maybe_disable_link_manager();
 
 	maybe_disable_automattic_widgets();
@@ -1209,12 +1218,78 @@ function upgrade_350() {
 }
 
 /**
+ * Execute changes made in WordPress 3.7.
+ *
+ * @since 3.7.0
+ */
+function upgrade_370() {
+	global $wp_current_db_version;
+	if ( $wp_current_db_version < 25824 )
+		wp_clear_scheduled_hook( 'wp_auto_updates_maybe_update' );
+}
+
+/**
+ * Execute changes made in WordPress 3.7.2.
+ *
+ * @since 3.7.2
+ * @since 3.8.0
+ */
+function upgrade_372() {
+	global $wp_current_db_version;
+	if ( $wp_current_db_version < 26148 )
+		wp_clear_scheduled_hook( 'wp_maybe_auto_update' );
+}
+
+/**
+ * Execute changes made in WordPress 3.7.3.
+ *
+ * @since 3.7.3
+ */
+function upgrade_373() {
+	global $wp_current_db_version, $wpdb;
+	if ( $wp_current_db_version < 26149 ) {
+		// Find all lost Quick Draft auto-drafts and promote them to proper drafts.
+		$posts = $wpdb->get_results( "SELECT ID, post_title, post_content FROM $wpdb->posts WHERE post_type = 'post'
+			AND post_status = 'auto-draft' AND post_date >= '2014-04-08 00:00:00'" );
+
+		foreach ( $posts as $post ) {
+			// A regular auto-draft should never have content as that would mean it should have been promoted.
+			// If an auto-draft has content, it's from Quick Draft and it should be recovered.
+			if ( '' === $post->post_content ) {
+				// If it does not have content, we must evaluate whether the title should be recovered.
+				if ( 'Auto Draft' === $post->post_title || __( 'Auto Draft' ) === $post->post_title ) {
+					// This a plain old auto draft. Ignore it.
+					continue;
+				}
+			}
+
+			$wpdb->update( $wpdb->posts, array( 'post_status' => 'draft' ), array( 'ID' => $post->ID ) );
+			clean_post_cache( $post->ID );
+		}
+	}
+}
+
+/**
  * Execute network level changes
  *
  * @since 3.0.0
  */
 function upgrade_network() {
 	global $wp_current_db_version, $wpdb;
+
+	// Always
+	if ( is_main_network() ) {
+		// Deletes all expired transients.
+		// The multi-table delete syntax is used to delete the transient record from table a,
+		// and the corresponding transient_timeout record from table b.
+		$time = time();
+		$wpdb->query("DELETE a, b FROM $wpdb->sitemeta a, $wpdb->sitemeta b WHERE
+			a.meta_key LIKE '\_site\_transient\_%' AND
+			a.meta_key NOT LIKE '\_site\_transient\_timeout\_%' AND
+			b.meta_key = CONCAT( '_site_transient_timeout_', SUBSTRING( a.meta_key, 17 ) )
+			AND b.meta_value < $time");
+	}
+
 	// 2.8
 	if ( $wp_current_db_version < 11549 ) {
 		$wpmu_sitewide_plugins = get_site_option( 'wpmu_sitewide_plugins' );
@@ -1978,6 +2053,22 @@ function pre_schema_upgrade() {
 		$wpdb->query("ALTER TABLE $wpdb->options DROP INDEX option_name");
 	}
 
+	// Multisite schema upgrades.
+	if ( $wp_current_db_version < 25448 && is_multisite() && ! defined( 'DO_NOT_UPGRADE_GLOBAL_TABLES' ) && is_main_network() ) {
+
+		// Upgrade verions prior to 3.7
+		if ( $wp_current_db_version < 25179 ) {
+			// New primary key for signups.
+			$wpdb->query( "ALTER TABLE $wpdb->signups ADD signup_id BIGINT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST" );
+			$wpdb->query( "ALTER TABLE $wpdb->signups DROP INDEX domain" );
+		}
+
+		if ( $wp_current_db_version < 25448 ) {
+			// Convert archived from enum to tinyint.
+			$wpdb->query( "ALTER TABLE $wpdb->blogs CHANGE COLUMN archived archived varchar(1) NOT NULL default '0'" );
+			$wpdb->query( "ALTER TABLE $wpdb->blogs CHANGE COLUMN archived archived tinyint(2) NOT NULL default 0" );
+		}
+	}
 }
 
 /**

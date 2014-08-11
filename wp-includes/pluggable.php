@@ -115,7 +115,7 @@ if ( !function_exists('get_userdata') ) :
  * @since 0.71
  *
  * @param int $user_id User ID
- * @return bool|object False on failure, WP_User object on success
+ * @return WP_User|bool WP_User object on success, false on failure.
  */
 function get_userdata( $user_id ) {
 	return get_user_by( 'id', $user_id );
@@ -130,7 +130,7 @@ if ( !function_exists('get_user_by') ) :
  *
  * @param string $field The field to retrieve the user with. id | slug | email | login
  * @param int|string $value A value for $field. A user ID, slug, email address, or login name.
- * @return bool|object False on failure, WP_User object on success
+ * @return WP_User|bool WP_User object on success, false on failure.
  */
 function get_user_by( $field, $value ) {
 	$userdata = WP_User::get_data_by( $field, $value );
@@ -463,7 +463,7 @@ if ( !function_exists('wp_authenticate') ) :
  *
  * @param string $username User's username
  * @param string $password User's password
- * @return WP_Error|WP_User WP_User object if login successful, otherwise WP_Error object.
+ * @return WP_User|WP_Error WP_User object if login successful, otherwise WP_Error object.
  */
 function wp_authenticate($username, $password) {
 	$username = sanitize_user($username);
@@ -546,7 +546,7 @@ function wp_validate_auth_cookie($cookie = '', $scheme = '') {
 	$key = wp_hash($username . $pass_frag . '|' . $expiration, $scheme);
 	$hash = hash_hmac('md5', $username . '|' . $expiration, $key);
 
-	if ( $hmac != $hash ) {
+	if ( ! hash_equals( $hash, $hmac ) ) {
 		do_action('auth_cookie_bad_hash', $cookie_elements);
 		return false;
 	}
@@ -649,7 +649,10 @@ if ( !function_exists('wp_set_auth_cookie') ) :
  */
 function wp_set_auth_cookie($user_id, $remember = false, $secure = '') {
 	if ( $remember ) {
-		$expiration = $expire = time() + apply_filters('auth_cookie_expiration', 14 * DAY_IN_SECONDS, $user_id, $remember);
+		$expiration = time() + apply_filters('auth_cookie_expiration', 14 * DAY_IN_SECONDS, $user_id, $remember);
+		// Ensure the browser will continue to send the cookie after the expiration time is reached.
+		// Needed for the login grace period in wp_validate_auth_cookie().
+		$expire = $expiration + ( 12 * HOUR_IN_SECONDS );
 	} else {
 		$expiration = time() + apply_filters('auth_cookie_expiration', 2 * DAY_IN_SECONDS, $user_id, $remember);
 		$expire = 0;
@@ -827,10 +830,14 @@ if ( !function_exists('check_ajax_referer') ) :
  * @param string $query_arg where to look for nonce in $_REQUEST (since 2.5)
  */
 function check_ajax_referer( $action = -1, $query_arg = false, $die = true ) {
-	if ( $query_arg )
-		$nonce = $_REQUEST[$query_arg];
-	else
-		$nonce = isset($_REQUEST['_ajax_nonce']) ? $_REQUEST['_ajax_nonce'] : $_REQUEST['_wpnonce'];
+	$nonce = '';
+
+	if ( $query_arg && isset( $_REQUEST[ $query_arg ] ) )
+		$nonce = $_REQUEST[ $query_arg ];
+	elseif ( isset( $_REQUEST['_ajax_nonce'] ) )
+		$nonce = $_REQUEST['_ajax_nonce'];
+	elseif ( isset( $_REQUEST['_wpnonce'] ) )
+		$nonce = $_REQUEST['_wpnonce'];
 
 	$result = wp_verify_nonce( $nonce, $action );
 
@@ -854,17 +861,34 @@ if ( !function_exists('wp_redirect') ) :
  * @since 1.5.1
  * @uses apply_filters() Calls 'wp_redirect' hook on $location and $status.
  *
- * @param string $location The path to redirect to
- * @param int $status Status code to use
- * @return bool False if $location is not set
+ * @param string $location The path to redirect to.
+ * @param int $status Status code to use.
+ * @return bool False if $location is not provided, true otherwise.
  */
 function wp_redirect($location, $status = 302) {
 	global $is_IIS;
 
-	$location = apply_filters('wp_redirect', $location, $status);
-	$status = apply_filters('wp_redirect_status', $status, $location);
+	/**
+	 * Filter the redirect location.
+	 *
+	 * @since 2.1.0
+	 *
+	 * @param string $location The path to redirect to.
+	 * @param int    $status   Status code to use.
+	 */
+	$location = apply_filters( 'wp_redirect', $location, $status );
 
-	if ( !$location ) // allows the wp_redirect filter to cancel a redirect
+	/**
+	 * Filter the redirect status code.
+	 *
+	 * @since 2.3.0
+	 *
+	 * @param int    $status   Status code to use.
+	 * @param string $location The path to redirect to.
+	 */
+	$status = apply_filters( 'wp_redirect_status', $status, $location );
+
+	if ( ! $location )
 		return false;
 
 	$location = wp_sanitize_redirect($location);
@@ -873,6 +897,8 @@ function wp_redirect($location, $status = 302) {
 		status_header($status); // This causes problems on IIS and some FastCGI setups
 
 	header("Location: $location", true, $status);
+
+	return true;
 }
 endif;
 
@@ -987,6 +1013,9 @@ if ( ! function_exists('wp_notify_postauthor') ) :
  */
 function wp_notify_postauthor( $comment_id, $comment_type = '' ) {
 	$comment = get_comment( $comment_id );
+	if ( empty( $comment ) )
+		return false;
+
 	$post    = get_post( $comment->comment_post_ID );
 	$author  = get_userdata( $post->post_author );
 
@@ -1073,11 +1102,16 @@ function wp_notify_postauthor( $comment_id, $comment_type = '' ) {
 	if ( isset($reply_to) )
 		$message_headers .= $reply_to . "\n";
 
-	$notify_message = apply_filters('comment_notification_text', $notify_message, $comment_id);
-	$subject = apply_filters('comment_notification_subject', $subject, $comment_id);
-	$message_headers = apply_filters('comment_notification_headers', $message_headers, $comment_id);
+	$emails = array( $author->user_email );
 
-	@wp_mail( $author->user_email, $subject, $notify_message, $message_headers );
+	$emails          = apply_filters( 'comment_notification_recipients', $emails,          $comment_id );
+	$notify_message  = apply_filters( 'comment_notification_text',       $notify_message,  $comment_id );
+	$subject         = apply_filters( 'comment_notification_subject',    $subject,         $comment_id );
+	$message_headers = apply_filters( 'comment_notification_headers',    $message_headers, $comment_id );
+
+	foreach ( $emails as $email ) {
+		@wp_mail( $email, $subject, $notify_message, $message_headers );
+	}
 
 	return true;
 }
@@ -1103,9 +1137,9 @@ function wp_notify_moderator($comment_id) {
 	$post = get_post($comment->comment_post_ID);
 	$user = get_userdata( $post->post_author );
 	// Send to the administration and to the post author if the author can modify the comment.
-	$email_to = array( get_option('admin_email') );
+	$emails = array( get_option('admin_email') );
 	if ( user_can($user->ID, 'edit_comment', $comment_id) && !empty($user->user_email) && ( get_option('admin_email') != $user->user_email) )
-		$email_to[] = $user->user_email;
+		$emails[] = $user->user_email;
 
 	$comment_author_domain = @gethostbyaddr($comment->comment_author_IP);
 	$comments_waiting = $wpdb->get_var("SELECT count(comment_ID) FROM $wpdb->comments WHERE comment_approved = '0'");
@@ -1155,12 +1189,14 @@ function wp_notify_moderator($comment_id) {
 	$subject = sprintf( __('[%1$s] Please moderate: "%2$s"'), $blogname, $post->post_title );
 	$message_headers = '';
 
-	$notify_message = apply_filters('comment_moderation_text', $notify_message, $comment_id);
-	$subject = apply_filters('comment_moderation_subject', $subject, $comment_id);
-	$message_headers = apply_filters('comment_moderation_headers', $message_headers);
+	$emails          = apply_filters( 'comment_moderation_recipients', $emails,          $comment_id );
+	$notify_message  = apply_filters( 'comment_moderation_text',       $notify_message,  $comment_id );
+	$subject         = apply_filters( 'comment_moderation_subject',    $subject,         $comment_id );
+	$message_headers = apply_filters( 'comment_moderation_headers',    $message_headers, $comment_id );
 
-	foreach ( $email_to as $email )
-		@wp_mail($email, $subject, $notify_message, $message_headers);
+	foreach ( $emails as $email ) {
+		@wp_mail( $email, $subject, $notify_message, $message_headers );
+	}
 
 	return true;
 }
@@ -1261,11 +1297,17 @@ function wp_verify_nonce($nonce, $action = -1) {
 	$i = wp_nonce_tick();
 
 	// Nonce generated 0-12 hours ago
-	if ( substr(wp_hash($i . $action . $uid, 'nonce'), -12, 10) === $nonce )
+	$expected = substr( wp_hash( $i . '|' . $action . '|' . $uid, 'nonce'), -12, 10 );
+	if ( hash_equals( $expected, $nonce ) ) {
 		return 1;
+	}
+
 	// Nonce generated 12-24 hours ago
-	if ( substr(wp_hash(($i - 1) . $action . $uid, 'nonce'), -12, 10) === $nonce )
+	$expected = substr( wp_hash( ( $i - 1 ) . '|' . $action . '|' . $uid, 'nonce' ), -12, 10 );
+	if ( hash_equals( $expected, $nonce ) ) {
 		return 2;
+	}
+
 	// Invalid nonce
 	return false;
 }
@@ -1288,7 +1330,7 @@ function wp_create_nonce($action = -1) {
 
 	$i = wp_nonce_tick();
 
-	return substr(wp_hash($i . $action . $uid, 'nonce'), -12, 10);
+	return substr(wp_hash($i . '|' . $action . '|' . $uid, 'nonce'), -12, 10);
 }
 endif;
 
@@ -1420,7 +1462,7 @@ function wp_hash_password($password) {
 		$wp_hasher = new PasswordHash(8, true);
 	}
 
-	return $wp_hasher->HashPassword($password);
+	return $wp_hasher->HashPassword( trim( $password ) );
 }
 endif;
 
@@ -1567,7 +1609,7 @@ if ( !function_exists('wp_set_password') ) :
 function wp_set_password( $password, $user_id ) {
 	global $wpdb;
 
-	$hash = wp_hash_password( trim( $password ) );
+	$hash = wp_hash_password( $password );
 	$wpdb->update($wpdb->users, array('user_pass' => $hash, 'user_activation_key' => ''), array('ID' => $user_id) );
 
 	wp_cache_delete($user_id, 'users');
@@ -1664,9 +1706,11 @@ function get_avatar( $id_or_email, $size = '96', $default = '', $alt = false ) {
 		if ( !empty( $rating ) )
 			$out .= "&amp;r={$rating}";
 
+		$out = str_replace( '&#038;', '&amp;', esc_url( $out ) );
 		$avatar = "<img alt='{$safe_alt}' src='{$out}' class='avatar avatar-{$size} photo' height='{$size}' width='{$size}' />";
 	} else {
-		$avatar = "<img alt='{$safe_alt}' src='{$default}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+		$out = esc_url( $default );
+		$avatar = "<img alt='{$safe_alt}' src='{$out}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
 	}
 
 	return apply_filters('get_avatar', $avatar, $id_or_email, $size, $default, $alt);
@@ -1747,3 +1791,35 @@ function wp_text_diff( $left_string, $right_string, $args = null ) {
 }
 endif;
 
+if ( ! function_exists( 'hash_equals' ) ) :
+/**
+ * Compare two strings in constant time.
+ *
+ * This function is NOT pluggable. It is in this file (in addition to
+ * compat.php) to prevent errors if, during an update, pluggable.php
+ * copies over but compat.php does not.
+ *
+ * This function was added in PHP 5.6.
+ * It can leak the length of a string.
+ *
+ * @since 3.9.2
+ *
+ * @param string $a Expected string.
+ * @param string $b Actual string.
+ * @return bool Whether strings are equal.
+ */
+function hash_equals( $a, $b ) {
+	$a_length = strlen( $a );
+	if ( $a_length !== strlen( $b ) ) {
+		return false;
+	}
+	$result = 0;
+
+	// Do not attempt to "optimize" this.
+	for ( $i = 0; $i < $a_length; $i++ ) {
+		$result |= ord( $a[ $i ] ) ^ ord( $b[ $i ] );
+	}
+
+	return $result === 0;
+}
+endif;
